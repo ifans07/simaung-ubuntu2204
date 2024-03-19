@@ -10,7 +10,7 @@
                     Tambah</h3>
             </div>
             <div class="card p-3">
-                <form action="/piutang/proses-tambah" method="post">
+                <form action="<?= base_url('piutang/proses-tambah') ?>" method="post">
                     <div class="mb-3">
                         <label for="peminjam" class="form-label">Peminjam</label>
                         <input type="text" class="form-control" id="peminjam" name="peminjam"

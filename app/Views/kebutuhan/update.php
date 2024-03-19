@@ -10,7 +10,7 @@
                     Form Edit kebutuhan</h1>
             </div>
             <div class="card p-3">
-                <form action="/kebutuhan/proses-update" method="POST">
+                <form action="<?= base_url('kebutuhan/proses-update') ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $rows['id'] ?>">
                     <div class="mb-3">
                         <label for="kebutuhan" class="form-label">Nama kebutuhan</label>

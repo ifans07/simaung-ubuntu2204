@@ -245,7 +245,7 @@ section {
   height: 50vh;
   width: 100%;
   background: linear-gradient(rgba(63, 73, 83, 0.9), rgba(63, 73, 83, 0.5)),
-    url("/assets/hero/hero1.jpg"), fixed center center;
+    url("http://localhost:8080/assets/hero/hero1.jpg"), fixed center center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;

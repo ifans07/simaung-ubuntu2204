@@ -1,0 +1,25 @@
+INFO - 2024-01-21 13:12:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-21 22:59:09 --> Undefined variable $hari
+in APPPATH\Views\coba\indexcoba.php on line 125.
+ 1 APPPATH\Views\coba\indexcoba.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hari', 'F:\\application-ci\\simaung\\app\\Views\\coba\\indexcoba.php', 125)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\coba\\indexcoba.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('coba/indexcoba', [], true)
+ 5 APPPATH\Controllers\Coba.php(22): view('coba/indexcoba', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-21 22:59:58 --> Undefined variable $datadompet
+in APPPATH\Views\coba\indexcoba.php on line 110.
+ 1 APPPATH\Views\coba\indexcoba.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datadompet', 'F:\\application-ci\\simaung\\app\\Views\\coba\\indexcoba.php', 110)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\coba\\indexcoba.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('coba/indexcoba', [], true)
+ 5 APPPATH\Controllers\Coba.php(22): view('coba/indexcoba', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

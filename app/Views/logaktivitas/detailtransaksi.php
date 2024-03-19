@@ -27,8 +27,8 @@ foreach ($logdata as $value) {
 <section>
     <div class="mb-5">
         <div class="bread-container d-flex justify-content-center">
-            <a href="/" class="bread-list active">Beranda</a>
-            <a href="/piutang" class="bread-list">Piutang</a>
+            <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
+            <a href="<?= base_url('piutang') ?>" class="bread-list">Piutang</a>
             <a href="" class="bread-list">Kebutuhan</a>
             <a href="" class="bread-list">Target</a>
             <a href="" class="bread-list">Rencana</a>
@@ -41,7 +41,7 @@ foreach ($logdata as $value) {
                 <p>Detail transaksi <?= $tanggal ?></p>
             </div>
             <div class="d-flex justify-content-between align-items-end mb-2">
-                <div><a href="/riwayat/tambah" class="btn btn-dark">Tambah transaksi</a></div>
+                <div><a href="<?= base_url('riwayat/tambah') ?>" class="btn btn-dark">Tambah transaksi</a></div>
                 <div class="form-text">
                     Jumlah transaksi: <?php echo count($d) + count($datalog)
                                         ?>
@@ -50,7 +50,7 @@ foreach ($logdata as $value) {
             <div id="container">
                 <div class="row row-cols-1 row-cols-md-3 g-2">
                     <?php foreach ($datalog as $log) : ?>
-                    <a href="/riwayat/log-detail/<?= $log['tanggal'] ?>" class="col box-cost">
+                    <a href="<?= base_url('riwayat/log-detail/'.$log['tanggal']) ?>" class="col box-cost">
                         <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             data-bs-title="<?= $log['catatan'] ?>">
                             <div class=" row g-2">
@@ -133,7 +133,7 @@ foreach ($logdata as $value) {
                     <?php foreach ($d as $data) : ?>
                     <?php //if ($data['tanggal'] !== $tanggal) : 
                         ?>
-                    <a href="/riwayat/log-detail/<?= $data['tanggal'] ?>" class="col box-cost">
+                    <a href="<?= base_url('riwayat/log-detail/'.$data['tanggal']) ?>" class="col box-cost">
                         <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             data-bs-title="<?= $data['catatan'] ?>">
                             <div class=" row g-2">

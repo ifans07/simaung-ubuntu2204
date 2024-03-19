@@ -8,7 +8,7 @@
                 <h3 class="rounded p-3 fw-medium fs-1"><i class="fa-solid fa-edit"></i> Form edit to-do</h3>
             </div>
             <div class="card p-3">
-                <form action="/todolist/proses-update" method="post">
+                <form action="<?= base_url('todolist/proses-update') ?>" method="post">
                     <?= csrf_field() ?>
                     <input type="hidden" name="id" value="<?= $todo['id'] ?>">
                     <div class="mb-3">

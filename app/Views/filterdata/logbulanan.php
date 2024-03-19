@@ -125,15 +125,15 @@ foreach ($datagaji as $gaji) {
 </div>
 <div>
     <div class="bread-container d-flex justify-content-center">
-        <a href="/" class="bread-list active">Beranda</a>
-        <a href="/piutang" class="bread-list">Piutang</a>
+        <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
+        <a href="<?= base_url('piutang') ?>" class="bread-list">Piutang</a>
         <a href="" class="bread-list">Kebutuhan</a>
         <a href="" class="bread-list">Target</a>
         <a href="" class="bread-list">Rencana</a>
     </div>
 </div>
 <div class="d-flex justify-content-between align-items-end mb-3">
-    <div><a href="/riwayat/tambah" class="btn btn-dark">Tambah transaksi</a></div>
+    <div><a href="<?= base_url('riwayat/tambah') ?>" class="btn btn-dark">Tambah transaksi</a></div>
     <div class="form-text">
         Jumlah transaksi: <?= count($datalog) ?>
     </div>
@@ -144,7 +144,7 @@ foreach ($datagaji as $gaji) {
             <div class="col box-cost">
                 <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?= $log['catatan'] ?>">
                 <div class="icon-hapus">
-                    <form action="/riwayat/hapus" method="post">
+                    <form action="<?= base_url('riwayat/hapus') ?>" method="post">
                         <input type="hidden" name="dompetid" value="<?= $log['id_dompet'] ?>" class="text-end">
                         <input type="hidden" name="jumlah" value="<?= $log['jumlah'] ?>" class="text-end">
                         <input type="hidden" name="saldo" value="<?= $log['saldo'] ?>" class="text-end">
@@ -167,7 +167,7 @@ foreach ($datagaji as $gaji) {
                         <div class="col-9">
                             <div class="text-dompet describe-text p-1">
                                 <span class="tipotext"><?= $log['nama_dompet'] ?></span>
-                                <a href="/riwayat/log-detail/<?= $log['tanggal'] ?>" class="describe">
+                                <a href="<?= base_url('riwayat/log-detail/'.$log['tanggal']) ?>" class="describe">
                                     <h6>
                                         <?= $log['log_aktivitas'] ?>
                                         <?php if ($log['status'] == 2) : ?>

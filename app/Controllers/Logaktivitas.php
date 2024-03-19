@@ -52,7 +52,7 @@ class Logaktivitas extends BaseController
         $this->logModel->save($dataLog);
         $this->dompetModel->update($iddompet, $datadompet);
         session()->setFlashdata('addberhasil', '1 data berhasil ditambahkan');
-        return redirect()->to(base_url('/beranda'));
+        return redirect()->to(base_url('/'));
     }
 
     public function addpemasukan()

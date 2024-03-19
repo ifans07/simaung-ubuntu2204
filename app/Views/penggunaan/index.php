@@ -11,7 +11,7 @@
             </div>
             <div class="card p-3">
                 <div class="mb-3">
-                    <a href="/penggunaan/tambah" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
+                    <a href="<?= base_url('penggunaan/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
                     <div class="float-end">
                         <small class="fw-medium"><?= date('l, d-m-Y H:i:s') ?></small>
                     </div>
@@ -35,8 +35,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="/penggunaan/update/<?= $row['id'] ?>" class="badge text-bg-secondary"><i class="fa-solid fa-pen"></i></a>
-                                <a href="/penggunaan/hapus/<?= $row['id'] ?>" class="badge text-bg-danger"><i class="fa-solid fa-trash-alt"></i></a>
+                                <a href="<?= base_url('penggunaan/update/'.$row['id']) ?>" class="badge text-bg-secondary"><i class="fa-solid fa-pen"></i></a>
+                                <a href="<?= base_url('penggunaan/hapus/'.$row['id']) ?>" class="badge text-bg-danger"><i class="fa-solid fa-trash-alt"></i></a>
                                 <a href="" class="badge text-bg-primary"><i class="fa-solid fa-check"></i></a>
                             </div>
                         </div>
@@ -74,9 +74,9 @@
                                 $diffDay = $interval->d;
                                 ?>
                             <small class="">Pemakaian: <span class="fw-medium"><?= $diffYear." Tahun ".$diffMonth." Bulan ".$diffDay." Hari | " ?></span>(<?= $diff->days ?> hari)</small>
-                            - <a href="/penggunaan/update/<?= $row['id'] ?>"
+                            - <a href="<?= base_url('penggunaan/update/'.$row['id']) ?>"
                                 class="badge <?= ($row['status_penggunaan'] == 0) ? 'text-bg-primary' : 'text-bg-dark' ?>"><i
-                                    class="fa-solid fa-pen"></i></a> <a href="/penggunaan/hapus/<?= $row['id'] ?>"
+                                    class="fa-solid fa-pen"></i></a> <a href="<?= base_url('penggunaan/hapus/'.$row['id']) ?>"
                                 class="badge <?= ($row['status_penggunaan'] == 0) ? 'text-bg-danger' : 'text-bg-dark' ?>"
                                 onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash"></i></a>
                             <?php if ($row['status_penggunaan'] == 0) : ?><a href=""
@@ -113,7 +113,7 @@ foreach ($datapenggunaan as $row) : ?>
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form action="/penggunaan/proses-done" method="post">
+            <form action="<?= base_url('penggunaan/proses-done') ?>" method="post">
                 <?= csrf_field() ?>
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="modal-header">

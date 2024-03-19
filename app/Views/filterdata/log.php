@@ -59,7 +59,7 @@ foreach ($datalog as $data) {
 
 <div class="row row-cols-1 row-cols-md-3 g-2">
     <?php foreach ($datalog as $log) : ?>
-        <a href="/coba/detaillog/<?= $log['tanggal'] ?>" class="col box-cost">
+        <a href="<?= base_url('coba/detaillog/'.$log['tanggal']) ?>" class="col box-cost">
             <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?= $log['catatan'] ?>">
                 <div class=" row g-2">
                     <div class="col-3">

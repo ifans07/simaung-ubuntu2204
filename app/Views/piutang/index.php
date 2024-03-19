@@ -11,13 +11,13 @@
             </div>
             <div class="">
                 <div class="my-3">
-                    <a href="/piutang/tambah" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
+                    <a href="<?= base_url('piutang/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
                 </div>
                 <ul class="list-group">
                     <?php foreach ($datapiutang as $row) : ?>
                     <li class="list-group-item">
                         <input type="hidden" value="<?= $row['id'] ?>" class="idpiutang">
-                        <a href="/piutang/detail/<?= $row['id'] ?>" class="text-decoration-none">
+                        <a href="<?= base_url('piutang/detail/'.$row['id']) ?>" class="text-decoration-none">
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex gap-3 align-items-center">
                                     <div>
@@ -64,10 +64,10 @@
                                     </div>
                                 </div>
                                 <div class="align-self-center">
-                                    <a href="/piutang/update/<?= $row['id'] ?>"
+                                    <a href="<?= base_url('piutang/update/'.$row['id']) ?>"
                                         class="badge text-bg-secondary fw-medium fs-6 p-2"><i
                                             class="fa-solid fa-edit"></i></a>
-                                    <a href="/piutang/tambah-detail/<?= $row['id'] ?>"
+                                    <a href="<?= base_url('piutang/tambah-detail/'.$row['id']) ?>"
                                         class="badge text-bg-primary fw-medium fs-6 p-2"><i
                                             class="fa-solid fa-plus"></i></a>
                                 </div>
@@ -89,17 +89,18 @@ $(document).ready(function() {
     let taruhSini = document.querySelectorAll('.taruhDisini')
     let cicilDisini = document.querySelectorAll('.cicilDisini')
     let diterima = document.querySelectorAll('.diterima')
+    let base_url = window.location.href
     // let tingkat = 0
     // let valueCheck = 0;
     // let array = []
     id.forEach((i, index) => {
-        $.getJSON("/piutang/orang-utang/" + i.value, function(data) {
+        $.getJSON(base_url+"/orang-utang/" + i.value, function(data) {
             taruhSini[index].innerHTML = (parseInt(data.piutang.nominal)).toLocaleString(
                 'id-ID')
             cicilDisini[index].innerHTML = ('0').toLocaleString('id-ID')
         });
 
-        $.getJSON("/piutang/cicilan/" + i.value, function(data) {
+        $.getJSON(base_url+"/cicilan/" + i.value, function(data) {
             // let newDiv = document.createElement('div')
             // newDiv.classList.add('text-danger')
 

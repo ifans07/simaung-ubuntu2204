@@ -1,0 +1,101 @@
+CRITICAL - 2024-02-08 10:48:57 --> Undefined variable $datadompet
+in APPPATH\Views\piutang\update.php on line 29.
+ 1 APPPATH\Views\piutang\update.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datadompet', 'F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/piutang/update', [], true)
+ 5 APPPATH\Controllers\Piutang.php(77): view('/piutang/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->update('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 10:49:40 --> Undefined variable $sumsaldo
+in APPPATH\Views\piutang\update.php on line 32.
+ 1 APPPATH\Views\piutang\update.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sumsaldo', 'F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php', 32)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/piutang/update', [], true)
+ 5 APPPATH\Controllers\Piutang.php(78): view('/piutang/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->update('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 10:51:57 --> Undefined variable $piutang
+in APPPATH\Views\piutang\update.php on line 15.
+ 1 APPPATH\Views\piutang\update.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $piutang', 'F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/piutang/update', [], true)
+ 5 APPPATH\Controllers\Piutang.php(79): view('/piutang/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->update('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 10:55:23 --> Undefined array key "tanggal"
+in APPPATH\Views\piutang\update.php on line 47.
+ 1 APPPATH\Views\piutang\update.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggal"', 'F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php', 47)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\piutang\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('/piutang/update', [], true)
+ 5 APPPATH\Controllers\Piutang.php(79): view('/piutang/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->update('4')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 11:07:24 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1750.
+ 1 SYSTEMPATH\BaseModel.php(748): CodeIgniter\BaseModel->transformDataToArray('4', 'insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert('4', false)
+ 3 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert('4', false)
+ 4 APPPATH\Controllers\Piutang.php(91): CodeIgniter\BaseModel->save('4', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->updateproses()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-02-08 11:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-08 11:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-08 17:28:25 --> Undefined property: App\Controllers\Dompet::$dompetModel
+in APPPATH\Controllers\Dompet.php on line 240.
+ 1 APPPATH\Controllers\Dompet.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dompet::$dompetModel', 'F:\\application-ci\\simaung\\app\\Controllers\\Dompet.php', 240)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->idDompet('1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 17:28:26 --> Undefined property: App\Controllers\Dompet::$dompetModel
+in APPPATH\Controllers\Dompet.php on line 240.
+ 1 APPPATH\Controllers\Dompet.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dompet::$dompetModel', 'F:\\application-ci\\simaung\\app\\Controllers\\Dompet.php', 240)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->idDompet('2')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 17:28:26 --> Undefined property: App\Controllers\Dompet::$dompetModel
+in APPPATH\Controllers\Dompet.php on line 240.
+ 1 APPPATH\Controllers\Dompet.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dompet::$dompetModel', 'F:\\application-ci\\simaung\\app\\Controllers\\Dompet.php', 240)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->idDompet('3')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 17:28:27 --> Undefined property: App\Controllers\Dompet::$dompetModel
+in APPPATH\Controllers\Dompet.php on line 240.
+ 1 APPPATH\Controllers\Dompet.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dompet::$dompetModel', 'F:\\application-ci\\simaung\\app\\Controllers\\Dompet.php', 240)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->idDompet('4')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-08 17:28:45 --> Undefined property: App\Controllers\Dompet::$dompetModel
+in APPPATH\Controllers\Dompet.php on line 240.
+ 1 APPPATH\Controllers\Dompet.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Dompet::$dompetModel', 'F:\\application-ci\\simaung\\app\\Controllers\\Dompet.php', 240)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->idDompet('1')
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

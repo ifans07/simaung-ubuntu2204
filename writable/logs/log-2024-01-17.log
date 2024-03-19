@@ -1,0 +1,25 @@
+INFO - 2024-01-17 10:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-17 10:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-17 10:31:52 --> syntax error, unexpected token "if", expecting ":"
+in APPPATH\Views\dompet\index.php on line 282.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 3 APPPATH\Controllers\Dompet.php(108): view('dompet/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-17 12:20:28 --> Undefined array key 12
+in APPPATH\Views\dompet\index.php on line 240.
+ 1 APPPATH\Views\dompet\index.php(240): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 12', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 240)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(108): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-01-17 21:57:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

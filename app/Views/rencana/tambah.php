@@ -9,7 +9,7 @@
                     Form tambah rencana</h3>
             </div>
             <div class="card p-3">
-                <form action="/rencana/proses-tambah" method="post">
+                <form action="<?= base_url('rencana/proses-tambah') ?>" method="post">
                     <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="rencana" class="form-label">Rencana</label>

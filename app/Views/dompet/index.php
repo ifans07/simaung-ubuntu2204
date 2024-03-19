@@ -227,7 +227,7 @@ foreach($datacicilan as $cicilan){
                                             </div>
                                             <div class="col-9">
                                                 <div class="text-dompet describe-text p-1">
-                                                    <a href="/dompet/detail/<?= $data['id_dompet'] ?>" class="describe lh-1">
+                                                    <a href="<?= base_url('dompet/detail/'.$data['id_dompet']) ?>" class="describe lh-1">
                                                         <p class="mb-1"><?= $data['nama_dompet'] ?></p>
                                                         <div class="lh-1">
                                                             <p class="m-0 p-0 fw-medium">Rp
@@ -253,7 +253,7 @@ foreach($datacicilan as $cicilan){
                                                     <i class="fa-solid fa-plus"></i>
                                                 </div>
                                             </div>
-                                            <a href="/dompet/tambah" class="col-9 text-dark">
+                                            <a href="<?= base_url('dompet/tambah') ?>" class="col-9 text-dark">
                                                 <div class="text-dompet describe-text p-1">
                                                     <p class="mb-1 p-0 fw-medium">Tambah Dompet</p>
                                                     <p class="m-0 p-0">Rp0</p>
@@ -347,15 +347,15 @@ foreach($datacicilan as $cicilan){
                             </div>
                             <div class="">
                                 <div class="bread-container d-flex justify-content-center">
-                                    <a href="/" class="bread-list active">Beranda</a>
-                                    <a href="/piutang" class="bread-list">Piutang</a>
+                                    <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
+                                    <a href="<?= base_url('piutang') ?>" class="bread-list">Piutang</a>
                                     <a href="" class="bread-list">Kebutuhan</a>
                                     <a href="" class="bread-list">Target</a>
                                     <a href="" class="bread-list">Rencana</a>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-end mb-3">
-                                <div><a href="/riwayat/tambah" class="btn btn-dark">Tambah transaksi</a></div>
+                                <div><a href="<?= base_url('riwayat/tambah') ?>" class="btn btn-dark">Tambah transaksi</a></div>
                                 <div class="form-text">
                                     Jumlah transaksi: <?= $jmltrxblnini ?>
                                 </div>
@@ -451,7 +451,7 @@ foreach($datacicilan as $cicilan){
                         list</h3>
                 </div>
                 <div class="card p-3">
-                    <form action="/todolist/proses-tambah" method="post" class="mb-3">
+                    <form action="<?= base_url('todolist/proses-tambah') ?>" method="post" class="mb-3">
                         <div class="row g-2 g-md-2">
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="title" placeholder="Judul">
@@ -481,9 +481,9 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </div>
                                 <div>
-                                    <a href="/todolist/update/<?= $row['slug'] ?>" class="badge text-bg-primary"><i
+                                    <a href="<?= base_url('todolist/update/'.$row['slug']) ?>" class="badge text-bg-primary"><i
                                             class="fa-solid fa-pen"></i></a> <a
-                                        href="/todolist/hapus/<?= $row['slug'] ?>" class="badge text-bg-danger"
+                                        href="<?= base_url('todolist/hapus/'.$row['slug']) ?>" class="badge text-bg-danger"
                                         onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash"></i></a>
                                 </div>
                             </li>
@@ -504,7 +504,7 @@ foreach($datacicilan as $cicilan){
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <strong class="fw-medium">Rencana</strong> <a href="/rencana/tambah"
+                                <strong class="fw-medium">Rencana</strong> <a href="<?= base_url('rencana/tambah') ?>"
                                     class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                             </div>
                             <ul>
@@ -518,12 +518,12 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
-                                <li><a href="/rencana" class="text-decoration-none">Selengkapnya . . .</a></li>
+                                <li><a href="<?= base_url('rencana') ?>" class="text-decoration-none">Selengkapnya . . .</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <strong class="fw-medium">Penghitung periode</strong> <a href="/periode/tambah"
+                                <strong class="fw-medium">Penghitung periode</strong> <a href="<?= base_url('periode/tambah') ?>"
                                     class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                             </div>
                             <ul>
@@ -548,7 +548,7 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
-                                <li><a href="/periode">Selengkapnya . . .</a></li>
+                                <li><a href="<?= base_url('periode') ?>">Selengkapnya . . .</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -578,7 +578,7 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
-                                <li><a href="/penggunaan">Selengkapnya . . .</a></li>
+                                <li><a href="<?= base_url('penggunaan') ?>">Selengkapnya . . .</a></li>
                             </ul>
                         </div>
                     </div>
@@ -607,14 +607,14 @@ foreach($datacicilan as $cicilan){
                         </div>
                         <div class="col col-md-auto">
                             <!-- <label for="" class="form-label">-</label> -->
-                            <a href="/kebutuhan/tambah" class="btn btn-dark form-control">
+                            <a href="<?= base_url('kebutuhan/tambah') ?>" class="btn btn-dark form-control">
                                 <i class="fa-solid fa-plus"></i>
                                 Kebutuhan
                             </a>
                         </div>
                         <div class="col col-md-auto">
                             <!-- <label for="" class="form-label">-</label> -->
-                            <a href="/target/tambah" class="btn btn-dark w-100"><i class="fa-solid fa-plus"></i> Tambah
+                            <a href="<?= base_url('target/tambah') ?>" class="btn btn-dark w-100"><i class="fa-solid fa-plus"></i> Tambah
                                 target</a>
                         </div>
                     </div>
@@ -649,7 +649,7 @@ foreach($datacicilan as $cicilan){
                                 <?php endif; ?>
                                 <?php endforeach; ?>
                                 <li>
-                                    <strong class="fw-medium"><a href="/kebutuhan"
+                                    <strong class="fw-medium"><a href="<?= base_url('kebutuhan') ?>"
                                             class="text-decoration-none">Selengkapnya
                                             . . .</a></strong>
                                 </li>
@@ -685,7 +685,7 @@ foreach($datacicilan as $cicilan){
                                 </li>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
-                                <li><strong class="fw-medium"><a href="/target"
+                                <li><strong class="fw-medium"><a href="<?= base_url('target') ?>"
                                             class="text-decoration-none">Selengkapnya .
                                             .
                                             .</a></strong></li>
@@ -716,7 +716,11 @@ $(document).ready(function() {
 
     let dariTgl = document.getElementById('dari')
     let sampaiTgl = document.getElementById('sampai')
-    let base_URL = window.location.origin
+    let base_URL = window.location.href
+    // let base_URL = window.location.origin
+    // let base_URL = window.location.pathname
+    // let base_URL = window.location.host
+
     if (bulan == 12) {
         if (tanggal >= 27 && tanggal <= 31) {
             dariTgl.value = tahun + '-' + bulan + '-' + 27
@@ -762,7 +766,10 @@ $(document).ready(function() {
 <!-- section todolist -->
 <script>
     $(document).ready(function(){
-        let base_URL = window.location.origin
+        let base_URL = window.location.href
+        // let base_URL = window.location.origin
+        // let base_URL = window.location.host
+        // let base_URL = window.location.pathname
         $('#container-todolist').load(base_URL+"/todo/data-list")
     })
 </script>

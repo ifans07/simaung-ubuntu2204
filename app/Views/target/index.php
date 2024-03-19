@@ -13,7 +13,7 @@
             <div class="card p-3">
                 <div class="d-flex flex-wrap justify-content-between mb-4">
                     <div class="mb-2">
-                        <a href="/target/tambah" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah
+                        <a href="<?= base_url('target/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah
                             target</a>
                     </div>
                     <div class="lh-1">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div>
-                    <form action="/kebutuhan/proses-update-json" method="post" id="formname">
+                    <form action="<?= base_url('kebutuhan/proses-update-json') ?>" method="post" id="formname">
                         <?php
                         $totalkebutuhan = 0;
                         $totalkeluar = 0;
@@ -49,9 +49,9 @@
                                             <div class="form-text"><?= $row['catatan'] ?></div>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="/target/update/<?= $row['id'] ?>"
+                                            <a href="<?= base_url('target/update/'.$row['id']) ?>"
                                                 class="badge text-bg-primary me-1"><i class="fa-solid fa-edit"></i></a>
-                                            <a href="/target/hapus/<?= $row['id'] ?>" class="badge text-bg-danger"
+                                            <a href="<?= base_url('target/hapus/'.$row['id']) ?>" class="badge text-bg-danger"
                                                 onclick="return confirm('Yakin?')"><i class="fa-solid fa-x"></i></a>
                                         </div>
 
@@ -92,9 +92,9 @@
                                     <div class="form-text text-decoration-line-through"><?= $row['catatan'] ?></div>
                                 </div>
                                 <div class="d-flex align-items-center gap-2">
-                                    <a href="/target/update/<?= $row['id'] ?>" class="text-dark"><i
+                                    <a href="<?= base_url('target/update/'.$row['id']) ?>" class="text-dark"><i
                                             class="fa-solid fa-edit"></i></a>
-                                    <a href="/target/hapus/<?= $row['id'] ?>" class="text-dark"
+                                    <a href="<?= base_url('target/hapus/'.$row['id']) ?>" class="text-dark"
                                         onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash"></i></a>
                                     <div class="d-flex flex-column lh-1">
                                         <small class="form-text">Mulai:
@@ -157,7 +157,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form action="/target/proses-done" method="post">
+            <form action="<?= base_url('target/proses-done') ?>" method="post">
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="modal-header">
                     <div class="lh-1">

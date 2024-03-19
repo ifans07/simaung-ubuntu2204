@@ -12,8 +12,8 @@ foreach ($logkeluar as $row) {
 <section>
     <div class="container">
         <div class="bread-container">
-            <a href="/" class="bread-list active">Beranda</a>
-            <a href="" class="bread-list">Piutang</a>
+            <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
+            <a href="<?= base_url('piutang') ?>" class="bread-list">Piutang</a>
             <a href="" class="bread-list">Kebutuhan</a>
             <a href="" class="bread-list">Target</a>
             <a href="" class="bread-list">Rencana</a>
@@ -26,11 +26,11 @@ foreach ($logkeluar as $row) {
                         Detail dompet
                     </div>
                     <div>
-                        <a href="/dompet/detail/edit-dompet/<?= $dompet['id_dompet'] ?>" class="btn btn-dark">
+                        <a href="<?= base_url('dompet/detail/edit-dompet/'.$dompet['id_dompet']) ?>" class="btn btn-dark">
                             <i class="fa-solid fa-pen"></i>
                             Edit dompet
                         </a>
-                        <a href="/dompet/detail/hapus-dompet/<?= $dompet['id_dompet'] ?>" class="btn btn-dark" onclick="return confirm('yakin?')">
+                        <a href="<?= base_url('dompet/detail/hapus-dompet/'.$dompet['id_dompet']) ?>" class="btn btn-dark" onclick="return confirm('yakin?')">
                             <i class="fa-solid fa-trash-alt"></i>
                             Hapus
                         </a>
@@ -50,7 +50,7 @@ foreach ($logkeluar as $row) {
                             <i class="fa-solid fa-money-bill"></i>
                             Rp <?= number_format($dompet['saldo'], 0, ',', '.') ?>
                         </h3>
-                        <a href="/dompet/detail/edit-saldo/<?= $dompet['id_dompet'] ?>" class="btn btn-dark">
+                        <a href="<?= base_url('dompet/detail/edit-saldo/'.$dompet['id_dompet']) ?>" class="btn btn-dark">
                             <i class="fa-solid fa-pen"></i>
                             Edit saldo
                         </a>
@@ -92,7 +92,7 @@ foreach ($logkeluar as $row) {
             </div>
             <div class="card p-3">
                 <div class="mb-2">
-                    <strong class="fw-medium">Riwayat</strong> <a href="/riwayat/tambah" class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
+                    <strong class="fw-medium">Riwayat</strong> <a href="<?= base_url('riwayat/tambah') ?>" class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                 </div>
                 <ul>
                     <?php if (!empty($logkeluar)) : ?>

@@ -1,0 +1,97 @@
+CRITICAL - 2023-10-29 11:24:58 --> Undefined variable $countkebutuhan
+in APPPATH\Views\target\index.php on line 21.
+ 1 APPPATH\Views\target\index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $countkebutuhan', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(23): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-29 11:26:44 --> Undefined variable $datakebutuhan
+in APPPATH\Views\target\index.php on line 32.
+ 1 APPPATH\Views\target\index.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datakebutuhan', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 32)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(24): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-29 03:38:32 --> date_default_timezone_get() expects exactly 0 arguments, 1 given
+in APPPATH\Views\target\tambah.php on line 3.
+ 1 APPPATH\Views\target\tambah.php(3): date_default_timezone_get('Asia/Kuala_Lumpur')
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/tambah', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-29 12:26:56 --> Undefined array key 7
+in APPPATH\Views\target\tambah.php on line 35.
+ 1 APPPATH\Views\target\tambah.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 7', 'F:\\application-ci\\simaung\\app\\Views\\target\\tambah.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/tambah', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-29 05:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-29 13:54:01 --> Undefined array key "harga"
+in APPPATH\Views\target\index.php on line 58.
+ 1 APPPATH\Views\target\index.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "harga"', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 58)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(24): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-29 13:54:10 --> Undefined array key "harga"
+in APPPATH\Views\target\index.php on line 58.
+ 1 APPPATH\Views\target\index.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "harga"', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 58)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(24): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-29 13:54:26 --> Undefined array key "periode"
+in APPPATH\Views\target\index.php on line 82.
+ 1 APPPATH\Views\target\index.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "periode"', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 82)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(24): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-29 08:49:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-29 11:33:06 --> Undefined variable $datahtw
+in APPPATH\Controllers\Target.php on line 99.
+ 1 APPPATH\Controllers\Target.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datahtw', 'F:\\application-ci\\simaung\\app\\Controllers\\Target.php', 99)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Target->updateproses()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-29 11:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-29 14:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-29 14:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

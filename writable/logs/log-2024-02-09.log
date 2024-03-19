@@ -1,0 +1,69 @@
+CRITICAL - 2024-02-09 10:22:22 --> Empty statement is given for the field "Select"
+in SYSTEMPATH\Database\BaseBuilder.php on line 511.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(511): CodeIgniter\Database\Exceptions\DataException::forEmptyInputGiven('Select')
+ 2 SYSTEMPATH\Database\BaseBuilder.php(472): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('', '', 'SUM')
+ 3 APPPATH\Models\PiutangModel.php(61): CodeIgniter\Database\BaseBuilder->selectSum()
+ 4 APPPATH\Controllers\Dompet.php(231): App\Models\PiutangModel->getIdDompet('1')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->dataPiutang('1')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-09 10:22:23 --> Empty statement is given for the field "Select"
+in SYSTEMPATH\Database\BaseBuilder.php on line 511.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(511): CodeIgniter\Database\Exceptions\DataException::forEmptyInputGiven('Select')
+ 2 SYSTEMPATH\Database\BaseBuilder.php(472): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('', '', 'SUM')
+ 3 APPPATH\Models\PiutangModel.php(61): CodeIgniter\Database\BaseBuilder->selectSum()
+ 4 APPPATH\Controllers\Dompet.php(231): App\Models\PiutangModel->getIdDompet('2')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->dataPiutang('2')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-09 10:22:24 --> Empty statement is given for the field "Select"
+in SYSTEMPATH\Database\BaseBuilder.php on line 511.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(511): CodeIgniter\Database\Exceptions\DataException::forEmptyInputGiven('Select')
+ 2 SYSTEMPATH\Database\BaseBuilder.php(472): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('', '', 'SUM')
+ 3 APPPATH\Models\PiutangModel.php(61): CodeIgniter\Database\BaseBuilder->selectSum()
+ 4 APPPATH\Controllers\Dompet.php(231): App\Models\PiutangModel->getIdDompet('3')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->dataPiutang('3')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-09 10:22:25 --> Empty statement is given for the field "Select"
+in SYSTEMPATH\Database\BaseBuilder.php on line 511.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(511): CodeIgniter\Database\Exceptions\DataException::forEmptyInputGiven('Select')
+ 2 SYSTEMPATH\Database\BaseBuilder.php(472): CodeIgniter\Database\BaseBuilder->maxMinAvgSum('', '', 'SUM')
+ 3 APPPATH\Models\PiutangModel.php(61): CodeIgniter\Database\BaseBuilder->selectSum()
+ 4 APPPATH\Controllers\Dompet.php(231): App\Models\PiutangModel->getIdDompet('4')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->dataPiutang('4')
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-02-09 21:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-09 23:12:01 --> Undefined array key "saldo     "
+in APPPATH\Views\piutang\tambah.php on line 29.
+ 1 APPPATH\Views\piutang\tambah.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "saldo     "', 'F:\\application-ci\\simaung\\app\\Views\\piutang\\tambah.php', 29)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\piutang\\tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('piutang/tambah', [], true)
+ 5 APPPATH\Controllers\Piutang.php(52): view('piutang/tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-02-09 23:33:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-09 23:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-09 23:50:40 --> syntax error, unexpected token "=", expecting "]"
+in APPPATH\Controllers\Piutang.php on line 153.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('F:\\application-ci\\simaung\\app\\Controllers\\Piutang.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Piutang')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Piutang')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Piutang', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

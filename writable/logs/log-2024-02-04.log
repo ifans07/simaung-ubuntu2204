@@ -1,0 +1,118 @@
+INFO - 2024-02-04 15:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-04 15:40:42 --> Unsupported operand types: string + string
+in APPPATH\Views\kebutuhan\index.php on line 124.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('kebutuhan/index', [], true)
+ 4 APPPATH\Controllers\Kebutuhan.php(41): view('kebutuhan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Kebutuhan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 15:47:56 --> Unsupported operand types: int + array
+in APPPATH\Views\kebutuhan\index.php on line 10.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('kebutuhan/index', [], true)
+ 4 APPPATH\Controllers\Kebutuhan.php(41): view('kebutuhan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Kebutuhan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 15:48:49 --> count(): Argument #1 ($value) must be of type Countable|array, string given
+in APPPATH\Views\kebutuhan\index.php on line 10.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('kebutuhan/index', [], true)
+ 4 APPPATH\Controllers\Kebutuhan.php(41): view('kebutuhan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Kebutuhan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 15:51:04 --> Undefined variable $i
+in APPPATH\Views\kebutuhan\index.php on line 10.
+ 1 APPPATH\Views\kebutuhan\index.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $i', 'F:\\application-ci\\simaung\\app\\Views\\kebutuhan\\index.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\kebutuhan\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('kebutuhan/index', [], true)
+ 5 APPPATH\Controllers\Kebutuhan.php(41): view('kebutuhan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Kebutuhan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 15:52:15 --> Array to string conversion
+in APPPATH\Views\kebutuhan\index.php on line 110.
+ 1 APPPATH\Views\kebutuhan\index.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'F:\\application-ci\\simaung\\app\\Views\\kebutuhan\\index.php', 110)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\kebutuhan\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('kebutuhan/index', [], true)
+ 5 APPPATH\Controllers\Kebutuhan.php(41): view('kebutuhan/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Kebutuhan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 17:03:28 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Piutang.php on line 66.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('F:\\application-ci\\simaung\\app\\Controllers\\Piutang.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Piutang')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Piutang')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Piutang', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 17:19:19 --> syntax error, unexpected token "}", expecting ";"
+in APPPATH\Controllers\Piutang.php on line 77.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('F:\\application-ci\\simaung\\app\\Controllers\\Piutang.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Piutang')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Piutang')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Piutang', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-02-04 17:19:23 --> syntax error, unexpected token "}", expecting ";"
+in APPPATH\Controllers\Piutang.php on line 77.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(285): CodeIgniter\Autoloader\Autoloader->includeFile('F:\\application-ci\\simaung\\app\\Controllers\\Piutang.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(263): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Piutang')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Piutang')
+ 4 SYSTEMPATH\CodeIgniter.php(877): class_exists('\\App\\Controllers\\Piutang', true)
+ 5 SYSTEMPATH\CodeIgniter.php(481): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+ERROR - 2024-02-04 17:24:59 --> mysqli_sql_exception: Table 'db_simaung.cicilans' doesn't exist in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO `ci...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ci...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ci...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ci...', Array, false)
+#4 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+#5 F:\application-ci\simaung\vendor\codeigniter4\framework\system\BaseModel.php(788): CodeIgniter\Model->doInsert(Array)
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Model.php(715): CodeIgniter\BaseModel->insert(Array, false)
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\BaseModel.php(698): CodeIgniter\Model->insert(Array, false)
+#8 F:\application-ci\simaung\app\Controllers\Piutang.php(76): CodeIgniter\BaseModel->save(Array)
+#9 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(919): App\Controllers\Piutang->cicilan()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+#11 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#14 {main}
+CRITICAL - 2024-02-04 17:25:00 --> Table 'db_simaung.cicilans' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2308): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cicilans` (`id_piutang`, `id_dompet`, `catatan`, `jml_cicilan`, `tanggal`, `status_cicilan`) VALUES (:id_piutang:, :id_dompet:, :catatan:, :jml_cicilan:, :tanggal:, :status_cicilan:)', [...], false)
+ 2 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(788): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 5 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 6 APPPATH\Controllers\Piutang.php(76): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Piutang->cicilan()
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Piutang))
+ 9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

@@ -1,0 +1,60 @@
+CRITICAL - 2023-10-24 05:48:41 --> Undefined array key "saldoawal"
+in APPPATH\Views\dompet\update-saldo.php on line 18.
+ 1 APPPATH\Views\dompet\update-saldo.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "saldoawal"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\update-saldo.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\update-saldo.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/update-saldo', [], true)
+ 5 APPPATH\Controllers\Dompet.php(54): view('dompet/update-saldo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->editsaldo('2')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-24 06:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-24 10:12:05 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1750.
+ 1 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray('4', 'update')
+ 2 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], '4')
+ 3 APPPATH\Controllers\Dompet.php(82): CodeIgniter\Model->update([...], '4')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->updateproses()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-10-24 10:12:42 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1750.
+ 1 SYSTEMPATH\BaseModel.php(916): CodeIgniter\BaseModel->transformDataToArray('4', 'update')
+ 2 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update([...], '4')
+ 3 APPPATH\Controllers\Dompet.php(82): CodeIgniter\Model->update([...], '4')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->updateproses()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-24 10:13:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-24 10:13:13 --> Unsupported operand types: string + string
+in APPPATH\Controllers\Dompet.php on line 84.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->updateproses()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-24 10:13:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 10:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 10:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 10:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-24 10:26:27 --> Trying to access array offset on value of type null
+in APPPATH\Views\dompet\detail.php on line 13.
+ 1 APPPATH\Views\dompet\detail.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\detail.php', 13)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\detail.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/detail', [], true)
+ 5 APPPATH\Controllers\Dompet.php(35): view('dompet/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->detail('5')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-10-24 10:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 11:00:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-24 15:47:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

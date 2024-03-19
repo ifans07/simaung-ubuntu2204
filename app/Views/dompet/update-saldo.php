@@ -19,7 +19,7 @@ foreach ($logkeluar as $log) {
                 </h1>
             </div>
             <div class="card p-3">
-                <form action="/dompet/proses-update-saldo" method="POST">
+                <form action="<?= base_url('dompet/proses-update-saldo') ?>" method="POST">
                     <input type="hidden" name="iddompet" value="<?= $datadompet['id_dompet'] ?>">
                     <div class="mb-3">
                         <label for="saldo" class="form-label">Saldo</label>

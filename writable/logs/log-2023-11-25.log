@@ -1,0 +1,69 @@
+ERROR - 2023-11-25 21:23:44 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'db_simaung', 3306, '', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 F:\application-ci\simaung\app\Controllers\Penggunaanl.php(20): CodeIgniter\BaseModel->findAll()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(919): App\Controllers\Penggunaanl->index()
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penggunaanl))
+#9 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 F:\application-ci\simaung\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 F:\application-ci\simaung\app\Controllers\Penggunaanl.php(20): CodeIgniter\BaseModel->findAll()
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(919): App\Controllers\Penggunaanl->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penggunaanl))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2023-11-25 21:23:44 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_lamapenggunaan`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Penggunaanl.php(20): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Penggunaanl->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penggunaanl))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-25 22:15:20 --> Undefined array key "nama_barang"
+in APPPATH\Views\periode\index.php on line 91.
+ 1 APPPATH\Views\periode\index.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_barang"', 'F:\\application-ci\\simaung\\app\\Views\\periode\\index.php', 91)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\periode\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('periode/index', [], true)
+ 5 APPPATH\Controllers\Penghitungp.php(22): view('periode/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Penghitungp->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penghitungp))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-25 22:15:32 --> Undefined array key "nama_barang"
+in APPPATH\Views\periode\index.php on line 82.
+ 1 APPPATH\Views\periode\index.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_barang"', 'F:\\application-ci\\simaung\\app\\Views\\periode\\index.php', 82)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\periode\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('periode/index', [], true)
+ 5 APPPATH\Controllers\Penghitungp.php(22): view('periode/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Penghitungp->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penghitungp))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-25 22:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

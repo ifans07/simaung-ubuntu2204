@@ -10,7 +10,7 @@
                     Edit Aktivitas</h3>
             </div>
             <div class="card p-3">
-                <form action="/periode/proses-update" method="post">
+                <form action="<?= base_url('periode/proses-update') ?>" method="post">
                     <input type="hidden" name="id" value="<?= $data['id'] ?>">
                     <div class="mb-3">
                         <label for="aktivitas" class="form-label">Aktivitas</label>

@@ -11,7 +11,7 @@
                 </h1>
             </div>
             <div class="card p-3">
-                <form action="/dompet/proses-update" method="POST">
+                <form action="<?= base_url('dompet/proses-update') ?>" method="POST">
                     <input type="hidden" name="iddompet" value="<?= $datadompet['id_dompet'] ?>">
                     <div class="mb-3">
                         <label for="namadompet" class="form-label">Nama dompet</label>

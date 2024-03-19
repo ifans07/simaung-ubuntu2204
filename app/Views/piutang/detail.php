@@ -44,9 +44,9 @@ foreach($cicilan as $cicil){
                         </div>
                     </div>
                     <div class="align-self-center">
-                        <a href="/piutang/update/<?= $piutang['id'] ?>"
+                        <a href="<?= base_url('piutang/update/'.$piutang['id']) ?>"
                             class="badge text-bg-secondary fw-medium fs-6 p-2"><i class="fa-solid fa-edit"></i></a>
-                        <a href="/piutang/tambah-detail/<?= $piutang['id'] ?>" class="badge text-bg-primary fs-6 p-2"><i
+                        <a href="<?= base_url('piutang/tambah-detail/'.$piutang['id']) ?>" class="badge text-bg-primary fs-6 p-2"><i
                                 class="fa-solid fa-plus"></i></a>
                     </div>
                 </div>

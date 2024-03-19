@@ -12,9 +12,9 @@
             </div>
         </div>
         <div>
-            <a href="/todolist/update/<?= $row['slug'] ?>" class="badge text-bg-primary"><i
+            <a href="<?= base_url('todolist/update/'.$row['slug']) ?>" class="badge text-bg-primary"><i
                     class="fa-solid fa-pen"></i></a> <a
-                href="/todolist/hapus/<?= $row['slug'] ?>" class="badge text-bg-danger"
+                href="<?= base_url('todolist/hapus/'.$row['slug']) ?>" class="badge text-bg-danger"
                 onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash"></i></a>
         </div>
     </li>

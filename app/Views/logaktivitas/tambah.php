@@ -7,7 +7,7 @@
             <div>
                 <ul class="nav nav-underline">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/" role="tab"><i class="fa-solid fa-arrow-left"></i>
+                        <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i>
                             Kembali</a>
                     </li>
                     <li class="nav-item">
@@ -35,7 +35,7 @@
                 </h1>
             </div>
             <div class="card p-3">
-                <form action="/riwayat/proses-tambah" method="post">
+                <form action="<?= base_url('riwayat/proses-tambah') ?>" method="post">
                     <div class="mb-3">
                         <label for="log" class="form-label">Aktivitas</label>
                         <input type="text" class="form-control" id="log" name="log">
@@ -87,7 +87,7 @@
                 </h1>
             </div>
             <div class="card p-3">
-                <form action="/riwayat/proses-pemasukan" method="post">
+                <form action="<?= base_url('riwayat/proses-pemasukan') ?>" method="post">
                     <div class="mb-3">
                         <label for="log" class="form-label">Aktivitas</label>
                         <input type="text" class="form-control" id="log" name="log">
@@ -138,7 +138,7 @@
                 </h1>
             </div>
             <div class="card p-3">
-                <form action="/riwayat/proses-transfer" method="post">
+                <form action="<?= base_url('riwayat/proses-transfer') ?>" method="post">
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">Jumlah</label>
                         <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Nominal yang di transfer">
@@ -203,11 +203,12 @@
 
 <script>
     $(document).ready(function() {
+        let base_url = window.location.origin
         // form pengeluaran
         $('#dompet-keluar').on('change', function(e) {
             let idDompet = $(this).val()
             $.ajax({
-                url: '/dompet/datajson',
+                url: base_url+'/dompet/datajson',
                 method: 'POST',
                 data: {
                     iddompet: idDompet
@@ -223,7 +224,7 @@
         $('#dompet-masuk').on('change', function(e) {
             let idDompet = $(this).val()
             $.ajax({
-                url: '/dompet/datajson',
+                url: base_url+'/dompet/datajson',
                 method: 'POST',
                 data: {
                     iddompet: idDompet
@@ -239,7 +240,7 @@
         $('#dompet-1-transfer').on('change', function(e) {
             let idDompet1 = $(this).val()
             $.ajax({
-                url: '/dompet/datajson',
+                url: base_url+'/dompet/datajson',
                 method: 'POST',
                 data: {
                     iddompet: idDompet1
@@ -256,7 +257,7 @@
         $('#dompet-2-transfer').on('change', function(e) {
             let idDompet2 = $(this).val()
             $.ajax({
-                url: '/dompet/datajson',
+                url: base_url+'/dompet/datajson',
                 method: 'POST',
                 data: {
                     iddompet: idDompet2

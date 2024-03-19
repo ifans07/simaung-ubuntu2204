@@ -3,7 +3,7 @@
 <footer id="footer" class="footer mt-5">
     <div class="footer-top">
         <div class="container">
-            <h2 class="logo"><a href="/" class=""><i class="fa-solid fa-money-bill"></i> Simaung</a></h2>
+            <h2 class="logo"><a href="<?= base_url('/') ?>" class=""><i class="fa-solid fa-money-bill"></i> Simaung</a></h2>
             <div class="environment lh-1">
 
                 <p class="">Page rendered in {elapsed_time} seconds</p>

@@ -10,7 +10,7 @@
                     Form update rencana</h3>
             </div>
             <div class="card p-3">
-                <form action="/rencana/proses-update" method="post">
+                <form action="<?= base_url('rencana/proses-update') ?>" method="post">
                     <?= csrf_field() ?>
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <div class="mb-3">

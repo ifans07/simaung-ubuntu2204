@@ -176,7 +176,7 @@ class Dompet extends BaseController
         );
         $dompetModel->save($data);
         session()->setFlashdata('addberhasil', '1 Dompet bertambah!');
-        return redirect()->to('/');
+        return redirect()->to(base_url('/'));
     }
 
     public function updateproses()
@@ -191,7 +191,7 @@ class Dompet extends BaseController
         );
         $dompetModel->update($id, $data);
         session()->setFlashdata('updateberhasil', 'Data dompet berhasil diupdate!');
-        return redirect()->to('/dompet/detail/' . $id);
+        return redirect()->to(base_url('/dompet/detail/' . $id));
     }
 
     public function deleteproses($id)
@@ -199,7 +199,7 @@ class Dompet extends BaseController
         $dompetModel = new DompetModel();
         $dompetModel->delete($id);
         session()->setFlashdata('deleteberhasil', '1 Dompet dihapus!');
-        return redirect()->to('/');
+        return redirect()->to(base_url('/'));
     }
 
     public function updateprosessaldo()
@@ -211,7 +211,7 @@ class Dompet extends BaseController
         ];
         $dompetModel->update($id, $data);
         session()->setFlashdata('updatesaldoberhasil', 'Nilai saldo berhasil diupdate!');
-        return redirect()->to('/dompet/detail/' . $id);
+        return redirect()->to(base_url('/dompet/detail/' . $id));
     }
 
 

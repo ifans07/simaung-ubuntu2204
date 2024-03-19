@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimaUng</title>
+    <title><?= $title ?> | SimaUng</title>
     <meta name="description" content="The small framework with powerful features">
 
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="<?= base_url('favicon.ico') ?>">
     <link rel="stylesheet" href="<?= base_url('node_modules/bootstrap/dist/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -47,10 +47,10 @@
     <?php endif; ?>
 
     <!-- SCRIPTS -->
-    <script src="/js/script.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?= base_url('js/script.js') ?>"></script>
+    <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {

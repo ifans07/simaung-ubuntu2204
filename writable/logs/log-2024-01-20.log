@@ -1,0 +1,95 @@
+INFO - 2024-01-20 15:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-20 15:48:50 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+in SYSTEMPATH\BaseModel.php on line 1750.
+ 1 SYSTEMPATH\BaseModel.php(748): CodeIgniter\BaseModel->transformDataToArray('1', 'insert')
+ 2 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert('1', false)
+ 3 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert('1', false)
+ 4 APPPATH\Controllers\Logaktivitas.php(73): CodeIgniter\BaseModel->save('1', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Logaktivitas->addpemasukan()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logaktivitas))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-01-20 15:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-01-20 15:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-20 16:25:59 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 380.
+ 1 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Logaktivitas.php(103): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Logaktivitas->addtransfer()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logaktivitas))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-20 16:29:28 --> Updates are not allowed unless they contain a "where" or "like" clause.
+in SYSTEMPATH\Model.php on line 380.
+ 1 SYSTEMPATH\BaseModel.php(949): CodeIgniter\Model->doUpdate(null, [...])
+ 2 SYSTEMPATH\Model.php(776): CodeIgniter\BaseModel->update(null, [...])
+ 3 APPPATH\Controllers\Logaktivitas.php(103): CodeIgniter\Model->update(null, [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Logaktivitas->addtransfer()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Logaktivitas))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-01-20 16:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-01-20 16:43:00 --> Undefined array key "id_"
+in APPPATH\Views\dompet\index.php on line 318.
+ 1 APPPATH\Views\dompet\index.php(318): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 318)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(109): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-20 16:45:01 --> Undefined array key "ke_iddompet"
+in APPPATH\Views\dompet\index.php on line 318.
+ 1 APPPATH\Views\dompet\index.php(318): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ke_iddompet"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 318)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(109): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-20 16:47:46 --> Undefined array key "ke_iddompet"
+in APPPATH\Views\dompet\index.php on line 313.
+ 1 APPPATH\Views\dompet\index.php(313): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ke_iddompet"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 313)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(109): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-20 16:48:20 --> Undefined array key "ke_iddompet"
+in APPPATH\Views\dompet\index.php on line 318.
+ 1 APPPATH\Views\dompet\index.php(318): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ke_iddompet"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 318)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(109): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-01-20 16:49:25 --> Undefined array key "ke_iddompet"
+in APPPATH\Views\dompet\index.php on line 310.
+ 1 APPPATH\Views\dompet\index.php(310): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ke_iddompet"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 310)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(109): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

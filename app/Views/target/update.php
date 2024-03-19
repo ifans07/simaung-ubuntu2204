@@ -14,7 +14,7 @@ $h = date('w');
                     Form ubah target</h1>
             </div>
             <div class="card p-3">
-                <form action="/target/proses-update" method="POST">
+                <form action="<?= base_url('target/proses-update') ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <input type="hidden" name="status" value="<?= $row['status'] ?>">
                     <div class="mb-3">

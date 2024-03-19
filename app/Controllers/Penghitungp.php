@@ -60,7 +60,7 @@ class Penghitungp extends BaseController
             'tanggal_mulai' => $this->request->getPost('tanggal')
         ];
         $this->periodeModel->update($id, $data);
-        return redirect()->to('/periode');
+        return redirect()->to(base_url('/periode'));
     }
 
     public function deleteproses($id)

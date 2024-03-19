@@ -1,0 +1,26 @@
+CRITICAL - 2023-11-15 09:41:27 --> Undefined variable $coba
+in APPPATH\Views\dompet\index.php on line 27.
+ 1 APPPATH\Views\dompet\index.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $coba', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 27)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(32): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-15 09:41:28 --> Undefined variable $coba
+in APPPATH\Views\dompet\index.php on line 27.
+ 1 APPPATH\Views\dompet\index.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $coba', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 27)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(32): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-15 22:22:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-15 22:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

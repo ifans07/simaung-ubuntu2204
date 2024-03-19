@@ -88,6 +88,7 @@ class Piutang extends BaseController
     public function update($id)
     {
         $data = [
+            'title' => 'Edit Piutang',
             'data' => $this->piutangModel->find($id),
             'datadompet' => $this->dompetModel->findAll(),
             'sumsaldo' => $this->logModel->getSumAll()

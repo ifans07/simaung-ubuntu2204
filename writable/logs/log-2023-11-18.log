@@ -1,0 +1,20 @@
+CRITICAL - 2023-11-18 19:18:39 --> Undefined variable $dataperiode
+in APPPATH\Views\periode\index.php on line 17.
+ 1 APPPATH\Views\periode\index.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dataperiode', 'F:\\application-ci\\simaung\\app\\Views\\periode\\index.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\periode\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('periode/index', [], true)
+ 5 APPPATH\Controllers\Penghitungp.php(22): view('periode/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Penghitungp->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penghitungp))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-18 19:51:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-18 20:18:27 --> Too few arguments to function App\Controllers\Penghitungp::deleteproses(), 0 passed in F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php on line 919 and exactly 1 expected
+in APPPATH\Controllers\Penghitungp.php on line 66.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Penghitungp->deleteproses()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penghitungp))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')

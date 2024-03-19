@@ -1,0 +1,186 @@
+CRITICAL - 2023-11-28 10:32:48 --> Undefined variable $todolist
+in APPPATH\Views\dompet\index.php on line 139.
+ 1 APPPATH\Views\dompet\index.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $todolist', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 139)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(53): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-28 12:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-28 12:48:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:51:20 --> Undefined variable $row
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:51:36 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:51:48 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:52:16 --> Undefined variable $row
+in APPPATH\Views\todolist\update.php on line 15.
+ 1 APPPATH\Views\todolist\update.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('1')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:52:57 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:54:14 --> Undefined variable $row
+in APPPATH\Views\todolist\update.php on line 15.
+ 1 APPPATH\Views\todolist\update.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 12:54:34 --> Undefined variable $row
+in APPPATH\Views\todolist\update.php on line 15.
+ 1 APPPATH\Views\todolist\update.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 15)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881135')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-28 12:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 13:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 13:02:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-28 13:07:13 --> Undefined array key "m"
+in APPPATH\Views\dompet\index.php on line 140.
+ 1 APPPATH\Views\dompet\index.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "m"', 'F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php', 140)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\dompet\\index.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dompet/index', [], true)
+ 5 APPPATH\Controllers\Dompet.php(70): view('dompet/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 13:14:24 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881133')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 13:14:41 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881137')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 13:14:45 --> Trying to access array offset on value of type null
+in APPPATH\Views\todolist\update.php on line 12.
+ 1 APPPATH\Views\todolist\update.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php', 12)
+ 2 SYSTEMPATH\View\View.php(226): include('F:\\application-ci\\simaung\\app\\Views\\todolist\\update.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('todolist/update', [], true)
+ 5 APPPATH\Controllers\Todolist.php(54): view('todolist/update', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->update('5gh7!;CNcE61W[x`65656e5f7f5ba6.35881138')
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-11-28 16:52:44 --> Allowed fields must be specified for model: "App\Models\RiwayatgajiModel"
+in SYSTEMPATH\Model.php on line 736.
+ 1 SYSTEMPATH\Model.php(736): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\RiwayatgajiModel')
+ 2 SYSTEMPATH\BaseModel.php(763): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH\Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH\BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH\Controllers\Dompet.php(60): CodeIgniter\BaseModel->save([...])
+ 6 SYSTEMPATH\CodeIgniter.php(891): App\Controllers\Dompet->__construct()
+ 7 SYSTEMPATH\CodeIgniter.php(485): CodeIgniter\CodeIgniter->createController()
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-28 16:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 16:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 22:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-11-28 22:42:26 --> Too few arguments to function App\Controllers\Todolist::deleteproses(), 0 passed in F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php on line 919 and exactly 1 expected
+in APPPATH\Controllers\Todolist.php on line 70.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Todolist->deleteproses()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2023-11-28 22:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 22:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 22:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-28 22:44:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

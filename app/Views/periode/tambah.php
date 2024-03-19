@@ -10,7 +10,7 @@
                     Tambah Aktivitas</h3>
             </div>
             <div class="card p-3">
-                <form action="/periode/proses-tambah" method="post">
+                <form action="<?= base_url('periode/proses-tambah') ?>" method="post">
                     <div class="mb-3">
                         <label for="aktivitas" class="form-label">Aktivitas</label>
                         <input type="text" class="form-control" name="aktivitas" id="aktivitas"

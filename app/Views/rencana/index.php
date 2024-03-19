@@ -10,7 +10,7 @@
             <div class="card p-3">
                 <div class="d-flex justify-content-between flex-wrap mb-3">
                     <div>
-                        <a href="/rencana/tambah" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
+                        <a href="<?= base_url('rencana/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
                     </div>
                     <div class="fw-medium form-text align-self-center">
                         <span id="hari"><?= date('l') ?></span>, <span id="tanggal"><?= date('Y-m-d') ?></span> <span
@@ -30,8 +30,8 @@
                             </div>
                         </div>
                         <div class="mt-2">
-                            <a href="/rencana/update/<?= $row['id'] ?>" class="badge text-bg-primary"><i
-                                    class="fa-solid fa-pen"></i></a> <a href="/rencana/hapus/<?= $row['id'] ?>"
+                            <a href="<?= base_url('rencana/update/'.$row['id']) ?>" class="badge text-bg-primary"><i
+                                    class="fa-solid fa-pen"></i></a> <a href="<?= base_url('rencana/hapus/'.$row['id']) ?>"
                                 class="badge text-bg-danger" onclick="return confirm('Yakin?')"><i
                                     class="fa-solid fa-trash"></i></a>
                         </div>

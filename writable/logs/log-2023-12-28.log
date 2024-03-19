@@ -1,0 +1,22 @@
+CRITICAL - 2023-12-28 21:10:48 --> Unsupported operand types: string + int
+in APPPATH\Views\coba\indexcoba.php on line 46.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('coba/indexcoba', [], true)
+ 4 APPPATH\Controllers\Coba.php(22): view('coba/indexcoba', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Coba->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2023-12-28 21:11:57 --> Unsupported operand types: string + int
+in APPPATH\Views\coba\indexcoba.php on line 47.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('coba/indexcoba', [], true)
+ 4 APPPATH\Controllers\Coba.php(22): view('coba/indexcoba', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Coba->index()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
