@@ -157,6 +157,9 @@ foreach($datacicilan as $cicilan){
                                             <small class="form-text">Masuk bulan ini: <span class="text-primary">Coming soon</span></small>
                                             <sup data-bs-toggle="tooltip" data-bs-title="Bulan <?= $months[date('M')] ?>"><i class="fa-solid fa-info-circle"></i></sup>
                                         </div>
+                                        <div>
+                                            <small class="form-text">User id: <span class="fw-medium"><?= $iduser ?></span></small>
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <span class="fw-medium">Pengeluaran: </span>
@@ -180,13 +183,15 @@ foreach($datacicilan as $cicilan){
                                     <span class="fw-medium">Piutang: </span>
                                         <div>
                                             <small class="form-text">Total piutang: Rp
-                                                <?= number_format($totalhutang+$totaltingkatkan, 0, ',', '.') ?></small> - 
-                                                <small class="form-text">Total sisa: <span class="text-danger">Rp <?= number_format(($totalhutang+$totaltingkatkan)-$totalditerima,0,',','.') ?></span></small>
-                                                <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="total hutang - total diterima"><i class="fa-solid fa-info-circle"></i></sup>
+                                                <?= number_format($totalhutang+$totaltingkatkan, 0, ',', '.') ?></small>
                                         </div>
                                         <div>
                                             <small class="form-text">Total diterima: <span class="text-primary">Rp
                                                 <?= number_format($totalditerima, 0, ',', '.') ?></span></small>
+                                        </div>
+                                        <div>
+                                            <small class="form-text">Total sisa: <span class="text-danger">Rp <?= number_format(($totalhutang+$totaltingkatkan)-$totalditerima,0,',','.') ?></span></small>
+                                                <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="total hutang - total diterima"><i class="fa-solid fa-info-circle"></i></sup>
                                         </div>
                                     </div>
 
@@ -194,6 +199,12 @@ foreach($datacicilan as $cicilan){
                                     <span class="fw-medium">Random code: </span>
                                         <div>
                                             <small class="form-text"><?= uniqid($generate, $random) ?></small>
+                                        </div>
+                                        <div>
+                                            <small class="form-text">Username: <span class="fw-medium"><?= user()->username ?></span></small>
+                                        </div>
+                                        <div>
+                                            <small class="form-text">Email: <span class="fw-medium"><?= user()->email ?></span></small>
                                         </div>
                                     </div>
 
@@ -452,6 +463,7 @@ foreach($datacicilan as $cicilan){
                 </div>
                 <div class="card p-3">
                     <form action="<?= base_url('todolist/proses-tambah') ?>" method="post" class="mb-3">
+                        <?= csrf_field() ?>
                         <div class="row g-2 g-md-2">
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="title" placeholder="Judul">
@@ -471,6 +483,11 @@ foreach($datacicilan as $cicilan){
                             <strong class="fw-medium">List kegiatan</strong> -
                             <small><?= date('l, d-m-Y') ?></small>
                         </div>
+                            <?php if(empty($datatodolist)): ?>
+                                <div>
+                                    <small class="form-text">Kosong</small>
+                                </div>
+                            <?php endif; ?>
                         <ul>
                             <?php foreach ($datatodolist as $row) : ?>
                             <li class="mb-2">
@@ -507,6 +524,11 @@ foreach($datacicilan as $cicilan){
                                 <strong class="fw-medium">Rencana</strong> <a href="<?= base_url('rencana/tambah') ?>"
                                     class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                             </div>
+                            <?php if(empty($datarencana)): ?>
+                                <div>
+                                    <small class="form-text">Kosong! Tambah rencana</small>
+                                </div>
+                            <?php endif; ?>
                             <ul>
                                 <?php foreach ($datarencana as $row) : ?>
                                 <li class="mb-2">
@@ -518,7 +540,9 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
-                                <li><a href="<?= base_url('rencana') ?>" class="text-decoration-none">Selengkapnya . . .</a></li>
+                                <?php if(!empty($datarencana)): ?>
+                                    <li><a href="<?= base_url('rencana') ?>" class="text-decoration-none">Selengkapnya . . .</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -526,6 +550,11 @@ foreach($datacicilan as $cicilan){
                                 <strong class="fw-medium">Penghitung periode</strong> <a href="<?= base_url('periode/tambah') ?>"
                                     class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                             </div>
+                            <?php if(empty($datapenghitung)): ?>
+                                <div>
+                                    <small class="form-text">Kosong! Tambah kegiatan atau barang</small>
+                                </div>
+                            <?php endif; ?>
                             <ul>
                                 <?php
                                 foreach ($datapenghitung as $row) :
@@ -548,14 +577,21 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
+                                <?php if(!empty($datapenghitung)): ?>
                                 <li><a href="<?= base_url('periode') ?>">Selengkapnya . . .</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <div class="mb-2">
-                                <strong class="fw-medium">Lama penggunaan</strong> <a href="#"
+                                <strong class="fw-medium">Lama penggunaan</strong> <a href="<?= base_url('penggunaan/tambah') ?>"
                                     class="badge text-bg-dark"><i class="fa-solid fa-plus"></i></a>
                             </div>
+                            <?php if(empty($datapenggunaan)): ?>
+                                <div>
+                                    <small class="form-text">Kosong! Tambah barang</small>
+                                </div>
+                            <?php endif; ?>
                             <ul>
                                 <?php foreach ($datapenggunaan as $row) : ?>
                                 <li class="mb-2">
@@ -578,7 +614,9 @@ foreach($datacicilan as $cicilan){
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
+                                <?php if(!empty($datapenggunaan)): ?>
                                 <li><a href="<?= base_url('penggunaan') ?>">Selengkapnya . . .</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
@@ -624,6 +662,11 @@ foreach($datacicilan as $cicilan){
                                 <strong class="fw-medium">Kebutuhan</strong> - <small>Kebutuhan sebulan sesuai
                                     gaji</small>
                             </div>
+                            <?php if(empty($datakebutuhan)): ?>
+                                <div>
+                                    <small class="form-text">Kosong</small>
+                                </div>
+                            <?php endif; ?>
                             <ul class="">
                                 <?php foreach ($datakebutuhan as $row) : ?>
                                 <?php if ($row['status'] == 1) : ?>
@@ -648,11 +691,13 @@ foreach($datacicilan as $cicilan){
                                 </li>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
+                                <?php if(!empty($datakebutuhan)): ?>
                                 <li>
                                     <strong class="fw-medium"><a href="<?= base_url('kebutuhan') ?>"
                                             class="text-decoration-none">Selengkapnya
                                             . . .</a></strong>
                                 </li>
+                                <?php endif; ?>
                             </ul>
                             <!-- <div class="mt-3">
                             <a href="/kebutuhan" class="text-decoration-none btn btn-dark"><span>Selengkapnya</span> <i class="fa-solid fa-angles-right"></i></a>
@@ -662,6 +707,11 @@ foreach($datacicilan as $cicilan){
                             <div>
                                 <strong class="fw-medium">Target</strong> - <small>Perlu nabung untuk membeli</small>
                             </div>
+                            <?php if(empty($datatarget)): ?>
+                                <div>
+                                    <small class="form-text">Kosong</small>
+                                </div>
+                            <?php endif; ?>
                             <ul>
                                 <?php foreach ($datatarget as $row) : ?>
                                 <?php if ($row['status'] == 1) : ?>
@@ -685,10 +735,13 @@ foreach($datacicilan as $cicilan){
                                 </li>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
+
+                                <?php if(!empty($datatarget)): ?>
                                 <li><strong class="fw-medium"><a href="<?= base_url('target') ?>"
                                             class="text-decoration-none">Selengkapnya .
                                             .
                                             .</a></strong></li>
+                                <?php endif; ?>
                             </ul>
                             <!-- <div class="">
                             <a href="" class="text-decoration-none btn btn-dark w-md-100"><span>Selengkapnya</span> <i

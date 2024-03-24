@@ -13,6 +13,11 @@
                 <div class="my-3">
                     <a href="<?= base_url('piutang/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
                 </div>
+                <?php if(empty($datapiutang)): ?>
+                    <div>
+                        <small class="form-text">Data kosong!</small>
+                    </div>
+                <?php endif; ?>
                 <ul class="list-group">
                     <?php foreach ($datapiutang as $row) : ?>
                     <li class="list-group-item">

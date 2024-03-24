@@ -17,7 +17,7 @@ class Rencana extends BaseController
     {
         $data = [
             'title' => 'Rencana | Simaung',
-            'datarencana' => $this->rencanaModel->getRencana()
+            'datarencana' => $this->rencanaModel->getRencanaUser(user_id())
         ];
         return view('rencana/index', $data);
     }
@@ -34,7 +34,8 @@ class Rencana extends BaseController
     {
         $data = [
             'rencana' => $this->request->getVar('rencana'),
-            'catatan' => $this->request->getVar('catatan')
+            'catatan' => $this->request->getVar('catatan'),
+            'id_user' => user_id()
         ];
         $this->rencanaModel->save($data);
         session()->setFlashdata('addberhasil', '1 Data berhasil ditambahkan');

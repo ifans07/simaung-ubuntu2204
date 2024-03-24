@@ -17,7 +17,7 @@ class Penghitungp extends BaseController
     {
         $data = [
             'title' => 'Penghitung periode',
-            'dataperiode' => $this->periodeModel->findAll()
+            'dataperiode' => $this->periodeModel->getAllPenghitungUser(user_id())
         ];
         return view('periode/index', $data);
     }
@@ -35,7 +35,8 @@ class Penghitungp extends BaseController
         $data = [
             'nama_aktivitas' => $this->request->getPost('aktivitas'),
             'catatan' => $this->request->getPost('catatan'),
-            'tanggal_mulai' => $this->request->getPost('tanggal')
+            'tanggal_mulai' => $this->request->getPost('tanggal'),
+            'id_user' => user_id()
         ];
         $this->periodeModel->save($data);
         session()->setFlashdata('addberhasil', 'Data kegiatan berhasil ditambah');

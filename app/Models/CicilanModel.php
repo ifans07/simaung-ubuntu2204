@@ -13,7 +13,7 @@ class CicilanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_piutang', 'id_dompet', 'catatan_cicilan', 'jml_cicilan', 'tanggal', 'status_cicilan'];
+    protected $allowedFields    = ['id_piutang', 'id_dompet', 'catatan_cicilan', 'jml_cicilan', 'tanggal', 'status_cicilan', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -46,6 +46,14 @@ class CicilanModel extends Model
         ->join('tb_dompet', 'tb_dompet.id_dompet=tb_cicilanpiutang.id_dompet')
         ->where('tb_piutang.id', $id)
         ->orderBy('tanggal', 'DESC')
+        ->get()
+        ->getResultArray();
+    }
+
+    public function getCicilanUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->where('id_user', $user_id)
         ->get()
         ->getResultArray();
     }

@@ -12,6 +12,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('piutang/proses-update') ?>" method="post">
+                <?= csrf_field() ?>
                     <input type="hidden" value="<?= $data['id'] ?>" name="id">
                     <div class="mb-3">
                         <label for="peminjam" class="form-label">Peminjam</label>

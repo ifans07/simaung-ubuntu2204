@@ -10,6 +10,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('piutang/cicil') ?>" method="post">
+                <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="pilihan" class="form-label">Tipe aksi</label>
                         <select name="pilihan" id="pilihan" class="form-select">

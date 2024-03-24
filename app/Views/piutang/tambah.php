@@ -11,6 +11,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('piutang/proses-tambah') ?>" method="post">
+                <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="peminjam" class="form-label">Peminjam</label>
                         <input type="text" class="form-control" id="peminjam" name="peminjam"

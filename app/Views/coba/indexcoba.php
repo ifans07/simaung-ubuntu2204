@@ -16,8 +16,8 @@ $hari = [
 <section>
     <div>
         <div class="bread-container d-flex justify-content-center">
-            <a href="/" class="bread-list active">Beranda</a>
-            <a href="/piutang" class="bread-list">Piutang</a>
+            <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
+            <a href="<?= base_url('/piutang') ?>" class="bread-list">Piutang</a>
             <a href="" class="bread-list">Kebutuhan</a>
             <a href="" class="bread-list">Target</a>
             <a href="" class="bread-list">Rencana</a>
@@ -188,7 +188,9 @@ $hari = [
         let tahun = time.getFullYear()
         let blnIni = document.getElementById('bln-ini')
         let blnSblm = document.getElementById('bln-sblm')
-        console.log(bulan0)
+        let base_url = window.location.href
+
+        console.log(base_url)
         if (bulan + 1 == 12) {
             console.log(setMonth[0])
             blnSblm.value = tahun + '-' + bulan + '-' + tanggal
@@ -212,7 +214,7 @@ $hari = [
         }
         console.log(blnIni.value)
         console.log(blnSblm.value)
-        $('#container').load('http://localhost:8080/coba/filterlog/' + blnSblm.value +
+        $('#container').load(base_url+'/filterlog/' + blnSblm.value +
             '/' + blnIni.value)
 
         $('#bln-ini').on('change', function() {

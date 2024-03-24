@@ -13,7 +13,7 @@ class PiutangModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_peminjam', 'nominal', 'tanggal_pinjam', 'catatan', 'id_dompet', 'status'];
+    protected $allowedFields    = ['nama_peminjam', 'nominal', 'tanggal_pinjam', 'catatan', 'id_dompet', 'status', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -48,6 +48,16 @@ class PiutangModel extends Model
         return $this->join('tb_dompet', 'tb_dompet.id_dompet=tb_piutang.id_dompet')->where(['id' => $slug])->first();
     }
     
+    public function getPiutangUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->join('tb_dompet', 'tb_dompet.id_dompet=tb_piutang.id_dompet')
+        ->where('tb_piutang.id_user', $user_id)
+        ->orderBy('tanggal_pinjam', 'DESC')
+        ->get()
+        ->getResultArray();
+    }
+
     public function getOrangUtang($id){
         return $this->db->table($this->table)
         ->where('id', $id)

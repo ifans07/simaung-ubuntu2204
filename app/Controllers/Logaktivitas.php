@@ -17,6 +17,7 @@ class Logaktivitas extends BaseController
         $this->logModel = new LogaktivitasModel();
         $this->dompetModel = new DompetModel();
         $this->gajiModel = new GajiModel();
+        helper('form');
     }
 
     public function index()
@@ -28,8 +29,8 @@ class Logaktivitas extends BaseController
     {
         $data = [
             'title' => 'Form tambah aktivitas',
-            'dompet' => $this->dompetModel->findAll(),
-            'sumsaldo' => $this->logModel->getSumAll()
+            'dompet' => $this->dompetModel->getAllDompet(user_id()),
+            'sumsaldo' => $this->logModel->getSumAll(user_id())
         ];
         return view('logaktivitas/tambah', $data);
     }
@@ -37,17 +38,24 @@ class Logaktivitas extends BaseController
     public function addproses()
     {
         $jumlah = $this->request->getPost('jumlah');
+        $jml = explode('.', $jumlah);
+        $j = implode($jml);
+
         $saldo = $this->request->getPost('saldo');
+        $sldo = explode('.',$saldo);
+        $sld = implode($sldo);
+
         $iddompet = $this->request->getPost('dompet');
         $dataLog = [
             'log_aktivitas' => $this->request->getPost('log'),
-            'jumlah' => $jumlah,
+            'jumlah' => $j,
             'tanggal' => $this->request->getPost('tanggal'),
             'catatan' => $this->request->getPost('catatan'),
-            'id_dompet' => $iddompet
+            'id_dompet' => $iddompet,
+            'id_user' => user_id()
         ];
         $datadompet = [
-            'saldo' => $saldo - $jumlah
+            'saldo' => $sld - $j
         ];
         $this->logModel->save($dataLog);
         $this->dompetModel->update($iddompet, $datadompet);
@@ -58,18 +66,25 @@ class Logaktivitas extends BaseController
     public function addpemasukan()
     {
         $jumlah = $this->request->getPost('jumlah');
+        $jml = explode('.',$jumlah);
+        $j = implode($jml);
+
         $saldo = $this->request->getPost('saldo');
+        $sldo = explode('.',$saldo);
+        $sld = implode($sldo);
+
         $iddompet = $this->request->getPost('dompet');
         $dataLog = [
             'log_aktivitas' => $this->request->getPost('log'),
-            'jumlah' => $jumlah,
+            'jumlah' => $j,
             'tanggal' => $this->request->getPost('tanggal'),
             'catatan' => $this->request->getPost('catatan'),
             'id_dompet' => $iddompet,
-            'status' => 1
+            'status' => 1,
+            'id_user' => user_id()
         ];
         $datadompet = [
-            'saldo' => $saldo + $jumlah
+            'saldo' => $sld + $j
         ];
 
         $this->logModel->save($dataLog);
@@ -81,26 +96,37 @@ class Logaktivitas extends BaseController
     public function addtransfer()
     {
         $jumlah = $this->request->getPost('jumlah');
+        $jml = explode('.',$jumlah);
+        $j = implode($jml);
+        dd($j);
+
         $saldo1 = $this->request->getPost('saldo-1');
+        $sldo1 = explode('.',$saldo1);
+        $sld1 = implode($sldo1);
+
         $saldo2 = $this->request->getPost('saldo-2');
+        $sldo2 = explode('.',$saldo2);
+        $sld2 = implode($sldo2);
+
         $iddompet1 = $this->request->getPost('dompet-1');
         $iddompet2 = $this->request->getPost('dompet-2');
         $dataLog = [
             'log_aktivitas' => 'Transfer',
-            'jumlah' => $jumlah,
+            'jumlah' => $j,
             'tanggal' => $this->request->getPost('tanggal'),
             'catatan' => $this->request->getPost('catatan'),
             'id_dompet' => $iddompet1,
             'ke_iddompet' => $iddompet2,
             'biaya_tf' => $this->request->getPost('biaya-tf'),
-            'status' => 2
+            'status' => 2,
+            'id_user' => user_id()
         ];
 
         $datadompet1 = [
-            'saldo' => $saldo1 - $jumlah
+            'saldo' => $sld1 - $j
         ];
         $datadompet2 = [
-            'saldo' => $saldo2 + $jumlah
+            'saldo' => $sld2 + $j
         ];
 
         $this->dompetModel->update($iddompet1, $datadompet1);
@@ -138,8 +164,9 @@ class Logaktivitas extends BaseController
     public function logFilter($tanggal1 = 'Y-m-d', $tanggal2 = 'Y-m-d')
     {
         $data = [
+            'title' => 'Log Detail',
             'datalog' => $this->logModel->filterData($tanggal1, $tanggal2),
-            'datadompet' => $this->dompetModel->getAllDompet(),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             'datagaji' => $this->gajiModel->findAll()
         ];
         return view('filterdata/logbulanan', $data);
@@ -148,6 +175,7 @@ class Logaktivitas extends BaseController
     public function logDetail($tanggal)
     {
         $data = [
+            'title' => 'Detail',
             'datalog' => $this->logModel->filterData($tanggal, $tanggal),
             'logdata' => $this->logModel->getLogBulan(),
             'datadompet' => $this->dompetModel->getAllDompet(),

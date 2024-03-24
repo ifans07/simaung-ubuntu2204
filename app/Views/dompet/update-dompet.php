@@ -12,6 +12,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('dompet/proses-update') ?>" method="POST">
+                    <?= csrf_field() ?>
                     <input type="hidden" name="iddompet" value="<?= $datadompet['id_dompet'] ?>">
                     <div class="mb-3">
                         <label for="namadompet" class="form-label">Nama dompet</label>

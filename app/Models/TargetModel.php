@@ -13,7 +13,7 @@ class TargetModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['target', 'cost', 'tanggal_mulai', 'tanggal_selesai', 'created_at', 'status', 'catatan', 'id_dompet'];
+    protected $allowedFields    = ['target', 'cost', 'tanggal_mulai', 'tanggal_selesai', 'created_at', 'status', 'catatan', 'id_dompet', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,27 +39,40 @@ class TargetModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getAllTarget()
+    public function getAllTarget($user_id)
     {
         return $this->db->table($this->table)
-            ->join('tb_dompet', 'tb_dompet.id_dompet=tb_target.id_dompet')
+            // ->join('tb_dompet', 'tb_dompet.id_dompet=tb_target.id_dompet')
+            ->where('tb_target.id_user', $user_id)
             ->orderBy('tanggal_selesai', 'DESC')
             ->orderBy('id', 'DESC')
             ->get()
             ->getResultArray();
     }
 
-    public function getLimitTarget()
+    public function getAllTargetDone($user_id){
+        return $this->db->table($this->table)
+            ->join('tb_dompet', 'tb_dompet.id_dompet=tb_target.id_dompet')
+            ->where('tb_target.id_user', $user_id)
+            ->orderBy('tanggal_selesai', 'DESC')
+            ->orderBy('id', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getLimitTarget($user_id)
     {
         return $this->db->table($this->table)
+            ->where('id_user', $user_id)
             ->limit(4)
             ->get()
             ->getResultArray();
     }
 
-    public function countTarget()
+    public function countTarget($user_id)
     {
         return $this->db->table($this->table)
+            ->where('id_user', $user_id)
             ->where('status', 0)
             ->get()
             ->getNumRows();

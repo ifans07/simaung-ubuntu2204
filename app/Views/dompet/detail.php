@@ -63,7 +63,7 @@ foreach ($logkeluar as $row) {
                     </div>
                     <div class="d-flex justify-content-between">
                         <p>Pendapatan</p>
-                        <span>1 Transaksi</span>
+                        <span>0 Transaksi</span>
                     </div>
                     <div class="d-flex justify-content-between">
                         <p>Pengeluaran</p>

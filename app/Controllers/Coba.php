@@ -21,7 +21,7 @@ class Coba extends BaseController
         $data = [
             'title' => 'Coba | Percobaan syntax',
             'datalog' => $this->logModel->filterData(),
-            'datadompet' => $this->dompetModel->getAllDompet()
+            'datadompet' => $this->dompetModel->getAllDompet(user_id())
         ];
         return view('coba/indexcoba', $data);
     }
@@ -30,7 +30,7 @@ class Coba extends BaseController
     {
         $data = [
             'datalog' => $this->logModel->filterData($tanggal1, $tanggal2),
-            'datadompet' => $this->dompetModel->getAllDompet(),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
         ];
         return view('filterdata/log', $data);
     }
@@ -38,9 +38,10 @@ class Coba extends BaseController
     public function detaillog($tanggal)
     {
         $data = [
+            'title' => 'Detail Log',
             'datalog' => $this->logModel->filterData($tanggal, $tanggal),
-            'logdata' => $this->logModel->getLogBulan(),
-            'datadompet' => $this->dompetModel->getAllDompet(),
+            'logdata' => $this->logModel->getLogBulan(user_id()),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             'tanggal' => $tanggal
         ];
         return view('coba/detailtrxcoba', $data);

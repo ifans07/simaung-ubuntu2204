@@ -96,25 +96,26 @@ class Dompet extends BaseController
 
         $data = [ 
             'title' => 'Dompet',
-            'datadompet' => $dompetModel->getAllDompet(),
-            'datakebutuhan' => $kebutuhanModel->getLimitKebutuhan(),
-            'datatarget' => $targetModel->getLimitTarget(),
-            'keluartotal' => $logModel->getAllLog(),
-            'datalog' => $logModel->getLogBulan(),
-            'sumsaldo' => $logModel->getSumAll(),
-            'datatrf' => $logModel->getJmlTrf(),
-            'logbulan' => $logModel->getLogBulanIni(),
-            'loghariini' => $logModel->getLogHariIni(),
-            'datapenghitung' => $this->penghitungpModel->findAll(),
-            'datapenggunaan' => $this->penggunaanModel->findAll(),
-            'datarencana' => $this->rencanaModel->getRencana(),
-            'datatodolist' => $this->todoModel->getToDo(),
+            'datadompet' => $dompetModel->getAllDompet(user_id()),
+            'datakebutuhan' => $kebutuhanModel->getLimitKebutuhan(user_id()),
+            'datatarget' => $targetModel->getLimitTarget(user_id()),
+            'keluartotal' => $logModel->getAllLog(user_id()),
+            'datalog' => $logModel->getLogBulan(user_id()),
+            'sumsaldo' => $logModel->getSumAll(user_id()),
+            'datatrf' => $logModel->getJmlTrf(user_id()),
+            'logbulan' => $logModel->getLogBulanIni(user_id()),
+            'loghariini' => $logModel->getLogHariIni(user_id()),
+            'datapenghitung' => $this->penghitungpModel->getAllPenghitungUser(user_id()),
+            'datapenggunaan' => $this->penggunaanModel->getAllPenggunaanUser(user_id()),
+            'datarencana' => $this->rencanaModel->getRencanaUser(user_id()),
+            'datatodolist' => $this->todoModel->getToDoUser(user_id()),
             'datagaji' => $this->gajiModel->findAll(),
-            'datapiutang' => $this->piutangModel->findAll(),
-            'datacicilan' => $this->cicilanModel->findAll(),
-            'jmltrxblnini' => $logModel->getJmlTrxBlnIni(),
+            'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
+            'datacicilan' => $this->cicilanModel->getCicilanUser(user_id()),
+            'jmltrxblnini' => $logModel->getJmlTrxBlnIni(user_id()),
             'generate' => $password,
-            'random' => $randomPassword
+            'random' => $randomPassword,
+            'iduser' => user_id(),
         ];
 
         return view('dompet/index', $data);
@@ -169,10 +170,11 @@ class Dompet extends BaseController
     {
         $dompetModel = new DompetModel();
         $data = array(
-        'nama_dompet' => $this->request->getPost('namadompet'),
-        'saldo' => $this->request->getPost('saldo'),
-        'saldo_awal' => $this->request->getPost('saldoawal'),
-        'status' => $this->request->getPost('status')
+            'nama_dompet' => $this->request->getPost('namadompet'),
+            'saldo' => $this->request->getPost('saldo'),
+            'saldo_awal' => $this->request->getPost('saldoawal'),
+            'status' => $this->request->getPost('status'),
+            'id_user' => user_id()
         );
         $dompetModel->save($data);
         session()->setFlashdata('addberhasil', '1 Dompet bertambah!');
@@ -184,10 +186,11 @@ class Dompet extends BaseController
         $dompetModel = new DompetModel();
         $id = $this->request->getPost('iddompet');
         $data = array(
-        'nama_dompet' => $this->request->getPost('namadompet'),
-        'saldo' => $this->request->getPost('saldo'),
-        'saldoawal' => $this->request->getPost('saldoawal'),
-        'status' => $this->request->getPost('status')
+            'nama_dompet' => $this->request->getPost('namadompet'),
+            'saldo' => $this->request->getPost('saldo'),
+            'saldoawal' => $this->request->getPost('saldoawal'),
+            'status' => $this->request->getPost('status'),
+            'id_user' => user_id()
         );
         $dompetModel->update($id, $data);
         session()->setFlashdata('updateberhasil', 'Data dompet berhasil diupdate!');
@@ -207,7 +210,7 @@ class Dompet extends BaseController
         $dompetModel = new DompetModel();
         $id = $this->request->getPost('iddompet');
         $data = [
-        'saldo' => $this->request->getPost('saldo')
+            'saldo' => $this->request->getPost('saldo')
         ];
         $dompetModel->update($id, $data);
         session()->setFlashdata('updatesaldoberhasil', 'Nilai saldo berhasil diupdate!');

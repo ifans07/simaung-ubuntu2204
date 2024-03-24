@@ -13,7 +13,7 @@ class PenggunaanlModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_barang', 'catatan', 'tanggal_mulai', 'tanggal_selesai', 'status_penggunaan'];
+    protected $allowedFields    = ['nama_barang', 'catatan', 'tanggal_mulai', 'tanggal_selesai', 'status_penggunaan', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,4 +38,12 @@ class PenggunaanlModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAllPenggunaanUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->where('id_user', $user_id)
+        ->get()
+        ->getResultArray();
+    }
 }

@@ -13,7 +13,7 @@ class RencanaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['rencana', 'catatan'];
+    protected $allowedFields    = ['rencana', 'catatan', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -47,5 +47,13 @@ class RencanaModel extends Model
         }
 
         return $this->where(['id' => $id])->first();
+    }
+
+    public function getRencanaUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->where('id_user', $user_id)
+        ->get()
+        ->getResultArray();
     }
 }

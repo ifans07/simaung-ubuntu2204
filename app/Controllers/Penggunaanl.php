@@ -17,7 +17,7 @@ class Penggunaanl extends BaseController
     {
         $data = [
             'title' => 'Lama penggunaan',
-            'datapenggunaan' => $this->penggunaanModel->findAll()
+            'datapenggunaan' => $this->penggunaanModel->getAllPenggunaanUser(user_id())
         ];
         return view('penggunaan/index', $data);
     }
@@ -35,7 +35,8 @@ class Penggunaanl extends BaseController
         $data = [
             'nama_barang' => $this->request->getPost('barang'),
             'catatan' => $this->request->getPost('catatan'),
-            'tanggal_mulai' => $this->request->getPost('tanggal')
+            'tanggal_mulai' => $this->request->getPost('tanggal'),
+            'id_user' => user_id()
         ];
         $this->penggunaanModel->save($data);
         session()->setFlashdata('addberhasil', '1 Barang ditambahkan untuk dihitung lama penggunaannya!');

@@ -13,7 +13,7 @@ class KebutuhanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['kebutuhan', 'harga', 'created_at', 'tanggal_pakai', 'tanggal_habis', 'catatan', 'periode', 'status', 'id_dompet'];
+    protected $allowedFields    = ['kebutuhan', 'harga', 'created_at', 'tanggal_pakai', 'tanggal_habis', 'catatan', 'periode', 'status', 'id_dompet', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,23 +40,27 @@ class KebutuhanModel extends Model
     protected $afterDelete    = [];
 
 
-    public function getAllKebutuhan()
+    public function getAllKebutuhan($user_id)
     {
         return $this->db->table($this->table)
-            ->join('tb_dompet', 'tb_dompet.id_dompet=tb_kebutuhan.id_dompet')
+            // ->join('tb_dompet', 'tb_dompet.id_dompet=tb_kebutuhan.id_dompet')
+            // ->join('users', 'users.id=tb_kebutuhan.id_user')
+            ->where('id_user', $user_id)
             ->get()
             ->getResultArray();
     }
 
-    public function getLimitKebutuhan()
+    public function getLimitKebutuhan($user_id)
     {
         return $this->db->table($this->table)
+            ->where('id_user', $user_id)
             ->limit(5)
             ->get()->getResultArray();
     }
-    public function countKebutuhanDone()
+    public function countKebutuhanDone($user_id)
     {
         return $this->db->table($this->table)
+            ->where('id_user', $user_id)
             ->where('status', 0)
             ->get()->getNumRows();
     }

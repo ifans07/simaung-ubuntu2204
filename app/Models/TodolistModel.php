@@ -13,7 +13,7 @@ class TodolistModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title', 'deskripsi', 'tanggal', 'slug'];
+    protected $allowedFields    = ['title', 'deskripsi', 'tanggal', 'slug', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -46,6 +46,14 @@ class TodolistModel extends Model
         }
 
         return $this->where(['slug' => $slug])->first();
+    }
+
+    public function getToDoUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->where('id_user', $user_id)
+        ->get()
+        ->getResultArray();
     }
 
     public function hapus($slug)

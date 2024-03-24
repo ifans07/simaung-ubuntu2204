@@ -13,7 +13,7 @@ class DompetModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_dompet', 'saldo', 'saldo_awal', 'status'];
+    protected $allowedFields    = ['nama_dompet', 'saldo', 'saldo_awal', 'status', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,8 +40,16 @@ class DompetModel extends Model
     protected $afterDelete    = [];
 
 
-    public function getAllDompet()
+    public function getAllDompet($user_id)
     {
-        return $this->findAll();
+        if($user_id){
+            return $this->db->table($this->table)
+            // ->join('users','users.id=tb_dompet.id_user')
+            ->where('tb_dompet.id_user', $user_id)
+            ->get()
+            ->getResultArray();
+        }else{
+            return $this->findAll();
+        }
     }
 }

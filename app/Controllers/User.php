@@ -38,8 +38,8 @@ class User extends BaseController
 
         $data = [
             'title' => 'User',
-            'datapiutang' => $this->piutangModel->getPiutang(),
-            'datadompet' => $this->dompetModel->getAllDompet(),
+            'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             ''
         ];
         return view('user/index', $data);

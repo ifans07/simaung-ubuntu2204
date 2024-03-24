@@ -16,7 +16,7 @@ foreach($datadompet as $dompet){
             <div>
                 <div class="header-coba">
                     <h1>User</h1>
-                    <p>Welcome, Ifan Sutiono</p>
+                    <p>Welcome, <?= user()->username ?></p>
                 </div>
             </div>
             <div class="card mb-5">
@@ -26,8 +26,8 @@ foreach($datadompet as $dompet){
                     </div>
                     <div class="align-self-center lh-1 user-profil">
                         <h1 class="user-saldo">Rp <?= number_format($totalsaldo, 0,',','.') ?></h1>
-                        <p class="p-1 m-0">Nama: username</p>
-                        <p class="p-1 m-0">Email: email@gmail.com</p>
+                        <p class="p-1 m-0">Nama: <?= user()->username ?></p>
+                        <p class="p-1 m-0">Email: <?= user()->email ?></p>
                         <p class="p-1 m-0">alamat: jl. alamat</p>
                     </div>
                 </div>

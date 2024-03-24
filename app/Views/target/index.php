@@ -158,6 +158,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <form action="<?= base_url('target/proses-done') ?>" method="post">
+                <?= csrf_field() ?>
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="modal-header">
                     <div class="lh-1">

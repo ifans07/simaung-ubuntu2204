@@ -38,7 +38,8 @@ class Todolist extends BaseController
             'title' => $this->request->getVar('title'),
             'deskripsi' => $this->request->getVar('deskripsi'),
             'slug' => uniqid($password, $randomPassword),
-            'tanggal' => date('Y-m-d H:i:s')
+            'tanggal' => date('Y-m-d H:i:s'),
+            'id_user' => user_id()
         ];
         $this->todolistModel->save($data);
         session()->setFlashdata('addberhasil', '1 kegiatan berhasil ditambahkan');
@@ -79,7 +80,7 @@ class Todolist extends BaseController
     public function datalist()
     {
         $data = [
-            'datatodolist' => $this->todolistModel->getToDo()
+            'datatodolist' => $this->todolistModel->getToDoUser(user_id())
         ];
         return view('todolist/index-list', $data);
     }

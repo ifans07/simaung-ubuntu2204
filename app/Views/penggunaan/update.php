@@ -11,6 +11,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('penggunaan/proses-update') ?>" method="post">
+                <?= csrf_field() ?>
                     <input type="hidden" name="id" value="<?= $data['id'] ?>">
                     <div class="mb-3">
                         <label for="barang" class="form-label">Barang</label>

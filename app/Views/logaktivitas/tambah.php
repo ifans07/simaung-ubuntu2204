@@ -36,13 +36,17 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('riwayat/proses-tambah') ?>" method="post">
+                    <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="log" class="form-label">Aktivitas</label>
                         <input type="text" class="form-control" id="log" name="log">
                     </div>
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">Jumlah</label>
-                        <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Nominal yang keluar">
+                        <div class="input-group">
+                            <span class="input-group-text fw-medium">Rp</span>
+                            <input type="text" class="form-control jml-keluar" id="jumlah" name="jumlah" placeholder="Nominal yang keluar">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
@@ -63,7 +67,10 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="saldo" class="form-label">Saldo</label>
-                            <input type="text" class="form-control" id="saldo" name="saldo" readonly placeholder="Saldo dompet">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control" id="saldo" name="saldo" readonly placeholder="Saldo dompet">
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -88,13 +95,17 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('riwayat/proses-pemasukan') ?>" method="post">
+                    <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="log" class="form-label">Aktivitas</label>
                         <input type="text" class="form-control" id="log" name="log">
                     </div>
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">Jumlah</label>
-                        <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Nominal yang masuk">
+                        <div class="input-group">
+                            <span class="input-group-text fw-medium">Rp</span>
+                            <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Nominal yang masuk">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
@@ -114,7 +125,10 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="saldo-masuk" class="form-label">Saldo</label>
-                            <input type="text" class="form-control" id="saldo-masuk" name="saldo" readonly placeholder="Saldo dompet">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control" id="saldo-masuk" name="saldo" readonly placeholder="Saldo dompet">
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -139,9 +153,13 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('riwayat/proses-transfer') ?>" method="post">
+                    <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="jumlah" class="form-label">Jumlah</label>
-                        <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Nominal yang di transfer">
+                        <div class="input-group">
+                            <span class="input-group-text fw-medium">Rp</span>
+                            <input type="text" class="form-control jml-tf" id="jumlah" name="jumlah" placeholder="Nominal yang di transfer">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal</label>
@@ -161,7 +179,10 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="saldo-1-transfer" class="form-label">Saldo</label>
-                            <input type="text" class="form-control" id="saldo-1-transfer" name="saldo-1" readonly placeholder="Saldo dompet">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control" id="saldo-1-transfer" name="saldo-1" readonly placeholder="Saldo dompet">
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3 row g-3">
@@ -178,12 +199,18 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="dompet-2-transfer" class="form-label">Saldo</label>
-                            <input type="text" class="form-control" id="saldo-2-transfer" name="saldo-2" readonly placeholder="Saldo dompet">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control" id="saldo-2-transfer" name="saldo-2" readonly placeholder="Saldo dompet">
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="catatan" class="form-label">Biaya transfer</label>
-                        <input type="text" class="form-control" id="catatan" name="biaya-tf" placeholder="ketik sesuatu untuk diingat" value="0">
+                        <div class="input-group">
+                            <span class="input-group-text fw-medium">Rp</span>
+                            <input type="text" class="form-control" id="catatan" name="biaya-tf" placeholder="ketik sesuatu untuk diingat" value="0">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="catatan" class="form-label">Catatan</label>
@@ -202,23 +229,65 @@
 </section>
 
 <script>
+
+    let denganRupiah = document.querySelector('.jml-keluar')
+    let jmlTf = document.querySelector('.jml-tf')
+    let jmlMsk = document.querySelector('.jml-msk')
+    console.log(denganRupiah)
+        
+        denganRupiah.addEventListener('keyup', function(e){
+            denganRupiah.value = formatRupiah(this.value)
+        })
+
+        jmlTf.addEventListener('keyup', function(e){
+            jmlTf.value = formatRupiah(this.value)
+        })
+
+        const formatRupiah = (angka, prefix)=>{
+            let  number_string = angka.replace(/[^,\d]/g, '').toString(),
+            split    = number_string.split(','),
+            sisa     = split[0].length % 3,
+            rupiah     = split[0].substr(0, sisa),
+            ribuan     = split[0].substr(sisa).match(/\d{3}/gi);
+            
+        if (ribuan) {
+            separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+        
+        rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+        return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+
+        const rupiah = (number)=>{
+        return new Intl.NumberFormat("id-ID", {
+            style: "decimal", // format angka biasa atau default
+            // style: "currency", // format mata uang seperti RP, $, dll
+            // style: "percent" // format persen
+            currency: "IDR"
+            }).format(number);
+        }
+
+    console.log(rupiah(12000))
+
     $(document).ready(function() {
         let base_url = window.location.origin
         // form pengeluaran
         $('#dompet-keluar').on('change', function(e) {
             let idDompet = $(this).val()
             $.ajax({
-                url: base_url+'/dompet/datajson',
+                url: '/dompet/datajson',
                 method: 'POST',
                 data: {
                     iddompet: idDompet
                 },
                 dataType: 'JSON',
                 success: function(data) {
-                    $('#saldo').val(data.hasil.saldo)
+                    $('#saldo').val(rupiah(data.hasil.saldo))
                 }
             })
         })
+
 
         // form pemasukan
         $('#dompet-masuk').on('change', function(e) {
@@ -231,7 +300,7 @@
                 },
                 dataType: 'JSON',
                 success: function(data) {
-                    $('#saldo-masuk').val(data.hasil.saldo)
+                    $('#saldo-masuk').val(formatRupiah(data.hasil.saldo))
                 }
             })
         })
@@ -248,7 +317,7 @@
                 dataType: 'JSON',
                 success: function(data) {
                     console.log(data)
-                    $('#saldo-1-transfer').val(data.hasil.saldo)
+                    $('#saldo-1-transfer').val(rupiah(data.hasil.saldo))
                 }
             })
         })
@@ -265,7 +334,7 @@
                 dataType: 'JSON',
                 success: function(data) {
                     console.log(data)
-                    $('#saldo-2-transfer').val(data.hasil.saldo)
+                    $('#saldo-2-transfer').val(formatRupiah(data.hasil.saldo))
                 }
             })
         })

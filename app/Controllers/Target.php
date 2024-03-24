@@ -23,10 +23,10 @@ class Target extends BaseController
     {
         $data = [
             'title' => 'Target',
-            'rows' => $this->targetModel->findAll(),
-            'datatargetdone' => $this->targetModel->getAllTarget(),
-            'counttarget' => $this->targetModel->countTarget(),
-            'datadompet' => $this->dompetModel->findAll(),
+            'rows' => $this->targetModel->getAllTarget(user_id()),
+            'datatargetdone' => $this->targetModel->getAllTargetDone(user_id()),
+            'counttarget' => $this->targetModel->countTarget(user_id()),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             'logkeluar' => $this->logModel->getSumAll()
         ];
         return view('target/index', $data);
@@ -54,7 +54,8 @@ class Target extends BaseController
             'target' => $this->request->getPost('target'),
             'cost' => $this->request->getPost('cost'),
             'tanggal_mulai' => $time,
-            'catatan' => $this->request->getPost('catatan')
+            'catatan' => $this->request->getPost('catatan'),
+            'id_user' => user_id()
         ];
         $this->targetModel->save($data);
         session()->setFlashdata('addberhasil', '1 Target ditambahkan');
@@ -121,7 +122,8 @@ class Target extends BaseController
             'tanggal' => $tanggal[0],
             'catatan' => $this->request->getPost('catatan'),
             'status' => 3,
-            'id_dompet' => $this->request->getPost('dompet')
+            'id_dompet' => $this->request->getPost('dompet'),
+            'id_user' => user_id()
         ];
         $this->logModel->save($datalog);
 

@@ -13,7 +13,7 @@ class LogaktivitasModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['log_aktivitas', 'jumlah', 'tanggal', 'catatan', 'created_at', 'status', 'id_dompet', 'ke_iddompet', 'biaya_tf'];
+    protected $allowedFields    = ['log_aktivitas', 'jumlah', 'tanggal', 'catatan', 'created_at', 'status', 'id_dompet', 'ke_iddompet', 'biaya_tf', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -47,11 +47,12 @@ class LogaktivitasModel extends Model
             ->getResultArray();
     }
 
-    public function getAllLog()
+    public function getAllLog($user_id)
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->orderBy('tanggal', 'DESC')
             ->orderBy('id', 'DESC')
             ->get()
@@ -62,12 +63,13 @@ class LogaktivitasModel extends Model
 
     // }
 
-    public function getSumAll()
+    public function getSumAll($user_id)
     {
         return $this->db->table($this->table)
             ->select('tb_dompet.nama_dompet, tb_logaktivitas.ke_iddompet')
             ->selectSum('jumlah')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->groupBy('tb_logaktivitas.id_dompet')
             ->get()
             ->getResultArray();
@@ -76,9 +78,10 @@ class LogaktivitasModel extends Model
     public function logKeluar($id)
     {
         return $this->db->table($this->table)
-            ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal')
+            ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, tb_logaktivitas.id_user')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
             ->where('tb_logaktivitas.id_dompet', $id)
+            ->where('tb_logaktivitas.id_user', user_id())
             ->orderBy('tanggal', 'DESC')
             ->orderBy('id', 'DESC')
             ->get()
@@ -90,6 +93,7 @@ class LogaktivitasModel extends Model
     {
         return $this->db->table($this->table)
             ->where('id_dompet', $id)
+            ->where('id_user', user_id())
             ->where('status', 0)
             ->get()
             ->getNumRows();
@@ -98,6 +102,7 @@ class LogaktivitasModel extends Model
     {
         return $this->db->table($this->table)
             ->where('id_dompet', $id)
+            ->where('id_user', user_id())
             ->where('status', 3)
             ->get()
             ->getNumRows();
@@ -106,28 +111,31 @@ class LogaktivitasModel extends Model
     {
         return $this->db->table($this->table)
             ->where('id_dompet', $id)
+            ->where('id_user', user_id())
             ->where('status', 4)
             ->get()
             ->getNumRows();
     }
 
     // periode/ atur tanggal
-    public function getLogBulanIni()
+    public function getLogBulanIni($user_id)
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tanggal >=', date('Y-m-01'))
             ->where('tanggal <=', date('Y-m-31'))
             ->get()
             ->getResultArray();
     }
 
-    public function getLogHariIni()
+    public function getLogHariIni($user_id)
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tanggal', date('Y-m-d'))
             ->get()
             ->getResultArray();
@@ -135,33 +143,36 @@ class LogaktivitasModel extends Model
 
 
     // coba
-    public function getLogBulan()
+    public function getLogBulan($user_id)
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
             ->where('tanggal >=', date('Y-m-01'))
             ->where('tanggal <=', date('Y-m-31'))
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->orderBy('tanggal', 'DESC')
             ->orderBy('id', 'DESC')
             ->get()
             ->getResultArray();
     }
-    public function getJmlTrxBlnIni()
+    public function getJmlTrxBlnIni($user_id)
     {
         return $this->db->table($this->table)
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tanggal >=', date('Y-m-01'))
             ->where('tanggal <=', date('Y-m-31'))
             ->get()
             ->getNumRows();
     }
 
-    public function getJmlTrf()
+    public function getJmlTrf($user_id)
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tb_logaktivitas.status', 2)
             ->get()
             ->getResultArray();
@@ -170,8 +181,9 @@ class LogaktivitasModel extends Model
     public function filterData($tanggal1 = 'Y-m-01', $tanggal2 = 'Y-m-31')
     {
         return $this->db->table($this->table)
-            ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet')
+            ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet, tb_logaktivitas.id_user')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
+            ->where('tb_logaktivitas.id_user', user_id())
             ->where('tanggal >=', date($tanggal1))
             ->where('tanggal <=', date($tanggal2))
             ->orderBy('tanggal', 'DESC')

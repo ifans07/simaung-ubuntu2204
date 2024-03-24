@@ -13,7 +13,7 @@ class PenghitungpModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_aktivitas', 'catatan', 'tanggal_mulai', 'tanggal_selesai', 'status_penghitung'];
+    protected $allowedFields    = ['nama_aktivitas', 'catatan', 'tanggal_mulai', 'tanggal_selesai', 'status_penghitung', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,4 +38,13 @@ class PenghitungpModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function getAllPenghitungUser($user_id)
+    {
+        return $this->db->table($this->table)
+        ->where('id_user', $user_id)
+        ->get()
+        ->getResultArray();
+    }
 }

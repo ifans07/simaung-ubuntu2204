@@ -11,6 +11,7 @@
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('penggunaan/proses-tambah') ?>" method="post">
+                <?= csrf_field() ?>
                     <div class="mb-3">
                         <label for="barang" class="form-label">Barang</label>
                         <input type="text" class="form-control" name="barang" id="barang"

@@ -15,6 +15,7 @@ $h = date('w');
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('target/proses-update') ?>" method="POST">
+                    <?= csrf_field() ?>
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <input type="hidden" name="status" value="<?= $row['status'] ?>">
                     <div class="mb-3">

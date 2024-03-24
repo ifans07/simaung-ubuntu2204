@@ -2,6 +2,11 @@
     <strong class="fw-medium">List kegiatan</strong> -
     <small><?= date('l, d-m-Y') ?></small>
 </div>
+<?php if(empty($datatodolist)): ?>
+    <div>
+        <small class="form-text">Kosong</small>
+    </div>
+<?php endif; ?>
 <ul>
     <?php foreach ($datatodolist as $row) : ?>
     <li class="mb-2">

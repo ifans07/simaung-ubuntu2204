@@ -23,7 +23,7 @@ class Kebutuhan extends BaseController
     {
         // $kebutuhanModel = new KebutuhanModel();
         // $dompetModel = new DompetModel();
-        $saldo = $this->dompetModel->getAllDompet();
+        $saldo = $this->dompetModel->getAllDompet(user_id());
         $totalsaldo = 0;
         foreach ($saldo as $row) {
             $totalsaldo += $row['saldo'];
@@ -31,10 +31,10 @@ class Kebutuhan extends BaseController
         $data = [
             'title' => 'Kebutuhan',
             'totalSaldo' => $totalsaldo,
-            'datakebutuhandone' => $this->kebutuhanModel->getAllKebutuhan(),
-            'datakebutuhan' => $this->kebutuhanModel->findAll(),
-            'countkebutuhan' => $this->kebutuhanModel->countKebutuhanDone(),
-            'datadompet' => $this->dompetModel->findAll(),
+            // 'datakebutuhandone' => $this->kebutuhanModel->getAllKebutuhan(user_id()),
+            'datakebutuhan' => $this->kebutuhanModel->getAllKebutuhan(user_id()),
+            'countkebutuhan' => $this->kebutuhanModel->countKebutuhanDone(user_id()),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             'logkeluar' => $this->logModel->getSumAll(),
             'logkebutuhan' => $this->logModel->getLogBulanIni()
         ];
@@ -58,7 +58,8 @@ class Kebutuhan extends BaseController
             [
                 'kebutuhan' => $this->request->getPost('kebutuhan'),
                 'harga' => $this->request->getPost('cost'),
-                'catatan' => $this->request->getPost('catatan')
+                'catatan' => $this->request->getPost('catatan'),
+                'id_user' => user_id()
             ];
     
         $this->kebutuhanModel->save($data);
@@ -121,7 +122,8 @@ class Kebutuhan extends BaseController
             'tanggal' => $tanggal[0],
             'catatan' => $this->request->getPost('catatan'),
             'status' => 4,
-            'id_dompet' => $iddompet
+            'id_dompet' => $iddompet,
+            'id_user' => user_id()
         ];
         $this->logModel->save($datalog);
 
@@ -129,7 +131,8 @@ class Kebutuhan extends BaseController
         $datakebutuhan = [
             'periode' => $this->request->getPost('tanggal'),
             'status' => $this->request->getPost('status'),
-            'id_dompet' => $id
+            'id_dompet' => $id,
+            // 'id_user' => user_id()
         ];
         $this->kebutuhanModel->update($id, $datakebutuhan);
 

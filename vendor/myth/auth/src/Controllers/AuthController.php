@@ -46,7 +46,7 @@ class AuthController extends Controller
         // No need to show a login form if the user
         // is already logged in.
         if ($this->auth->check()) {
-            $redirectURL = session('redirect_url') ?? base_urll('/');
+            $redirectURL = session('redirect_url') ?? base_url('/');
             unset($_SESSION['redirect_url']);
 
             return redirect()->to($redirectURL);

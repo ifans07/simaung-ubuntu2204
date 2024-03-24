@@ -26,8 +26,9 @@ class Piutang extends BaseController
     {
         $data = [
             'title' => 'Piutang | Simaung',
-            'datapiutang' => $this->piutangModel->getPiutang(),
-            'cicilan' => $this->cicilanModel->findAll()
+            'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
+            // 'cicilan' => $this->cicilanModel->findAll()
+            'cicilan' => $this->cicilanModel->getCicilanUser(user_id())
         ];
         return view('piutang/index', $data);
     }
@@ -46,8 +47,8 @@ class Piutang extends BaseController
     {
         $data = [
             'title' => 'Form tambah data',
-            'datadompet' => $this->dompetModel->findAll(),
-            'sumsaldo' => $this->logModel->getSumAll()
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
+            'sumsaldo' => $this->logModel->getSumAll(user_id())
         ];
         return view('piutang/tambah', $data);
     }
@@ -61,7 +62,8 @@ class Piutang extends BaseController
             'tanggal_pinjam' => $this->request->getPost('tanggal')." ".$this->request->getPost('waktu'),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
             'id_dompet' => $idsaldo[0],
-            'status' => 1
+            'status' => 1,
+            'id_user' => user_id()
         ];
         $this->piutangModel->save($data);
 
@@ -71,7 +73,8 @@ class Piutang extends BaseController
             'tanggal' => htmlspecialchars($this->request->getPost('tanggal')),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
             'id_dompet' => $idsaldo[0],
-            'status' => 6
+            'status' => 6,
+            'id_user' => user_id()
         ];
         $this->logModel->save($datalog);
 
@@ -90,8 +93,8 @@ class Piutang extends BaseController
         $data = [
             'title' => 'Edit Piutang',
             'data' => $this->piutangModel->find($id),
-            'datadompet' => $this->dompetModel->findAll(),
-            'sumsaldo' => $this->logModel->getSumAll()
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
+            'sumsaldo' => $this->logModel->getSumAll(user_id())
         ];
         return view('/piutang/update', $data);
     }
@@ -117,8 +120,8 @@ class Piutang extends BaseController
         $data = [
             'title' => 'Form peminjam | Simaung',
             'piutang' => $this->piutangModel->find($id),
-            'dompet' => $this->dompetModel->findAll(),
-            'sumsaldo' => $this->logModel->getSumAll()
+            'dompet' => $this->dompetModel->getAllDompet(user_id()),
+            'sumsaldo' => $this->logModel->getSumAll(user_id())
         ];
         return view('piutang/tambah-detail', $data);
     }
@@ -136,7 +139,8 @@ class Piutang extends BaseController
             'catatan_cicilan' => htmlspecialchars($this->request->getPost('catatan')),
             'jml_cicilan' => htmlspecialchars($this->request->getPost('jmlcicilan')),
             'tanggal' => htmlspecialchars($this->request->getPost('tanggal')),
-            'status_cicilan' => htmlspecialchars($this->request->getPost('pilihan'))
+            'status_cicilan' => htmlspecialchars($this->request->getPost('pilihan')),
+            'id_user' => user_id()
         ];
 
         $datalog = [
@@ -146,7 +150,8 @@ class Piutang extends BaseController
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
             'id_dompet' => $idsaldo[0],
             'status' => $statusC,
-            'id_piutang' => htmlspecialchars($this->request->getPost('idpiutang'))
+            'id_piutang' => htmlspecialchars($this->request->getPost('idpiutang')),
+            'id_user' => user_id()
         ];
         $this->logModel->save($datalog);
 
