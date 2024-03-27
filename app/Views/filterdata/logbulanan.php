@@ -64,19 +64,19 @@ foreach ($datagaji as $gaji) {
                 <a class="text-dark w-50 d-flex justify-content-between" id="list-bln-toggle">
                     <span class="">
                         <?php if (date('m') == '01') : ?>
-                            <?php if (date('d') >= '27' && date('d') <= '31') : ?>
+                            <?php if (date('d') > '27' && date('d') <= '31') : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>
                             <?php else : ?>
                                 <?= $monthsIndex['11'] ?>
                             <?php endif; ?>
                         <?php elseif (date('m') == '12') : ?>
-                            <?php if (date('d') >= '27' && date('d') <= 31) : ?>
+                            <?php if (date('d') > '27' && date('d') <= 31) : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>
                             <?php else : ?>
                                 <?= $monthsIndex[date('n') - 2] ?>
                             <?php endif; ?>
                         <?php else : ?>
-                            <?php if (date('d') >= '27' && date('d') <= '31') : ?>
+                            <?php if (date('d') > '27' && date('d') <= '31') : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>
                             <?php else : ?>
                                 <?= $monthsIndex[date('n') - 2] ?>
@@ -84,19 +84,19 @@ foreach ($datagaji as $gaji) {
                         <?php endif; ?>
                     </span> <span class="mx-1">-</span> <span>
                         <?php if (date('m') == '01') : ?>
-                            <?php if (date('d') >= '27' && date('d') <= '31') : ?>
+                            <?php if (date('d') > '27' && date('d') <= '31') : ?>
                                 <?= $monthsIndex[date('n')] ?>
                             <?php else : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>
                             <?php endif; ?>
                         <?php elseif (date('m') == '12') : ?>
-                            <?php if (date('d') >= '27' && date('d') <= 31) : ?>
+                            <?php if (date('d') > '27' && date('d') <= 31) : ?>
                                 <?= $monthsIndex[0] ?>
                             <?php else : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>
                             <?php endif; ?>
                         <?php else : ?>
-                            <?php if (date('d') >= '27' && date('d') <= '31') : ?>
+                            <?php if (date('d') > '27' && date('d') <= '31') : ?>
                                 <?= $monthsIndex[date('n')] ?>
                             <?php else : ?>
                                 <?= $monthsIndex[date('n') - 1] ?>

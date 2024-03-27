@@ -177,8 +177,8 @@ class Logaktivitas extends BaseController
         $data = [
             'title' => 'Detail',
             'datalog' => $this->logModel->filterData($tanggal, $tanggal),
-            'logdata' => $this->logModel->getLogBulan(),
-            'datadompet' => $this->dompetModel->getAllDompet(),
+            'logdata' => $this->logModel->getLogBulan(user_id()),
+            'datadompet' => $this->dompetModel->getAllDompet(user_id()),
             'tanggal' => $tanggal
         ];
         return view('logaktivitas/detailtransaksi', $data);

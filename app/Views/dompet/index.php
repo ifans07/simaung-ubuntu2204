@@ -209,7 +209,7 @@ foreach($datacicilan as $cicilan){
                                     </div>
 
                                     <div class="col-md-12 text-center">
-                                        <?php if(date('m') != 27): ?>
+                                        <?php if(date('m') == 27): ?>
                                         <div class="mt-3 mb-3">
                                             <a href="#" class="btn btn-dark"><i class="fa-solid fa-money-bill"></i> Input gaji <sup data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="tombol ini hanya muncul di tanggal gajian!"><i class="fa-solid fa-info-circle"></i></sup></a>
                                         </div>
@@ -775,7 +775,7 @@ $(document).ready(function() {
     // let base_URL = window.location.host
 
     if (bulan == 12) {
-        if (tanggal >= 27 && tanggal <= 31) {
+        if (tanggal > 27 && tanggal <= 31) {
             dariTgl.value = tahun + '-' + bulan + '-' + 27
             sampaiTgl.value = (tahun + 1) + '-' + '01' + '-' + 27
         } else {
@@ -783,7 +783,7 @@ $(document).ready(function() {
             sampaiTgl.value = tahun + '-' + bulan + '-' + 27
         }
     } else if (bulan == '01') {
-        if (tanggal >= 27 && tanggal <= 31) {
+        if (tanggal > 27 && tanggal <= 31) {
             dariTgl.value = tahun + '-' + bulan + '-' + 27
             sampaiTgl.value = tahun + '-' + '0' + (parseInt(bulan) + 1) + '-' + 27
         } else {
@@ -791,7 +791,7 @@ $(document).ready(function() {
             sampaiTgl.value = tahun + '-' + bulan + '-' + 27
         }
     } else {
-        if (tanggal >= 27 && tanggal <= 31) {
+        if (tanggal > 27 && tanggal <= 31) {
             dariTgl.value = tahun + '-' + bulan + '-' + 27
             sampaiTgl.value = tahun + '-' + '0' + (parseInt(bulan) + 1) + '-' + 27
         } else {

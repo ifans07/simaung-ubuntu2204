@@ -1,0 +1,750 @@
+INFO - 2024-03-26 21:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:47 --> CSRF token verified.
+INFO - 2024-03-26 21:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:05:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:06:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:07:06 --> CSRF token verified.
+INFO - 2024-03-26 21:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:50:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:51:17 --> CSRF token verified.
+INFO - 2024-03-26 21:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:51:44 --> CSRF token verified.
+INFO - 2024-03-26 21:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:52:46 --> CSRF token verified.
+INFO - 2024-03-26 21:52:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:53:59 --> CSRF token verified.
+INFO - 2024-03-26 21:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 21:54:12 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 21:54:12 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 21:54:12 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/45666')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/45666', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/45666', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 21:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:58:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 21:59:01 --> CSRF token verified.
+INFO - 2024-03-26 21:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 21:59:02 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 21:59:02 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 21:59:02 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/45666')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/45666', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/45666', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:03:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:05:02 --> CSRF token verified.
+INFO - 2024-03-26 22:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:05:02 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): Unable to connect to ssl://smtp.googlemail.com:465 (Unable to find the socket transport &quot;ssl&quot; - did you forget to enable it when you configured PHP?) in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php:1897
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): Un...', 'F:\\application-...', 1897)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1897): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 30)
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1810): CodeIgniter\Email\Email->SMTPConnect()
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1695): CodeIgniter\Email\Email->sendWithSmtp()
+#4 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1587): CodeIgniter\Email\Email->spoolEmail()
+#5 F:\application-ci\simaung\vendor\myth\auth\src\Authentication\Resetters\EmailResetter.php(32): CodeIgniter\Email\Email->send()
+#6 F:\application-ci\simaung\vendor\myth\auth\src\Controllers\AuthController.php(249): Myth\Auth\Authentication\Resetters\EmailResetter->send(Object(Myth\Auth\Entities\User))
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptForgot()
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#9 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#12 {main}
+ERROR - 2024-03-26 22:05:02 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-03-26 22:05:02 --> 
+INFO - 2024-03-26 22:05:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:05:13 --> CSRF token verified.
+INFO - 2024-03-26 22:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:05:14 --> Email: sendWithSmtp throwed ErrorException: fsockopen(): Unable to connect to ssl://smtp.googlemail.com:465 (Unable to find the socket transport &quot;ssl&quot; - did you forget to enable it when you configured PHP?) in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php:1897
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fsockopen(): Un...', 'F:\\application-...', 1897)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1897): fsockopen('ssl://smtp.goog...', 465, NULL, NULL, 30)
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1810): CodeIgniter\Email\Email->SMTPConnect()
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1695): CodeIgniter\Email\Email->sendWithSmtp()
+#4 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Email\Email.php(1587): CodeIgniter\Email\Email->spoolEmail()
+#5 F:\application-ci\simaung\vendor\myth\auth\src\Authentication\Resetters\EmailResetter.php(32): CodeIgniter\Email\Email->send()
+#6 F:\application-ci\simaung\vendor\myth\auth\src\Controllers\AuthController.php(249): Myth\Auth\Authentication\Resetters\EmailResetter->send(Object(Myth\Auth\Entities\User))
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptForgot()
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#9 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#12 {main}
+ERROR - 2024-03-26 22:05:14 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2024-03-26 22:05:14 --> 
+INFO - 2024-03-26 22:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:08:00 --> CSRF token verified.
+INFO - 2024-03-26 22:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:08:01 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:08:01 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:08:01 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:11:46 --> CSRF token verified.
+INFO - 2024-03-26 22:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:11:47 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:11:47 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:11:47 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:17:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:17:44 --> CSRF token verified.
+INFO - 2024-03-26 22:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 22:18:16 --> ErrorException: Maximum execution time of 30 seconds exceeded
+in SYSTEMPATH\HTTP\CURLRequest.php on line 692.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-03-26 22:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:18:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:19:10 --> CSRF token verified.
+INFO - 2024-03-26 22:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:19:11 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:19:11 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:19:11 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:22:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:22:30 --> CSRF token verified.
+INFO - 2024-03-26 22:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:22:31 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:22:31 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:22:31 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:28:05 --> CSRF token verified.
+INFO - 2024-03-26 22:28:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:28:17 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:28:17 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:28:17 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:33:31 --> CSRF token verified.
+INFO - 2024-03-26 22:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:33:31 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:33:31 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:33:31 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:34:20 --> CSRF token verified.
+INFO - 2024-03-26 22:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:34:21 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:34:21 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:34:21 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:52:58 --> CSRF token verified.
+INFO - 2024-03-26 22:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:53:10 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:53:10 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:53:10 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/41670')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/41670', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/41670', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Qwerty*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Qwerty*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Qwerty*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(304): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptReset()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 22:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:56:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:56:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:56:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 22:57:16 --> CSRF token verified.
+INFO - 2024-03-26 22:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 22:57:28 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 22:57:28 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 22:57:28 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/45666')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/45666', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/45666', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 23:13:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:13:37 --> CSRF token verified.
+INFO - 2024-03-26 23:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 23:13:49 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 23:13:49 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 23:13:49 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/45666')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/45666', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/45666', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 23:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:15:03 --> CSRF token verified.
+INFO - 2024-03-26 23:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 23:15:36 --> ErrorException: Maximum execution time of 30 seconds exceeded
+in SYSTEMPATH\HTTP\CURLRequest.php on line 692.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-03-26 23:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:20:16 --> CSRF token verified.
+INFO - 2024-03-26 23:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 23:20:28 --> [ERROR] 60 : SSL certificate problem: unable to get local issuer certificate VENDORPATH\myth\auth\src\Exceptions\AuthException.php:56
+CRITICAL - 2024-03-26 23:20:28 --> Myth\Auth\Exceptions\AuthException: 60 : SSL certificate problem: unable to get local issuer certificate
+in VENDORPATH\myth\auth\src\Exceptions\AuthException.php on line 56.
+ 1 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(46): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+ 2 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 3 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 4 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+ 6 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 23:20:28 --> [Caused by] CodeIgniter\HTTP\Exceptions\HTTPException: 60 : SSL certificate problem: unable to get local issuer certificate
+in SYSTEMPATH\HTTP\CURLRequest.php on line 695.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(695): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('60', 'SSL certificate problem: unable to get local issuer certificate')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(387): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(145): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.pwnedpasswords.com/range/45666')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(180): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.pwnedpasswords.com/range/45666', [...])
+ 5 VENDORPATH\myth\auth\src\Authentication\Passwords\PwnedValidator.php(41): CodeIgniter\HTTP\CURLRequest->get('range/45666', [...])
+ 6 VENDORPATH\myth\auth\src\Authentication\Passwords\PasswordValidator.php(46): Myth\Auth\Authentication\Passwords\PwnedValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 7 VENDORPATH\myth\auth\src\Authentication\Passwords\ValidationRules.php(42): Myth\Auth\Authentication\Passwords\PasswordValidator->check('Set12345*&', Object(Myth\Auth\Entities\User))
+ 8 SYSTEMPATH\Validation\Validation.php(327): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('Set12345*&', null)
+ 9 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('password', 'password', 'Set12345*&', [...], [...])
+10 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+11 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+12 SYSTEMPATH\CodeIgniter.php(941): Myth\Auth\Controllers\AuthController->attemptRegister()
+13 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+14 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 23:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:31:17 --> CSRF token verified.
+INFO - 2024-03-26 23:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:31:50 --> CSRF token verified.
+INFO - 2024-03-26 23:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-26 23:31:51 --> mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_domp...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_domp...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_domp...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_domp...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('5')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-03-26 23:31:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('5')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 23:31:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'5\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'5\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('5')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-03-26 23:31:51 --> [Caused by] mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'5\'
+GROUP BY `tb_logaktivitas`.`id_dompet`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'5\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'5\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('5')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-03-26 23:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:33:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:33:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:36:28 --> CSRF token verified.
+INFO - 2024-03-26 23:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:38:55 --> CSRF token verified.
+INFO - 2024-03-26 23:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-26 23:39:29 --> ErrorException: Maximum execution time of 30 seconds exceeded
+in SYSTEMPATH\HTTP\CURLRequest.php on line 692.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-03-26 23:39:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:40:06 --> CSRF token verified.
+INFO - 2024-03-26 23:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:42:33 --> CSRF token verified.
+INFO - 2024-03-26 23:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:43:22 --> CSRF token verified.
+INFO - 2024-03-26 23:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:43:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:44:34 --> CSRF token verified.
+INFO - 2024-03-26 23:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:44:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:07 --> CSRF token verified.
+INFO - 2024-03-26 23:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:53 --> CSRF token verified.
+INFO - 2024-03-26 23:45:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:45:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:18 --> CSRF token verified.
+INFO - 2024-03-26 23:49:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:49:59 --> CSRF token verified.
+INFO - 2024-03-26 23:49:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:50:57 --> CSRF token verified.
+INFO - 2024-03-26 23:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:21 --> CSRF token verified.
+INFO - 2024-03-26 23:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:16 --> CSRF token verified.
+INFO - 2024-03-26 23:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:33 --> CSRF token verified.
+INFO - 2024-03-26 23:53:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-26 23:53:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
