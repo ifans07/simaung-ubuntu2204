@@ -15,21 +15,26 @@
                     <div class="mb-3">
                         <label for="peminjam" class="form-label">Peminjam</label>
                         <input type="text" class="form-control" id="peminjam" name="peminjam"
-                            placeholder="Kepada siapa anda meminjamkan? (nama depan & nama belakang">
+                            placeholder="Kepada siapa anda meminjamkan? (nama depan & nama belakang)">
                     </div>
                     <div class="row g-3 mb-3">
                         <div class="col-md-6">
                             <label for="jumlah" class="form-label">Jumlah</label>
-                            <input type="number" class="form-control" name="jumlah" id="jumlah" placeholder="Rp 0">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control jml-keluar" name="jumlah" id="jumlah" placeholder="Masukkan angka">
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="dompet" class="form-label">Dompet</label>
                             <select name="dompet" id="dompet" class="form-select" aria-label="Default select example">
-                                <option value="">Pilih dompet</option>
+                                <option value="0">--- Pilih dompet (optional) ---</option>
                                 <?php foreach ($datadompet as $row) : ?>
+                                <?php if($row['id_dompet'] != 0): ?>
                                 <option value="<?= $row['id_dompet'] ?> <?= $row['saldo'] ?>">
                                     <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                 </option>
+                                <?php endif ?>
                                 <?php endforeach; ?>
                             </select>
                         </div>

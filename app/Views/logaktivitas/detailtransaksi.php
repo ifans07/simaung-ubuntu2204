@@ -35,6 +35,9 @@ foreach ($logdata as $value) {
         </div>
     </div>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div class="header-coba mb-5">
                 <h1>Detail</h1>

@@ -6,17 +6,23 @@ use App\Controllers\BaseController;
 use App\Models\DompetModel;
 use App\Models\KebutuhanModel;
 use App\Models\LogaktivitasModel;
+use App\Models\InventoryModel;
+use App\Models\GajiModel;
 
 class Kebutuhan extends BaseController
 {
     protected $kebutuhanModel;
     protected $dompetModel;
     protected $logModel;
+    protected $inventoryModel;
+    protected $gajiModel;
     public function __construct()
     {
         $this->kebutuhanModel = new KebutuhanModel();
         $this->dompetModel = new DompetModel();
         $this->logModel = new LogaktivitasModel();
+        $this->inventoryModel = new InventoryModel();
+        $this->gajiModel = new GajiModel();
     }
 
     public function index()
@@ -35,8 +41,9 @@ class Kebutuhan extends BaseController
             'datakebutuhan' => $this->kebutuhanModel->getAllKebutuhan(user_id()),
             'countkebutuhan' => $this->kebutuhanModel->countKebutuhanDone(user_id()),
             'datadompet' => $this->dompetModel->getAllDompet(user_id()),
-            'logkeluar' => $this->logModel->getSumAll(),
-            'logkebutuhan' => $this->logModel->getLogBulanIni()
+            'logkeluar' => $this->logModel->getSumAll(user_id()),
+            'logkebutuhan' => $this->logModel->getLogBulanIni(user_id()),
+            'gaji' => $this->gajiModel->getGajiUser(user_id())
         ];
         return view('kebutuhan/index', $data);
     }
@@ -46,7 +53,9 @@ class Kebutuhan extends BaseController
         //
         $kebutuhanModel = new KebutuhanModel();
         $data = [
-            'title' => 'Form tambah kebutuhan'
+            'title' => 'Form tambah kebutuhan',
+            'barang' => $this->inventoryModel->getBarangUser(),
+            'dompet' => $this->dompetModel->getAllDompet(user_id())
         ];
         return view('kebutuhan/tambah', $data);
     }
@@ -54,14 +63,62 @@ class Kebutuhan extends BaseController
     public function addproses()
     {
         // $kebutuhanModel = new KebutuhanModel();
+        $status = $this->request->getPost('status');
+        if($status == "on"){
+            $setStatus = 0;
+        }else{
+            $setStatus = 1;
+        }
+        $dompet = $this->request->getPost('dompet');
+        $pisahdompet = explode('|',$dompet);
+        $iddompet = $pisahdompet[0];
+        $saldo = end($pisahdompet);
+
+        $check = $this->request->getPost('check');
+        if($check == "on"){
+            $kebutuhan = $this->request->getPost('barang');
+            $h = $this->request->getPost('cost');
+            $hrg = explode('.',$h);
+            $harga = implode($hrg);
+        }else{
+            $kebutuhanharga = $this->request->getPost('barang');
+            $pisahkebutuhanharga = explode('|',$kebutuhanharga);
+            $kebutuhan = $pisahkebutuhanharga[0];
+            $harga = $pisahkebutuhanharga[1];
+        }
+        $gettanggal = $this->request->getPost('tanggal');
+        $tanggal = explode('T', $gettanggal);
+        $gabungtanggal = implode(' ', $tanggal);
+
         $data =
-            [
-                'kebutuhan' => $this->request->getPost('kebutuhan'),
-                'harga' => $this->request->getPost('cost'),
+        [
+            'kebutuhan' => $kebutuhan,
+            'harga' => $harga,
+            'catatan' => $this->request->getPost('catatan'),
+            'periode' => $gabungtanggal,
+            'status' => $setStatus,
+            'id_dompet' => $iddompet,
+            'id_user' => user_id()
+        ];
+
+        if($status == "on"){
+            $datalog = [
+                'log_aktivitas' => $kebutuhan,
+                'jumlah' => $harga,
+                'tanggal' => $tanggal[0],
                 'catatan' => $this->request->getPost('catatan'),
+                'status' => 4,
+                'id_dompet' => $iddompet,
                 'id_user' => user_id()
             ];
-    
+
+            $datadompet = [
+                'saldo' => (int) $saldo - (int) $harga
+            ];
+            $this->logModel->save($datalog);
+            $this->dompetModel->update($iddompet, $datadompet);
+        }
+
         $this->kebutuhanModel->save($data);
         session()->setFlashdata('addberhasil', '1 Kebutuhan berhasil ditambah');
         return redirect()->to(base_url('/kebutuhan'));

@@ -54,10 +54,10 @@
                 </div>
             </form>
                 <hr>
-            <div class="d-flex justify-content-center align-items-center gap-4">
+            <!-- <div class="d-flex justify-content-center align-items-center gap-4">
                 <a href="" class="btn btn-outline-dark fw-bold"><i class="fa-brands fa-google fs-5"></i></a>
                 <a href="" class="btn btn-outline-dark fw-bold"><i class="fa-brands fa-github fs-5"></i></a>
-            </div>
+            </div> -->
             <div class="mt-5 form-text text-center">
                 <span>Belum punya akun? <a href="/register">Daftar disini</a></span>
                 <?php if ($config->activeResetter): ?>

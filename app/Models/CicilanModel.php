@@ -50,6 +50,17 @@ class CicilanModel extends Model
         ->getResultArray();
     }
 
+    public function getCicilanSum(){
+        return $this->db->table($this->table)
+        ->select('id,id_piutang,id_dompet,id_user,tanggal,status_cicilan,created_at,updated_at')
+        ->selectSum('jml_cicilan')
+        ->where('id_user', user_id())
+        ->groupBy('id_piutang')
+        ->groupBy('status_cicilan')
+        ->get()
+        ->getResultArray();
+    }
+
     public function getCicilanUser($user_id)
     {
         return $this->db->table($this->table)

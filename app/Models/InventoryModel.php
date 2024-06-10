@@ -4,16 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DompetModel extends Model
+class InventoryModel extends Model
 {
-    protected $DBGroup          = 'default';
-    protected $table            = 'tb_dompet';
-    protected $primaryKey       = 'id_dompet';
+    protected $table            = 'tb_inventory';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_dompet', 'saldo', 'saldo_awal', 'status', 'id_user'];
+    protected $allowedFields    = ['nama_barang','harga','catatan','status','created_at','updated_at','slug','id_user'];
+
+    protected bool $allowEmptyInserts = false;
 
     // Dates
     protected $useTimestamps = true;
@@ -40,17 +41,27 @@ class DompetModel extends Model
     protected $afterDelete    = [];
 
 
-    public function getAllDompet($user_id)
+    public function getBarangUser()
     {
-        if($user_id){
-            return $this->db->table($this->table)
-            // ->join('users','users.id=tb_dompet.id_user')
-            ->where('tb_dompet.id_user', $user_id)
-            ->orWhere('tb_dompet.id_user', 0)
-            ->get()
-            ->getResultArray();
-        }else{
-            return $this->findAll();
+        return $this->db->table($this->table)
+        ->where('id_user', user_id())
+        ->get()
+        ->getResultArray();
+    }
+
+    public function getBarang($slug = false){
+        
+        if ($slug == false) {
+            return $this->where('id_user', user_id())->findAll();
         }
+
+        return $this->where(['slug' => $slug])->where('id_user', user_id())->first();
+
+    }
+
+    public function hapus($slug)
+    {
+        $builder = $this->db->table($this->table);
+        return $builder->delete(['slug' => $slug]);
     }
 }

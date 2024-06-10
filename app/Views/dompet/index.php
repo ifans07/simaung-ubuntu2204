@@ -49,7 +49,7 @@ $months = [
     'Feb' => 'Februari',
     'Mar' => 'Maret',
     'Apr' => 'April',
-    'Mei' => 'Mei',
+    'May' => 'Mei',
     'Jun' => 'Juni',
     'Jul' => 'Juli',
     'Aug' => 'Agustus',
@@ -93,6 +93,12 @@ foreach($datacicilan as $cicilan){
     }
 }
 
+$tglGajian = (empty($datagaji))?0:$datagaji[0]['tanggal_gajian'];
+$gaji = (empty($datagaji))?0:$datagaji[0]['gaji'];
+$id = (empty($datagaji))?0:$datagaji[0]['id'];
+$iddompet = (empty($datagaji))?0:$datagaji[0]['iddompet'];
+$saldo = (empty($datagaji))?0:$datagaji[0]['saldo'];
+
 ?>
 
 <section>
@@ -131,7 +137,7 @@ foreach($datacicilan as $cicilan){
 
                                         <input type="password" class="form-control-plaintext"
                                             value="Rp<?= number_format($totalsaldo, 0, '.', '.') ?>"
-                                            style="font-weight: 700" id="saldoHide">
+                                            style="font-weight: 700" id="saldoHide" readonly>
 
                                         <span class="fs-2" style="cursor:pointer" id="toggleHideSaldo"><i
                                                 class="fa-solid fa-eye" id="iconToggleHide"></i></span>
@@ -143,7 +149,7 @@ foreach($datacicilan as $cicilan){
                                     <div class="col-md-12 text-center">
                                         <div class="fw-medium">Rincian: </div>
                                         <small class="form-text">Saldo awal: Rp
-                                            <?= number_format($totalsaldoawal, 0, ',', '.') ?></small> - <small class="form-text me-1">Sisa saldo: Rp <?= number_format($totalsaldoawal+$totalmasuk-$totalkeluar, 0,',','.') ?></small><sup
+                                            <?= number_format($totalsaldoawal, 0, ',', '.') ?></small> - <small class="form-text me-1">Sisa saldo: Rp <?= number_format($totalsaldoawal+($totalmasuk-$totalkeluar), 0,',','.') ?></small><sup
                                             data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Sisa saldo berdasarkan saldo awal - total pengeluaran sebagai perbandingan dengan saldo asli"><i
                                                 class="fa-solid fa-info-circle"></i></sup>
                                     </div>
@@ -165,7 +171,7 @@ foreach($datacicilan as $cicilan){
                                         <span class="fw-medium">Pengeluaran: </span>
                                         <div>
                                             <small class="form-text">Total keluar: <span class="text-danger">Rp
-                                                <?= number_format($totalkeluar, 0, ',', '.') ?></span></small>
+                                                <?= number_format($totalkeluar, 0, ',', '.') ?></span></small> <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="kecuali yang keluar dari piutang"><i class="fa-solid fa-info-circle"></i></sup>
                                         </div>
                                         <div>
                                             <small class="form-text">Keluar bulan ini: <span class="text-danger">Rp
@@ -225,6 +231,7 @@ foreach($datacicilan as $cicilan){
                         <div class="col-md-6">
                             <div class="row h-50 row-cols-1 row-cols-md-2 g-3">
                                 <?php foreach ($datadompet as $data) : ?>
+                                <?php if($data['id_dompet'] != 0): ?>
                                 <div class="col">
                                     <div class="card text-decoration-none dompet">
                                         <div class="row g-2">
@@ -255,7 +262,10 @@ foreach($datacicilan as $cicilan){
                                         </div>
                                     </div>
                                 </div>
+                                <?php endif; ?>
                                 <?php endforeach; ?>
+
+                                <!-- tambah dompet -->
                                 <div class="col">
                                     <div class="card text-decoration-none dompet">
                                         <div class="row g-2">
@@ -273,6 +283,41 @@ foreach($datacicilan as $cicilan){
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- input gaji -->
+                                <?php if(empty($riwayatgaji)): ?>
+                                    <div class="col" id="input-gaji" data-tanggal="<?= $tglGajian ?>">
+                                            <div class="card text-decoration-none dompet">
+                                                <div class="row g-2">
+                                                    <div class="col-3">
+                                                        <div class="icon-number p-2">
+                                                            <i class="fa-solid fa-plus"></i>
+                                                        </div>
+                                                    </div>
+                                                    <a href="<?= base_url('dompet/tambah') ?>" class="col-9 text-dark">
+                                                        <div class="text-dompet describe-text p-1">
+                                                            <p class="mb-1 p-0 fw-medium">Tekan untuk input gaji</p>
+                                                            <p class="m-0 p-0">Rp<?= number_format($gaji,0,',','.') ?></p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php else: ?>
+                                    <?php 
+                                        $gajibulanini = substr($riwayatgaji['tanggal'],0,7);
+                                        if($gajibulanini == date('Y-m')):
+                                    ?>
+                                        <div class="alert alert-info">
+                                            <small>Gaji bulan <?= date('F') ?> sudah di input!</small>
+                                        </div>
+                                    <?php else: ?>
+                                        <div>
+                                            
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif ?>
+
                             </div>
                         </div>
                     </div>
@@ -485,7 +530,7 @@ foreach($datacicilan as $cicilan){
                         </div>
                             <?php if(empty($datatodolist)): ?>
                                 <div>
-                                    <small class="form-text">Kosong</small>
+                                    <small class="form-text">Belum ada data!</small>
                                 </div>
                             <?php endif; ?>
                         <ul>
@@ -563,6 +608,7 @@ foreach($datacicilan as $cicilan){
                                     // $tglakhir = date_create(date('Y-m-d'));
                                     $diff = date_diff($tglawal, $tglakhir);
                                 ?>
+                                <?php if($row['status_penghitung'] == 0): ?>
                                 <li class="mb-2">
                                     <div class="lh-1">
                                         <strong class="fw-medium"><?= $row['nama_aktivitas'] ?></strong> -
@@ -576,6 +622,7 @@ foreach($datacicilan as $cicilan){
                                         </div>
                                     </div>
                                 </li>
+                                <?php endif ?>
                                 <?php endforeach; ?>
                                 <?php if(!empty($datapenghitung)): ?>
                                 <li><a href="<?= base_url('periode') ?>">Selengkapnya . . .</a></li>
@@ -594,6 +641,7 @@ foreach($datacicilan as $cicilan){
                             <?php endif; ?>
                             <ul>
                                 <?php foreach ($datapenggunaan as $row) : ?>
+                                <?php if($row['status_penggunaan'] == 0): ?>
                                 <li class="mb-2">
                                     <div class="lh-1">
                                         <strong class="fw-medium"><?= $row['nama_barang'] ?></strong> -
@@ -613,6 +661,7 @@ foreach($datacicilan as $cicilan){
                                         </div>
                                     </div>
                                 </li>
+                                <?php endif ?>
                                 <?php endforeach; ?>
                                 <?php if(!empty($datapenggunaan)): ?>
                                 <li><a href="<?= base_url('penggunaan') ?>">Selengkapnya . . .</a></li>
@@ -664,7 +713,7 @@ foreach($datacicilan as $cicilan){
                             </div>
                             <?php if(empty($datakebutuhan)): ?>
                                 <div>
-                                    <small class="form-text">Kosong</small>
+                                    <small class="form-text">Belum ada data!</small>
                                 </div>
                             <?php endif; ?>
                             <ul class="">
@@ -709,7 +758,7 @@ foreach($datacicilan as $cicilan){
                             </div>
                             <?php if(empty($datatarget)): ?>
                                 <div>
-                                    <small class="form-text">Kosong</small>
+                                    <small class="form-text">Belum ada data!</small>
                                 </div>
                             <?php endif; ?>
                             <ul>
@@ -843,6 +892,57 @@ $(document).ready(function() {
         }
     })
 })
+</script>
+
+<!-- input gaji -->
+<script>
+    $(document).ready(function(){
+        let inputGaji = document.getElementById('input-gaji')
+        let tanggalGajian = inputGaji.getAttribute('data-tanggal')
+
+        const times = new Date()
+        let tanggal = times.getDate()
+        let hours = times.getHours()
+        let minutes = times.getMinutes()
+        let second = times.getSeconds()
+
+console.log(hours)
+        setInterval(() => {
+            if(tanggalGajian == tanggal){
+                if(hours >= 16 && hours <= 24){
+                    inputGaji.innerHTML = `
+                    <form action="<?= base_url('user/gaji/gaji-bulanan') ?>" method="post">
+                    <?= csrf_field() ?>
+                        <div class="card text-decoration-none dompet">
+                            <div class="row g-2">
+                                <div class="col-3">
+                                    <div class="icon-number p-2">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="idgaji" value="<?= $id ?>">
+                                <input type="hidden" name="jml" value="<?= $gaji ?>">
+                                <input type="hidden" name="iddompet" value="<?= $iddompet ?>">
+                                <input type="hidden" name="saldo" value="<?= $saldo ?>">
+                                <button href="<?= base_url('dompet/tambah') ?>" class="col-9 text-dark" style="outline:none;background:transparent;border:none;text-align:left" type="submit">
+                                    <div class="text-dompet describe-text p-1">
+                                        <p class="mb-1 p-0 fw-medium">Tekan untuk input gaji</p>
+                                        <p class="m-0 p-0">Rp<?= number_format($gaji,0,',','.') ?></p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    `
+                }else{
+                    inputGaji.innerHTML = ``
+                }
+            }else{
+                console.log('false')
+                inputGaji.innerHTML = ``
+            }
+        }, 3000);
+    })
 </script>
 
 <?= $this->endSection() ?>

@@ -13,7 +13,7 @@ class RiwayatgajiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_gaji', 'tanggal', 'status', 'slug'];
+    protected $allowedFields    = ['id_gaji', 'tanggal', 'status', 'slug', 'id_user'];
 
     // Dates
     protected $useTimestamps = true;
@@ -38,4 +38,20 @@ class RiwayatgajiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getRiwayatGajiBulan($bulan)
+    {
+        $builder = $this->db->table($this->table);
+        return $this->where('id_user', user_id())->like(['tanggal' => $bulan])->first();
+    }
+
+    public function getRiwayatGajiUser()
+    {
+        $builder = $this->db->table($this->table);
+        $builder->join('tb_gaji', 'tb_gaji.id=tb_riwayatgaji.id_gaji');
+        $builder->join('tb_dompet', 'tb_gaji.iddompet=tb_dompet.id_dompet');
+        return $builder->where('tb_riwayatgaji.id_user', user_id())
+        ->get()
+        ->getResultArray();
+    }
 }

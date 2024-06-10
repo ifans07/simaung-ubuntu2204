@@ -11,6 +11,9 @@ foreach ($logkeluar as $row) {
 
 <section>
     <div class="container">
+        <div class="mb-3">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div class="bread-container">
             <a href="<?= base_url('/') ?>" class="bread-list active">Beranda</a>
             <a href="<?= base_url('piutang') ?>" class="bread-list">Piutang</a>

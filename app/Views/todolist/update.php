@@ -3,9 +3,12 @@
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
-                <h3 class="rounded p-3 fw-medium fs-1"><i class="fa-solid fa-edit"></i> Form edit to-do</h3>
+                <h3 class="rounded p-3 fw-medium fs-1" style="background-color: #f1f2f3"><i class="fa-solid fa-edit"></i> Form edit to-do</h3>
             </div>
             <div class="card p-3">
                 <form action="<?= base_url('todolist/proses-update') ?>" method="post">

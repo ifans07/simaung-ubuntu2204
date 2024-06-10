@@ -39,6 +39,11 @@ class LogaktivitasModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function jmlHari()
+    {
+        return date('t', strtotime(date('Y-m-01')));
+    }
+
     public function orderLog()
     {
         return $this->db->table($this->table)
@@ -125,7 +130,7 @@ class LogaktivitasModel extends Model
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
             ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tanggal >=', date('Y-m-01'))
-            ->where('tanggal <=', date('Y-m-31'))
+            ->where('tanggal <=', date('Y-m-'.$this->jmlHari()))
             ->get()
             ->getResultArray();
     }
@@ -149,7 +154,7 @@ class LogaktivitasModel extends Model
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet')
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
             ->where('tanggal >=', date('Y-m-01'))
-            ->where('tanggal <=', date('Y-m-31'))
+            ->where('tanggal <', date('Y-m-'.$this->jmlHari()))
             ->where('tb_logaktivitas.id_user', $user_id)
             ->orderBy('tanggal', 'DESC')
             ->orderBy('id', 'DESC')
@@ -162,7 +167,7 @@ class LogaktivitasModel extends Model
             ->join('tb_dompet', 'tb_dompet.id_dompet=tb_logaktivitas.id_dompet')
             ->where('tb_logaktivitas.id_user', $user_id)
             ->where('tanggal >=', date('Y-m-01'))
-            ->where('tanggal <=', date('Y-m-31'))
+            ->where('tanggal <=', date('Y-m-'.$this->jmlHari()))
             ->get()
             ->getNumRows();
     }
@@ -178,7 +183,7 @@ class LogaktivitasModel extends Model
             ->getResultArray();
     }
 
-    public function filterData($tanggal1 = 'Y-m-01', $tanggal2 = 'Y-m-31')
+    public function filterData($tanggal1 = 'Y-m-01', $tanggal2 = "Y-m-date('t',strtotime(date('Y-m-01')))")
     {
         return $this->db->table($this->table)
             ->select('id, tb_logaktivitas.log_aktivitas,jumlah,tanggal,catatan, tb_logaktivitas.status, tb_logaktivitas.id_dompet, nama_dompet, saldo, saldo_awal, ke_iddompet, tb_logaktivitas.id_user')

@@ -109,10 +109,11 @@ class Dompet extends BaseController
             'datapenggunaan' => $this->penggunaanModel->getAllPenggunaanUser(user_id()),
             'datarencana' => $this->rencanaModel->getRencanaUser(user_id()),
             'datatodolist' => $this->todoModel->getToDoUser(user_id()),
-            'datagaji' => $this->gajiModel->findAll(),
+            'datagaji' => $this->gajiModel->getGajiUser(user_id()),
             'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
             'datacicilan' => $this->cicilanModel->getCicilanUser(user_id()),
             'jmltrxblnini' => $logModel->getJmlTrxBlnIni(user_id()),
+            'riwayatgaji' => $this->riwayatgajiModel->getRiwayatGajiBulan(date('Y-m')),
             'generate' => $password,
             'random' => $randomPassword,
             'iduser' => user_id(),
@@ -169,10 +170,18 @@ class Dompet extends BaseController
     public function addproses()
     {
         $dompetModel = new DompetModel();
+        $saldo = $this->request->getPost('saldo');
+        $sldo = explode('.', $saldo);
+        $sld = implode($sldo);
+
+        $saldo_awal = $this->request->getPost('saldoawal');
+        $sldo_awal = explode('.',$saldo_awal);
+        $sld_awal = implode($sldo_awal);
+
         $data = array(
             'nama_dompet' => $this->request->getPost('namadompet'),
-            'saldo' => $this->request->getPost('saldo'),
-            'saldo_awal' => $this->request->getPost('saldoawal'),
+            'saldo' => $sld,
+            'saldo_awal' => $sld_awal,
             'status' => $this->request->getPost('status'),
             'id_user' => user_id()
         );
@@ -185,10 +194,19 @@ class Dompet extends BaseController
     {
         $dompetModel = new DompetModel();
         $id = $this->request->getPost('iddompet');
+
+        $saldo = $this->request->getPost('saldo');
+        $sldo = explode('.',$saldo);
+        $sld = implode($sldo);
+
+        $saldo_awal = $this->request->getPost('saldoawal');
+        $sldo_awal = explode('.',$sldo_awal);
+        $sld_awal = implode($sldo_awal);
+
         $data = array(
             'nama_dompet' => $this->request->getPost('namadompet'),
-            'saldo' => $this->request->getPost('saldo'),
-            'saldoawal' => $this->request->getPost('saldoawal'),
+            'saldo' => $sld,
+            'saldoawal' => $sld_awal,
             'status' => $this->request->getPost('status'),
             'id_user' => user_id()
         );
@@ -209,8 +227,13 @@ class Dompet extends BaseController
     {
         $dompetModel = new DompetModel();
         $id = $this->request->getPost('iddompet');
+
+        $saldo = $this->request->getPost('saldo');
+        $sldo = explode('.',$saldo);
+        $sld = implode($sldo);
+
         $data = [
-            'saldo' => $this->request->getPost('saldo')
+            'saldo' => $sld
         ];
         $dompetModel->update($id, $data);
         session()->setFlashdata('updatesaldoberhasil', 'Nilai saldo berhasil diupdate!');

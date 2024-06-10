@@ -98,11 +98,31 @@ $routes->get('/piutang/tambah-detail/(:any)', 'Piutang::tambahDetail/$1');
 $routes->post('/piutang/cicil','Piutang::cicilan');
 $routes->get('/piutang/cicilan/(:segment)', 'Piutang::piutang/$1');
 $routes->get('/piutang/orang-utang/(:segment)', 'Piutang::orangutang/$1');
+$routes->get('/piutang/verify-lunas/(:segment)', 'Piutang::piutanglunas/$1');
 // $routes->get('/piutang/coba','Piutang::piutangcoba');
+
+// inventory
+$routes->get('/inventory', 'Inventory::index');
+$routes->get('/inventory/tambah', 'Inventory::tambah');
+$routes->post('/inventory/proses-tambah', 'Inventory::addproses');
+$routes->get('/inventory/update/(:segment)', 'Inventory::update/$1');
+$routes->post('/inventory/proses-update', 'Inventory::updateproses');
+$routes->get('/inventory/proses-delete/(:segment)', 'Inventory::deleteproses/$1');
+$routes->get('/inventory/proses/(:segment)', 'Inventory::proses/$1');
+// inventory->kebutuhan
+$routes->post('/inventory/proses-addkebutuhan', 'Inventory::addkebutuhan');
 
 
 // user
 $routes->get('/user', 'User::index');
+$routes->get('/user/pengaturan', 'User::settings');
+// gaji
+$routes->get('/user/gaji/input-gaji', 'Gaji::index');
+$routes->post('/user/gaji/proses-tambah', 'Gaji::addproses');
+$routes->get('/user/gaji/update/(:segment)', 'Gaji::update/$1');
+$routes->post('/user/gaji/proses-update', 'Gaji::updateproses');
+$routes->get('/user/gaji/delete/(:segment)', 'Gaji::deleteproses/$1');
+$routes->post('/user/gaji/gaji-bulanan', 'Gaji::addriwayatgaji');
 
 
 // api (batal)

@@ -21,14 +21,21 @@ foreach($datadompet as $dompet){
             </div>
             <div class="card mb-5">
                 <div class="d-flex">
-                    <div class="me-3">
-                        <img src="<?= base_url('assets/hero/hero.jpg') ?>" alt="" class="img-thumbnail" width="200" height="200">
+                    <div class="me-md-3 me-1">
+                        <img src="<?= base_url('assets/hero/hero.jpg') ?>" alt="" class="img-thumbnail img-user">
                     </div>
                     <div class="align-self-center lh-1 user-profil">
                         <h1 class="user-saldo">Rp <?= number_format($totalsaldo, 0,',','.') ?></h1>
-                        <p class="p-1 m-0">Nama: <?= user()->username ?></p>
-                        <p class="p-1 m-0">Email: <?= user()->email ?></p>
-                        <p class="p-1 m-0">alamat: jl. alamat</p>
+                        <div class="mb-3 d-flex flex-column lh-1">
+                            <span>Nama: <?= user()->username ?></span>
+                            <span>Email: <?= user()->email ?></span>
+                            <?php if(empty($gaji)): ?>
+                                <span>Gaji: <span class="fw-medium">Belum di set. <a href="<?= base_url('user/gaji/input-gaji') ?>">Set gaji</a></span></span>
+                            <?php else: ?>
+                            <span id="btnGaji" style="cursor:pointer">Gaji: <span class="fw-medium" id="txtGaji" data-value="<?= number_format($gaji[0]['gaji'],0,',','.') ?>">Rp--------</span></span>
+                            <?php endif ?>
+                        </div>
+                        <a href="<?= base_url('user/pengaturan') ?>"><i class="fa-solid fa-gear"></i> Pengaturan</a>
                     </div>
                 </div>
             </div>
@@ -41,6 +48,11 @@ foreach($datadompet as $dompet){
                     <div class="my-3">
                         <a href="<?= base_url('piutang/tambah') ?>" class="btn btn-dark"><i class="fa-solid fa-plus"></i> Tambah data</a>
                     </div>
+                    <?php if(empty($datapiutang)): ?>
+                        <div>
+                            <small class="form-text">Belum ada data!</small>
+                        </div>
+                    <?php endif; ?>
                     <ul class="list-group">
                         <?php foreach ($datapiutang as $row) : ?>
                         <li class="list-group-item">
@@ -91,5 +103,17 @@ foreach($datadompet as $dompet){
         </div>
     </div>
 </section>
+<script>
+    let btnGaji = document.getElementById('btnGaji');
+    let txtGaji = document.getElementById('txtGaji');
+    let jmlGaji = txtGaji.getAttribute('data-value')
+    btnGaji.addEventListener('click', function(){
+        if(txtGaji.textContent.length <= 10){
+            txtGaji.textContent = 'Rp'+jmlGaji
+        }else{
+            txtGaji.textContent = 'Rp--------'
+        }
+    })
+</script>
 
 <?= $this->endSection() ?>

@@ -1,7 +1,7 @@
 <!-- FOOTER: DEBUG INFO + COPYRIGHTS -->
 
 <footer id="footer" class="footer mt-5">
-    <div class="footer-top">
+    <div class="footer-top p-4">
         <div class="container">
             <h2 class="logo"><a href="<?= base_url('/') ?>" class=""><i class="fa-solid fa-money-bill"></i> Simaung</a></h2>
             <div class="environment lh-1">
@@ -13,9 +13,9 @@
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom p-0 m-0">
         <div class="container">
-            <div class="copyrights">
+            <div class="copyrights p-0 m-0">
 
                 <p>&copy;<?= date('Y') ?> Orenji.</p>
 

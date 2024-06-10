@@ -48,11 +48,14 @@ class PiutangModel extends Model
         return $this->join('tb_dompet', 'tb_dompet.id_dompet=tb_piutang.id_dompet')->where(['id' => $slug])->first();
     }
     
+    // 1 = belum lunas
+    // 0 = sudah lunas
     public function getPiutangUser($user_id)
     {
         return $this->db->table($this->table)
         ->join('tb_dompet', 'tb_dompet.id_dompet=tb_piutang.id_dompet')
         ->where('tb_piutang.id_user', $user_id)
+        ->where('tb_piutang.status', 1)
         ->orderBy('tanggal_pinjam', 'DESC')
         ->get()
         ->getResultArray();

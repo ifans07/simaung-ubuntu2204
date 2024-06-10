@@ -28,7 +28,8 @@ class Piutang extends BaseController
             'title' => 'Piutang | Simaung',
             'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
             // 'cicilan' => $this->cicilanModel->findAll()
-            'cicilan' => $this->cicilanModel->getCicilanUser(user_id())
+            'cicilan' => $this->cicilanModel->getCicilanUser(user_id()),
+            'cicilansum' => $this->cicilanModel->getCicilanSum()
         ];
         return view('piutang/index', $data);
     }
@@ -55,13 +56,26 @@ class Piutang extends BaseController
 
     public function addproses()
     {
-        $idsaldo = explode(' ', $this->request->getPost('dompet'));
+        $id = $this->request->getPost('dompet');
+        if($id == 0){
+            $idsaldo = $id;
+        }else{
+            $idsaldopisah = explode(' ',$id);
+            $idsaldo = $idsaldopisah[0];
+        }
+
+        // $idsaldo = explode(' ', $this->request->getPost('dompet'));
+
+        $jumlah_nominal = htmlspecialchars($this->request->getPost('jumlah'));
+        $jmlh_nmnl = explode('.',$jumlah_nominal);
+        $jml_nml = implode($jmlh_nmnl);
+
         $data = [
             'nama_peminjam' => htmlspecialchars($this->request->getPost('peminjam')),
-            'nominal' => htmlspecialchars($this->request->getPost('jumlah')),
+            'nominal' => $jml_nml,
             'tanggal_pinjam' => $this->request->getPost('tanggal')." ".$this->request->getPost('waktu'),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
-            'id_dompet' => $idsaldo[0],
+            'id_dompet' => $idsaldo,
             'status' => 1,
             'id_user' => user_id()
         ];
@@ -69,19 +83,22 @@ class Piutang extends BaseController
 
         $datalog = [
             'log_aktivitas' => "Piutang",
-            'jumlah' => htmlspecialchars($this->request->getPost('jumlah')),
+            'jumlah' => $jml_nml,
             'tanggal' => htmlspecialchars($this->request->getPost('tanggal')),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
-            'id_dompet' => $idsaldo[0],
+            'id_dompet' => $idsaldo,
             'status' => 6,
             'id_user' => user_id()
         ];
         $this->logModel->save($datalog);
 
-        $datadompet = [
-            'saldo' => $idsaldo[1] - htmlspecialchars($this->request->getPost('jumlah'))
-        ];
-        $this->dompetModel->update($idsaldo[0], $datadompet);
+        
+        if($id != 0) {
+            $datadompet = [
+                'saldo' => (int) $idsaldopisah[1] - (int) $jml_nml,
+            ];
+            $this->dompetModel->update($idsaldo, $datadompet);
+        }
 
         session()->setFlashdata('addberhasil', 'Peminjam ditambahkan!');
         return redirect()->to(base_url('/piutang'));
@@ -100,15 +117,79 @@ class Piutang extends BaseController
     }
     public function updateproses()
     {
+        $dompetlamaid = $this->request->getPost('dompetlama'); //sudah di set di form hidden - id lama
+        $datadompetlama = $this->dompetModel->find($dompetlamaid); 
+
         $id = $this->request->getPost('id');
+        $dompet = explode(' ',$this->request->getPost('dompet'));
+        $dompetid = $dompet[0]; //dari form yang dipilih user - id baru
+        $saldo = $dompet[1];
+
+        $nominalama = $this->request->getPost('jml-lama');
+        $nominal = htmlspecialchars($this->request->getPost('jumlah'));
+        $nmnl = explode('.',$nominal);
+        $nml = implode($nmnl);
+
+        // if($nominalama != $nml){
+        //     if((int) $nml > (int) $nominalama){
+        //         $nml -= $nominalama;
+        //     }elseif((int) $nml < (int) $nominalama){
+        //         $nominalama -= $nml;
+        //     }
+        // }
+        
         $data = [
             'nama_peminjam' => htmlspecialchars($this->request->getPost('peminjam')),
-            'nominal' => htmlspecialchars($this->request->getPost('jumlah')),
+            'nominal' => $nml,
             'tanggal_pinjam' => $this->request->getPost('tanggal')." ".$this->request->getPost('waktu'),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
-            'id_dompet' => $this->request->getPost('dompet'),
+            'id_dompet' => $dompetid,
             'status' => 1
         ];
+
+        if($dompetlamaid != $dompetid){
+            if($dompetlamaid == 0){
+                // saldolama jangan di set
+                $datadompetbaru = [
+                    'saldo' => $saldo - $nml
+                ];
+                $this->dompetModel->update($dompetid, $datadompetbaru);
+            }elseif($dompetid == 0){
+                // saldo baru jangan di set
+                $datadompetlama = [
+                    'saldo' => $datadompetlama['saldo'] + $nominalama
+                ];
+                $this->dompetModel->update($dompetlamaid, $datadompetlama);
+            }else{
+                $datadompetlama = [
+                    'saldo' => $datadompetlama['saldo'] + $nominalama
+                ];
+                $datadompetbaru = [
+                    'saldo' => $saldo - $nml
+                ];
+                $this->dompetModel->update($dompetlamaid, $datadompetlama);
+                $this->dompetModel->update($dompetid, $datadompetbaru);
+            }
+        }else{
+            if($dompetid != 0){
+                if($nml > $nominalama){
+                    $datadompet = [
+                        'saldo' => $saldo - ($nml - $nominalama)
+                    ];
+
+                    $this->dompetModel->update($dompetid, $datadompet);
+                }elseif($nml < $nominalama){
+                    $datadompet = [
+                        'saldo' => $saldo + ($nominalama - $nml)
+                    ];
+
+                    $this->dompetModel->update($dompetid, $datadompet);
+                }else{
+                    $datates['testing'] = 'testing broo!';
+                }
+            }
+        }
+
         $this->piutangModel->update($id, $data);
 
         session()->setFlashdata('updateberhasil', 'data berhasil di update!');
@@ -120,6 +201,7 @@ class Piutang extends BaseController
         $data = [
             'title' => 'Form peminjam | Simaung',
             'piutang' => $this->piutangModel->find($id),
+            'cicilan' => $this->cicilanModel->getCicilan($id),
             'dompet' => $this->dompetModel->getAllDompet(user_id()),
             'sumsaldo' => $this->logModel->getSumAll(user_id())
         ];
@@ -128,16 +210,36 @@ class Piutang extends BaseController
 
     public function cicilan()
     {
+        $jumlah_cicil = htmlspecialchars($this->request->getPost('jmlcicilan'));
+        $jmlh_cicil = explode('.',$jumlah_cicil);
+        $jml_cicil = implode($jmlh_cicil);
+
         $idpiutang = $this->request->getPost('idpiutang');
         $idsaldo = explode(' ', $this->request->getPost('dompet'));
         $statusC = ($this->request->getPost('pilihan') == 0)?5:6;
-        $saldo = ($this->request->getPost('pilihan') == 0)?$idsaldo[1]+htmlspecialchars($this->request->getPost('jmlcicilan')):$idsaldo[1]-htmlspecialchars($this->request->getPost('jmlcicilan'));
+        $saldo = ($this->request->getPost('pilihan') == 0)?$idsaldo[1]+$jml_cicil:$idsaldo[1]-$jml_cicil;
+
+        // status hutang
+        $status = $this->request->getPost('status-hutang');
+        if($status == "on"){
+            $statusHutang = 1;
+        }else{
+            $statusHutang = 0;
+        }
+        if(isset($_POST['status-hutang'])){
+            $datadone = [
+                'status' => $statusHutang
+            ];
+            $this->piutangModel->update($idpiutang, $datadone);
+        }
+        // end status hutang
+
 
         $data = [
             'id_piutang' => htmlspecialchars($this->request->getPost('idpiutang')),
             'id_dompet' => $idsaldo[0],
             'catatan_cicilan' => htmlspecialchars($this->request->getPost('catatan')),
-            'jml_cicilan' => htmlspecialchars($this->request->getPost('jmlcicilan')),
+            'jml_cicilan' => $jml_cicil,
             'tanggal' => htmlspecialchars($this->request->getPost('tanggal')),
             'status_cicilan' => htmlspecialchars($this->request->getPost('pilihan')),
             'id_user' => user_id()
@@ -145,7 +247,7 @@ class Piutang extends BaseController
 
         $datalog = [
             'log_aktivitas' => "Piutang",
-            'jumlah' => htmlspecialchars($this->request->getPost('jmlcicilan')),
+            'jumlah' => $jml_cicil,
             'tanggal' => htmlspecialchars($this->request->getPost('tanggal')),
             'catatan' => htmlspecialchars($this->request->getPost('catatan')),
             'id_dompet' => $idsaldo[0],
@@ -162,6 +264,15 @@ class Piutang extends BaseController
 
         $this->cicilanModel->save($data);
         return redirect()->to(base_url('piutang/detail/'.$idpiutang));
+    }
+
+    public function piutanglunas($id){
+        $data = [
+            'status' => 0
+        ];
+        $this->piutangModel->update($id, $data);
+        session()->setFlashdata('verifydone', 'Hutang Lunas!');
+        return redirect()->to(base_url('/piutang'));
     }
 
     // pengambilan data cicilan piutang

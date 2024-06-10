@@ -486,6 +486,17 @@ section {
   z-index: -11;
   transition: all 1s;
 }
+@media (max-width: 768px){
+  .card .describe-text .tipotext{
+    transform: rotate(40deg) scale(.9) translateY(-100px);
+    right: 5%;
+    width: 100%;
+    text-align: right;
+  }
+  .catatan-piutang{
+    width: 9.3rem;
+  }
+}
 .card .describe-text .describe {
   color: #212529;
   z-index: 99;
@@ -738,5 +749,16 @@ section {
   }
   .user-profil p{
     font-size: .8rem;
+  }
+}
+
+.img-user{
+  width: 200px;
+  height: 200px;
+}
+@media (max-width: 768px){
+  .img-user{
+    width: 100px;
+    height: 100px;
   }
 }

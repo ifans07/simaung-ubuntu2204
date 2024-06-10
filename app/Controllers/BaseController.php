@@ -55,4 +55,29 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+
+    protected $lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    protected $upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    protected $numbers = "1234567890";
+
+    public function code()
+    {
+        $lowerCase = str_shuffle($this->lowerCase);
+        $upperCase = str_shuffle($this->upperCase);
+        $numbers = str_shuffle($this->numbers);
+        $randomPassword = substr($lowerCase, 0, 7);
+        $randomPassword .= substr($upperCase, 0, 6);
+        $randomPassword .= substr($numbers, 0, 5);
+        $password = str_shuffle($randomPassword);
+
+        $data = [
+            'password' => $password,
+            'randomPassword' => $randomPassword
+        ];
+
+
+        return $data;
+    }
+
 }

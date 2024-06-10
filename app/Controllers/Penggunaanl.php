@@ -4,20 +4,24 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PenggunaanlModel;
+use App\Models\InventoryModel;
 
 class Penggunaanl extends BaseController
 {
     protected $penggunaanModel;
+    protected $inventoryModel;
     public function __construct()
     {
         $this->penggunaanModel = new PenggunaanlModel();
+        $this->inventoryModel = new InventoryModel();
     }
 
     public function index()
     {
         $data = [
             'title' => 'Lama penggunaan',
-            'datapenggunaan' => $this->penggunaanModel->getAllPenggunaanUser(user_id())
+            'datapenggunaan' => $this->penggunaanModel->getAllPenggunaanUser(user_id()),
+            'code' => $this->code()
         ];
         return view('penggunaan/index', $data);
     }
@@ -25,19 +29,27 @@ class Penggunaanl extends BaseController
     public function tambah()
     {
         $data = [
-            'title' => 'Form tambah barang'
+            'title' => 'Form tambah barang',
+            'barang' => $this->inventoryModel->getBarangUser()
         ];
         return view('penggunaan/tambah', $data);
     }
 
     public function addproses()
     {
+        $check = $this->request->getPost('check');
+        if($check == "on"){
+            $barang = $this->request->getPost('barang');
+        }else{
+            $barang = $this->request->getPost('barang-exist');
+        }
         $data = [
-            'nama_barang' => $this->request->getPost('barang'),
+            'nama_barang' => $barang,
             'catatan' => $this->request->getPost('catatan'),
             'tanggal_mulai' => $this->request->getPost('tanggal'),
             'id_user' => user_id()
         ];
+
         $this->penggunaanModel->save($data);
         session()->setFlashdata('addberhasil', '1 Barang ditambahkan untuk dihitung lama penggunaannya!');
         return redirect()->to(base_url('/penggunaan'));

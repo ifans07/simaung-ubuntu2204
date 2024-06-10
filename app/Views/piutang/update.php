@@ -14,6 +14,7 @@
                 <form action="<?= base_url('piutang/proses-update') ?>" method="post">
                 <?= csrf_field() ?>
                     <input type="hidden" value="<?= $data['id'] ?>" name="id">
+                    <input type="hidden" name="dompetlama" value="<?= $data['id_dompet'] ?>">
                     <div class="mb-3">
                         <label for="peminjam" class="form-label">Peminjam</label>
                         <input type="text" class="form-control" id="peminjam" name="peminjam"
@@ -23,8 +24,12 @@
                     <div class="row g-3 mb-3">
                         <div class="col-md-6">
                             <label for="jumlah" class="form-label">Jumlah</label>
-                            <input type="number" class="form-control" name="jumlah" id="jumlah" placeholder="Rp 0"
-                                value="<?= $data['nominal'] ?>">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control jml-keluar" name="jumlah" id="jumlah" placeholder="Masukkan angka!"
+                                    value="<?= number_format($data['nominal'],0,',','.') ?>">
+                            </div>
+                            <input type="hidden" name="jml-lama" value="<?= $data['nominal'] ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="dompet" class="form-label">Dompet</label>
@@ -33,22 +38,12 @@
 
                                 <?php foreach ($datadompet as $row) : ?>
                                 <?php if($data['id_dompet'] == $row['id_dompet']): ?>
-                                <option value="<?= $row['id_dompet'] ?>" selected>
-                                    <?= $row['nama_dompet'] ?> -
-                                    <?php foreach ($sumsaldo as $saldo) : ?>
-                                    <?php if ($row['nama_dompet'] == $saldo['nama_dompet']) : ?>
-                                    Rp <?= number_format($row['saldo'] - $saldo['jumlah'], 0, ',', '.') ?>
-                                    <?php endif; ?>
-                                    <?php endforeach; ?>
+                                <option value="<?= $row['id_dompet'] ?> <?= $row['saldo'] ?>" selected>
+                                    <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                 </option>
                                 <?php else: ?>
-                                <option value="<?= $row['id_dompet'] ?>">
-                                    <?= $row['nama_dompet'] ?> -
-                                    <?php foreach ($sumsaldo as $saldo) : ?>
-                                    <?php if ($row['nama_dompet'] == $saldo['nama_dompet']) : ?>
-                                    Rp <?= number_format($row['saldo'] - $saldo['jumlah'], 0, ',', '.') ?>
-                                    <?php endif; ?>
-                                    <?php endforeach; ?>
+                                <option value="<?= $row['id_dompet'] ?> <?= $row['saldo'] ?>">
+                                    <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                 </option>
                                 <?php endif; ?>
                                 <?php endforeach; ?>

@@ -40,7 +40,7 @@ $hari = [
 
 $totalkeluar = 0;
 foreach ($datalog as $log) {
-    if ($log['status'] != 2 && $log['status'] != 1 && $log['status'] != 5) {
+    if ($log['status'] != 2 && $log['status'] != 1 && $log['status'] != 5 && $log['status'] != 6) {
         $totalkeluar += $log['jumlah'];
     }
 }
@@ -56,7 +56,7 @@ foreach ($datagaji as $gaji) {
     <div class="row row-cols-1 row-cols-md-3 d-flex align-items-center g-3">
         <div class="col">
             <div>
-                Keluar bulan ini: Rp <?= number_format($totalkeluar, 0, ',', '.') ?><sup class="ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="pengeluaran disesuaikan dengan tanggal dan bulan dimulai gajian | tanggal gajian: <?= $tglGajian ?>"><i class="fa-solid fa-info-circle"></i></sup>
+                <small class="form-text">Keluar bulan ini: Rp <?= number_format($totalkeluar, 0, ',', '.') ?></small><sup class="ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="pengeluaran disesuaikan dengan tanggal dan bulan dimulai gajian | tanggal gajian: <?= $tglGajian ?>"><i class="fa-solid fa-info-circle"></i></sup>
             </div>
         </div>
         <div class="col text-center position-relative">
@@ -117,10 +117,17 @@ foreach ($datagaji as $gaji) {
                 </div>
             </div>
         </div>
+        <?php if(empty($datagaji)): ?>
+            <div class="col text-end">
+                <small class="form-text">Sisa bulan ini: gaji belum di set. <a href="<?= base_url('user/gaji/input-gaji') ?>">set gaji</a></small>
+            </div>
+        <?php else: ?>
         <div class="col text-end">
-            Sisa bulan ini: Rp
-            <?= number_format(2853862 - $totalkeluar, 0, ',', '.') ?>
+            <small class="form-text">Sisa bulan ini: Rp
+            <?= number_format($datagaji[0]['gaji'] - $totalkeluar, 0, ',', '.') ?></small>
+            <sup class="" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="gaji dikurangin total pengeluaran"><i class="fa-solid fa-info-circle"></i></sup>
         </div>
+        <?php endif; ?>
     </div>
 </div>
 <div>
@@ -145,6 +152,7 @@ foreach ($datagaji as $gaji) {
                 <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?= $log['catatan'] ?>">
                 <div class="icon-hapus">
                     <form action="<?= base_url('riwayat/hapus') ?>" method="post">
+                    <?= csrf_field() ?>
                         <input type="hidden" name="dompetid" value="<?= $log['id_dompet'] ?>" class="text-end">
                         <input type="hidden" name="jumlah" value="<?= $log['jumlah'] ?>" class="text-end">
                         <input type="hidden" name="saldo" value="<?= $log['saldo'] ?>" class="text-end">
@@ -166,7 +174,19 @@ foreach ($datagaji as $gaji) {
                         </div>
                         <div class="col-9">
                             <div class="text-dompet describe-text p-1">
-                                <span class="tipotext"><?= $log['nama_dompet'] ?></span>
+                                <?php 
+                                
+                                    $nama_dompet = explode(' ', $log['nama_dompet']);
+                                    $nama = '';
+                                    if(count($nama_dompet) > 1){
+                                        foreach($nama_dompet as $namasingkat){
+                                            $nama .= substr($namasingkat, 0, 3);
+                                        }
+                                    }else{
+                                        $nama = $nama_dompet[0];
+                                    }
+                                ?>
+                                <span class="tipotext"><?= $nama ?></span>
                                 <a href="<?= base_url('riwayat/log-detail/'.$log['tanggal']) ?>" class="describe">
                                     <h6>
                                         <?= $log['log_aktivitas'] ?>

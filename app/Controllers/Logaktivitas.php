@@ -98,7 +98,7 @@ class Logaktivitas extends BaseController
         $jumlah = $this->request->getPost('jumlah');
         $jml = explode('.',$jumlah);
         $j = implode($jml);
-        dd($j);
+        // dd($j);
 
         $saldo1 = $this->request->getPost('saldo-1');
         $sldo1 = explode('.',$saldo1);
@@ -167,7 +167,7 @@ class Logaktivitas extends BaseController
             'title' => 'Log Detail',
             'datalog' => $this->logModel->filterData($tanggal1, $tanggal2),
             'datadompet' => $this->dompetModel->getAllDompet(user_id()),
-            'datagaji' => $this->gajiModel->findAll()
+            'datagaji' => $this->gajiModel->getGajiUser(user_id())
         ];
         return view('filterdata/logbulanan', $data);
     }

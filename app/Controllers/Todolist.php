@@ -23,16 +23,15 @@ class Todolist extends BaseController
         $lowerCase = "abcdefghijklmnopqrstuvwxyz";
         $upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         $numbers = "1234567890";
-        $symbols = "~`!@$%^&*()_|][{}';:.,?><";
+
         $lowerCase = str_shuffle($lowerCase);
         $upperCase = str_shuffle($upperCase);
         $numbers = str_shuffle($numbers);
-        $symbols = str_shuffle($symbols);
-        $randomPassword = substr($lowerCase, 0, 4);
-        $randomPassword .= substr($upperCase, 0, 4);
-        $randomPassword .= substr($numbers, 0, 4);
-        $randomPassword
-            .= substr($symbols, 0, 4);
+
+        $randomPassword = substr($lowerCase, 0, 7);
+        $randomPassword .= substr($upperCase, 0, 6);
+        $randomPassword .= substr($numbers, 0, 5);
+
         $password = str_shuffle($randomPassword);
         $data = [
             'title' => $this->request->getVar('title'),
@@ -88,6 +87,9 @@ class Todolist extends BaseController
     // kalendar
     public function calendar()
     {
-        return view('filterdata/kalender');
+        $data = [
+            'title' => 'Kalender'
+        ];
+        return view('filterdata/kalender', $data);
     }
 }

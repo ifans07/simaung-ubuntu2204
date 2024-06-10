@@ -3,6 +3,9 @@
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
                 <h3 class="rounded p-3 fw-medium fs-1" style="background-color: #f1f2f3;">Rencana</h3>

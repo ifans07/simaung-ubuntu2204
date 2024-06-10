@@ -3,6 +3,9 @@
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
                 <h3 class="rounded fw-medium fs-1 p-3" style="background-color: #f1f2f3;"><i
@@ -17,6 +20,8 @@
                 </div>
 
                 <?php foreach($dataperiode as $row): ?>
+                <?php if($row['status_penghitung'] == 0): ?>
+                
                 <div class="d-flex mb-3">
                     <div class="align-self-center me-3">
                         <i class="fa-solid fa-dot-circle"></i>
@@ -32,20 +37,39 @@
                             </div>
                         </div>
                         <div>
+                            <?php
+                                $tglawal = date_create($row['tanggal_mulai']);
+                                $tglakhir = ($row['status_penghitung'] == 0) ? date_create(date('Y-m-d')) : date_create($row['tanggal_selesai']);
+                                // $tglakhir = date_create(date('Y-m-d'));
+                                $diff = date_diff($tglawal, $tglakhir);
+
+                                $dateStart = new DateTime($row['tanggal_mulai']);
+                                $dateEnd = ($row['status_penghitung'] == 0)? new DateTime(date('Y-m-d')): new DateTime($row['tanggal_selesai']);
+                                $interval = $dateStart->diff($dateEnd);
+                                $diffYear = $interval->y;
+                                $diffMonth = $interval->m;
+                                $diffDay = $interval->d;
+
+                            ?>
+                            <small class="">Periode: <span class="fw-medium"><?= $diffYear." Tahun ".$diffMonth." Bulan ".$diffDay." Hari |" ?></span> (<?= $diff->days ?> hari)</small>
+                        </div>
+                        <div>
                             <a href="<?= base_url('periode/update/'.$row['id']) ?>" class="badge text-bg-secondary"><i class="fa-solid fa-pen"></i></a>
                             <a href="<?= base_url('periode/hapus/'.$row['id']) ?>" class="badge text-bg-danger"><i class="fa-solid fa-trash-alt"></i></a>
-                            <a href="" class="badge text-bg-primary"><i class="fa-solid fa-check"></i></a>
+                            <a href="" class="badge text-bg-primary" data-bs-toggle="modal" data-bs-target="#periode-<?= $row['id'] ?>"><i class="fa-solid fa-check"></i></a>
                         </div>
                     </div>
                 </div>
+                <?php endif ?>
                 <?php endforeach; ?>
                 <hr>
                 <?php foreach ($dataperiode as $row) : ?>
+                <?php if($row['status_penghitung'] == 1): ?>
                 <div class="d-flex gap-2 mb-2">
                     <div class="align-self-center">
                         <i class="fa-solid <?= ($row['status_penghitung'] == 0) ? 'fa-times' : 'fa-check'; ?>"></i>
                     </div>
-                    <div class="lh-1">
+                    <div class="">
                         <div
                             class="lh-1 mb-1 <?= ($row['status_penghitung'] == 0) ? '' : 'text-decoration-line-through'; ?>">
                             <small class="fw-medium"><?= $row['nama_aktivitas'] ?></small> -
@@ -60,9 +84,19 @@
                                 $tglakhir = ($row['status_penghitung'] == 0) ? date_create(date('Y-m-d')) : date_create($row['tanggal_selesai']);
                                 // $tglakhir = date_create(date('Y-m-d'));
                                 $diff = date_diff($tglawal, $tglakhir);
-                                ?>
-                            <small class="">Periode: <span class="fw-medium"><?= $diff->days ?></span> hari</small>
-                            - <a href="<?= base_url('periode/update/'.$row['id']) ?>"
+
+                                $dateStart = new DateTime($row['tanggal_mulai']);
+                                $dateEnd = ($row['status_penghitung'] == 0)? new DateTime(date('Y-m-d')): new DateTime($row['tanggal_selesai']);
+                                $interval = $dateStart->diff($dateEnd);
+                                $diffYear = $interval->y;
+                                $diffMonth = $interval->m;
+                                $diffDay = $interval->d;
+
+                            ?>
+                            <small class="">Periode: <span class="fw-medium"><?= $diffYear." Tahun ".$diffMonth." Bulan ".$diffDay." Hari |" ?></span> (<?= $diff->days ?> hari)</small>
+                        </div>
+                        <div>
+                            <a href="<?= base_url('periode/update/'.$row['id']) ?>"
                                 class="badge <?= ($row['status_penghitung'] == 0) ? 'text-bg-primary' : 'text-bg-dark' ?>"><i
                                     class="fa-solid fa-pen"></i></a> <a href="<?= base_url('periode/hapus/'.$row['id']) ?>"
                                 class="badge <?= ($row['status_penghitung'] == 0) ? 'text-bg-danger' : 'text-bg-dark' ?>"
@@ -74,26 +108,9 @@
                         </div>
                     </div>
                 </div>
+                <?php endif ?>
                 <?php endforeach; ?>
-                <div class="d-flex gap-2">
-                    <div class="align-self-center">
-                        <i class="fa-solid fa-times"></i>
-                    </div>
-                    <div class="lh-1">
-                        <div class="lh-1 mb-1">
-                            <small class="fw-medium">Panjangin rambut</small> - <small>2023-10-10</small>
-                            <div class="form-text">
-                                Catatan kecil rara
-                            </div>
-                        </div>
-                        <div>
-                            <small class="form-text">Periode: <span class="fw-medium">12</span> hari</small> - <a
-                                href="" class="badge text-bg-primary"><i class="fa-solid fa-pen"></i></a> <a href=""
-                                class="badge text-bg-danger"><i class="fa-solid fa-trash-alt"></i></a> <a href=""
-                                class="badge text-bg-success"><i class="fa-solid fa-check"></i></a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

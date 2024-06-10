@@ -7,6 +7,7 @@ use App\Models\DompetModel;
 use App\Models\LogaktivitasModel;
 use App\Models\PiutangModel;
 use App\Models\UserModel;
+use App\Models\GajiModel;
 
 
 use Myth\Auth\Config\Auth as AuthConfig;
@@ -20,6 +21,7 @@ class User extends BaseController
     protected $dompetModel;
     protected $userModel;
     protected $logModel;
+    protected $gajiModel;
 
     protected $config;
     public function __construct()
@@ -28,6 +30,7 @@ class User extends BaseController
         $this->dompetModel = new DompetModel();
         $this->userModel = new UserModel();
         $this->logModel = new LogaktivitasModel();
+        $this->gajiModel = new GajiModel();
 
         $this->config = config('Auth');
     }
@@ -40,9 +43,18 @@ class User extends BaseController
             'title' => 'User',
             'datapiutang' => $this->piutangModel->getPiutangUser(user_id()),
             'datadompet' => $this->dompetModel->getAllDompet(user_id()),
-            ''
+            'gaji' => $this->gajiModel->getGajiUser(user_id())
         ];
         return view('user/index', $data);
+    }
+
+    // pengaturan
+    public function settings()
+    {
+        $data = [
+            'title' => 'Pengaturan'
+        ];
+        return view('pengaturan/index', $data);
     }
 
     // auth

@@ -3,6 +3,9 @@
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
                 <h3 class="rounded fw-medium fs-1 p-3" style="background-color: #f1f2f3;"><i
@@ -17,16 +20,16 @@
                     </div>
                 </div>
                 <div class="mb-2">
-                    <span class="fw-medium">List barang :</span> <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="barang yang sudah ada di inventory (sudah punya), tekan barang untuk mulai penghitungan lama penggunaan"><i class="fa-solid fa-info-circle"></i></sup>
+                    <span class="fw-medium">List barang masih digunakan :</span> <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="barang yang sudah ada di inventory (sudah punya), tekan barang untuk mulai penghitungan lama penggunaan"><i class="fa-solid fa-info-circle"></i></sup>
                 </div>
                 <?php foreach($datapenggunaan as $row): ?>
+                <?php if($row['status_penggunaan'] == 0): ?>
                     <div class="d-flex mb-3">
                         <div class="align-self-center me-3">
                             <i class="fa-solid fa-dot-circle"></i>
                         </div>
                         <div>
-                            <div
-                                class="lh-1 mb-1">
+                            <div class="lh-1 mb-1">
                                 <small class="fw-medium"><?= $row['nama_barang'] ?></small>
                                 -
                                 <small><?= $row['tanggal_mulai'] ?></small>
@@ -35,15 +38,40 @@
                                 </div>
                             </div>
                             <div>
+                                <?php
+                                $tglawal = date_create($row['tanggal_mulai']);
+                                $tglakhir = ($row['status_penggunaan'] == 0) ? date_create(date('Y-m-d')) : date_create($row['tanggal_selesai']);
+                                // $tglakhir = date_create(date('Y-m-d'));
+                                $diff = date_diff($tglawal, $tglakhir);
+
+                                $dateStart = new DateTime($row['tanggal_mulai']);
+                                $dateEnd = ($row['status_penggunaan'] == 0)? new DateTime(date('Y-m-d')): new DateTime($row['tanggal_selesai']);
+                                $interval = $dateStart->diff($dateEnd);
+                                $diffYear = $interval->y;
+                                $diffMonth = $interval->m;
+                                $diffDay = $interval->d;
+                                ?>
+
+                                <small class="">Pemakaian: <span class="fw-medium"><?= $diffYear." Tahun ".$diffMonth." Bulan ".$diffDay." Hari | " ?></span>(<?= $diff->days ?> hari)</small>
+                            </div>
+                            <div>
                                 <a href="<?= base_url('penggunaan/update/'.$row['id']) ?>" class="badge text-bg-secondary"><i class="fa-solid fa-pen"></i></a>
-                                <a href="<?= base_url('penggunaan/hapus/'.$row['id']) ?>" class="badge text-bg-danger"><i class="fa-solid fa-trash-alt"></i></a>
-                                <a href="" class="badge text-bg-primary"><i class="fa-solid fa-check"></i></a>
+                                <a href="<?= base_url('penggunaan/hapus/'.$row['id']) ?>" class="badge text-bg-danger" onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash-alt"></i></a>
+                                <a href=""
+                                class="badge <?= ($row['status_penggunaan'] == 0) ? 'text-bg-primary' : 'text-bg-dark disabled' ?>"
+                                disabled data-bs-toggle="modal" data-bs-target="#penggunaan-<?= $row['id'] ?>"><i
+                                    class="fa-solid fa-check"></i></a>
                             </div>
                         </div>
                     </div>
+                    <?php endif ?>
                 <?php endforeach; ?>
                 <hr>
+                <div class="mb-2">
+                    <span class="fw-medium">List barang habis digunakan :</span> <sup data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="barang yang sudah ada di inventory (sudah punya), tekan barang untuk mulai penghitungan lama penggunaan"><i class="fa-solid fa-info-circle"></i></sup>
+                </div>
                 <?php foreach ($datapenggunaan as $row) : ?>
+                <?php if($row['status_penggunaan'] == 1): ?>
                 <div class="d-flex gap-2 mb-2">
                     <div class="align-self-center">
                         <i
@@ -86,6 +114,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -117,7 +146,7 @@ foreach ($datapenggunaan as $row) : ?>
                 <?= csrf_field() ?>
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-6 fw-normal" id="exampleModalLabel">Atur tanggal habis barang!</h1>
+                    <h1 class="modal-title fs-6 fw-medium" id="exampleModalLabel">Atur tanggal habis barang!</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

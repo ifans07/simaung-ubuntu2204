@@ -22,13 +22,19 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="saldo" class="form-label">Saldo</label>
-                            <input type="number" class="form-control" name="saldo" id="saldo"
-                                placeholder="Masukkan angka" value="<?= $datadompet['saldo'] ?>">
+                            <div class="input-group">
+                                <span class="input-group-text fw-medium">Rp</span>
+                                <input type="text" class="form-control jml-keluar" name="saldo" id="saldo"
+                                placeholder="Masukkan angka" value="<?= number_format($datadompet['saldo'],0,',','.') ?>">
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="saldoawal" class="form-label">Saldo awal</label>
-                            <input type="number" class="form-control" name="saldoawal" id="saldoawal"
-                                placeholder="Masukkan ulang saldo" value="<?= $datadompet['saldo_awal'] ?>" disabled>
+                            <div class="input-group">
+                                <div class="input-group-text fw-medium">Rp</div>
+                                <input type="text" class="form-control jml-tf" name="saldoawal" id="saldoawal"
+                                    placeholder="Masukkan ulang saldo" value="<?= number_format($datadompet['saldo_awal'],0,',','.') ?>" disabled>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">

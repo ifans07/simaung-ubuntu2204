@@ -44,6 +44,7 @@ class PenghitungpModel extends Model
     {
         return $this->db->table($this->table)
         ->where('id_user', $user_id)
+        ->orderBy('id', 'DESC')
         ->get()
         ->getResultArray();
     }

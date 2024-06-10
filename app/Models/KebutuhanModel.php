@@ -45,6 +45,7 @@ class KebutuhanModel extends Model
         return $this->db->table($this->table)
             // ->join('tb_dompet', 'tb_dompet.id_dompet=tb_kebutuhan.id_dompet')
             // ->join('users', 'users.id=tb_kebutuhan.id_user')
+            ->like('created_at', date('Y-m'))
             ->where('id_user', $user_id)
             ->get()
             ->getResultArray();
@@ -53,7 +54,9 @@ class KebutuhanModel extends Model
     public function getLimitKebutuhan($user_id)
     {
         return $this->db->table($this->table)
+            ->like('created_at', date('Y-m'))
             ->where('id_user', $user_id)
+            ->orderBy('created_at', 'DESC')
             ->limit(5)
             ->get()->getResultArray();
     }

@@ -41,9 +41,10 @@
             <h2 class="logo-list logo"><a href="<?= base_url('/') ?>"><i class="fa-solid fa-money-bill"></i> Simaung</a></h2>
             <ul class="nav">
                 <li class="nav-item"><a href="<?= base_url('/') ?>" class="nav-link active-link">Home</a></li>
-                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/inventory" class="nav-link">Inventory</a></li>
+                <li class="nav-item"><a href="/kebutuhan" class="nav-link">Kebutuhan</a></li>
+                <li class="nav-item"><a href="/target" class="nav-link">Target</a></li>
                 <li class="nav-item"><a href="<?= base_url('calendar') ?>" class="nav-link">Calendar</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="<?= base_url('piutang') ?>" class="nav-link">Piutang</a></li>
                 <li class="nav-item"><a href="<?= base_url('coba') ?>" class="nav-link">Coba</a></li>
                 <li class="nav-item"><a href="<?= base_url('user') ?>" class="nav-link"><i class="fa-solid fa-user"></i></a></li>
@@ -61,6 +62,9 @@
             </div>
             <div class="toggle-darkmode">
                 <i class="fa-solid fa-moon"></i>
+            </div>
+            <div>
+                <a href="<?= base_url('user/pengaturan') ?>" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Pengaturan"><i class="fa-solid fa-gear"></i></a>
             </div>
         </div>
     </div>

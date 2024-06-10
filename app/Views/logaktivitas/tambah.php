@@ -59,7 +59,7 @@
                                 <option value="">--- Pilih dompet ---</option>
                                 <?php foreach ($dompet as $row) : ?>
                                     <option value="<?= $row['id_dompet'] ?>">
-                                        <?= $row['nama_dompet'] ?>
+                                        <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -118,7 +118,7 @@
                                 <option value="">--- Pilih dompet ---</option>
                                 <?php foreach ($dompet as $row) : ?>
                                     <option value="<?= $row['id_dompet'] ?>">
-                                        <?= $row['nama_dompet'] ?>
+                                        <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -172,7 +172,7 @@
                                 <option value="">--- Pilih dompet ---</option>
                                 <?php foreach ($dompet as $row) : ?>
                                     <option value="<?= $row['id_dompet'] ?>">
-                                        <?= $row['nama_dompet'] ?>
+                                        <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -192,7 +192,7 @@
                                 <option value="">--- Pilih dompet ---</option>
                                 <?php foreach ($dompet as $row) : ?>
                                     <option value="<?= $row['id_dompet'] ?>">
-                                        <?= $row['nama_dompet'] ?>
+                                        <?= $row['nama_dompet'] ?> - Rp <?= number_format($row['saldo'],0,',','.') ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>

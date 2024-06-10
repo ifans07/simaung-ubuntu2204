@@ -23,9 +23,12 @@ foreach ($logkeluar as $log) {
                     <input type="hidden" name="iddompet" value="<?= $datadompet['id_dompet'] ?>">
                     <div class="mb-3">
                         <label for="saldo" class="form-label">Saldo</label>
-                        <input type="number" class="form-control" name="saldo" id="saldo"
-                            placeholder="Masukkan hanya angka" value="<?= $datadompet['saldo'] - $totalkeluar ?>">
-                        <small class="form-text">Saldo awal: <?= $datadompet['saldo_awal'] ?></small>
+                        <div class="input-group">
+                            <span class="input-group-text fw-medium">Rp</span>
+                            <input type="text" class="form-control jml-keluar" name="saldo" id="saldo"
+                                placeholder="Masukkan hanya angka" value="<?= number_format($datadompet['saldo'],0,',','.') ?>">
+                        </div>
+                            <small class="form-text">Saldo awal: Rp<?= number_format($datadompet['saldo_awal'],0,',','.') ?></small>
                     </div>
                     <div>
                         <button class="btn btn-dark">

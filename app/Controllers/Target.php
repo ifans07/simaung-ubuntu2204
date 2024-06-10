@@ -27,7 +27,7 @@ class Target extends BaseController
             'datatargetdone' => $this->targetModel->getAllTargetDone(user_id()),
             'counttarget' => $this->targetModel->countTarget(user_id()),
             'datadompet' => $this->dompetModel->getAllDompet(user_id()),
-            'logkeluar' => $this->logModel->getSumAll()
+            'logkeluar' => $this->logModel->getSumAll(user_id())
         ];
         return view('target/index', $data);
     }

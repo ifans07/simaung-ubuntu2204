@@ -4,6 +4,9 @@
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
                 <h1 class="rounded p-3 fw-medium" style="background-color: #f1f2f3;">
@@ -68,7 +71,8 @@
                     <?php
                         $tgl1mulai = explode(', ', $row['tanggal_mulai']);
                         $tgl2mulai = explode(' ', $tgl1mulai[1]);
-                        $tgl1selesai = explode(', ', $row['tanggal_selesai']);
+                        $tglselesai = (empty($row['tanggal_selesai']))?date('l, Y-m-d H:i:s'):$row['tanggal_selesai'];
+                        $tgl1selesai = explode(', ', $tglselesai);
                         $tgl2selesai = explode(' ', $tgl1selesai[1]);
                         $tglawal = date_create($tgl1mulai[1]);
                         $tglakhir = date_create($tgl1selesai[1]);

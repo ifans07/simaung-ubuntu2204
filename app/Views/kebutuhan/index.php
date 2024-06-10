@@ -11,10 +11,20 @@ foreach ($logkebutuhan as $row) {
     }
 }
 
+$jmldone = [];
+foreach($datakebutuhan as $butuh){
+    if($butuh['status'] == 0){
+        $jmldone[] = $butuh['status'];
+    }
+}
+
 ?>
 
 <section>
     <div class="container">
+        <div class="mb-4">
+            <a class="nav-link text-dark" href="<?= base_url('/') ?>" role="tab"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
         <div>
             <div>
                 <h1 class="rounded p-3 fw-medium" style="background-color: #f1f2f3;">
@@ -32,6 +42,9 @@ foreach ($logkebutuhan as $row) {
                         <div>
                             <small class="form-text">Kebutuhan: <?= count($datakebutuhan) ?></small>
                         </div>
+                        <div>
+                            <small class="form-text">Done: <?= count($jmldone) ?></small>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -40,10 +53,10 @@ foreach ($logkebutuhan as $row) {
                         $totalkebutuhan = 0;
                         $totalkeluar = 0;
                         $sisa = 0;
-                        $gaji = 12800000;
+                        $gaji = $gaji[0]['gaji'];
                         foreach ($datakebutuhan as $row) : ?>
                         <?php $totalkebutuhan += $row['harga'] ?>
-                        <?php //if ($row['status'] == 1) : ?>
+                        <?php if ($row['status'] == 1) : ?>
                         <div class="mb-3">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#kebutuhan-<?= $row['id'] ?>"
                                 class="nav-link">
@@ -69,55 +82,37 @@ foreach ($logkebutuhan as $row) {
                                 </div>
                             </a>
                         </div>
-                        <?php //endif; ?>
+                        <?php else: ?>
+                            <?php $totalkeluar+=$row['harga'] ?>
+                            <div class="mb-3">
+                            <div href="#" class="nav-link">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div>
+                                        <i class="fa-solid fa-dot-circle"></i>
+                                    </div>
+                                    <div>
+                                        <div class="lh-1">
+                                            <strong>
+                                                <?= $row['kebutuhan'] ?>
+                                            </strong> -
+                                            <small>Rp <?= number_format($row['harga'], 0, ',', '.') ?></small>
+                                            <div class="form-text"><?= $row['catatan'] ?></div>
+                                        </div>
+                                        <div>
+                                            <span class="form-text">Done: <?= $row['periode'] ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endif ?>
                         <?php endforeach; ?>
 
                     </form>
                 </div>
+                
                 <hr>
 
-                <!-- kebutuhan done update -->
-                <div>
-                    <div class="lh-1 float-end">
-                        <small class="fw-medium"><?= date('l, d-m-Y H:i:s') ?></small>
-                        <div>
-                            <small class="form-text">Kebutuhan terbeli: <?= count($jmlkebutuhandone) ?></small>
-                        </div>
-                    </div>
-                    <?php foreach ($logkebutuhan as $log) : ?>
-                    <?php if ($log['status'] == 4) : ?>
-                    <div class="mb-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div>
-                                <i class="fa-solid fa-check text-success"></i>
-                            </div>
-                            <div>
-                                <div class="lh-1 mb-2">
-                                    <strong class="text-decoration-line-through">
-                                        <?= $log['log_aktivitas'] ?>
-                                    </strong> -
-                                    <small class="text-decoration-line-through">Rp
-                                        <?= number_format($log['jumlah'], 0, ',', '.') ?></small>
-                                    <div class="form-text text-decoration-line-through"><?= $log['catatan'] ?></div>
-                                </div>
-                                <div class="d-flex align-items-center gap-2">
-                                    <a href="<?= base_url('kebutuhan/update/'.$log['id']) ?>" class="text-dark"><i
-                                            class="fa-solid fa-edit"></i></a>
-                                    <a href="<?= base_url('kebutuhan/hapus/'.$log['id']) ?>" class="text-dark"
-                                        onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash"></i></a>
-                                    <small class="form-text">Done:
-                                        <?= date('l', strtotime($log['tanggal'])) . ', ' . $log['tanggal'] ?> (<span
-                                            class="fw-medium"><?= $log['nama_dompet'] ?></span>)</small>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-
-                <hr>
                 <div>
                     <div class="lh-sm">
                         <table>
@@ -136,7 +131,7 @@ foreach ($logkebutuhan as $row) {
                             <tr>
                                 <td>Gaji</td>
                                 <td>:</td>
-                                <td>&nbsp;Rp 12.800.000/bulan</td>
+                                <td>&nbsp;Rp <?= number_format($gaji,0,',','.') ?>/bulan</td>
                             </tr>
                             <tr class="fw-medium">
                                 <td>Sisa</td>
@@ -188,11 +183,17 @@ foreach ($logkebutuhan as $row) {
                         <select name="dompet" id="dompet" class="form-select">
                             <option value="">--- Pilih dompet ---</option>
                             <?php foreach ($datadompet as $dompet) : ?>
-
-                            <option value="<?= $dompet['id_dompet'] ?>,<?= $dompet['saldo'] ?>">
-                                <?= $dompet['nama_dompet'] ?> -
-                                Rp <?= number_format($dompet['saldo'], 0, ',', '.') ?>
-                            </option>
+                                <?php if($row['id_dompet'] == $dompet['id_dompet']): ?>
+                                    <option value="<?= $dompet['id_dompet'] ?>,<?= $dompet['saldo'] ?>" selected>
+                                        <?= $dompet['nama_dompet'] ?> -
+                                        Rp <?= number_format($dompet['saldo'], 0, ',', '.') ?>
+                                    </option>
+                                <?php else: ?>
+                                    <option value="<?= $dompet['id_dompet'] ?>,<?= $dompet['saldo'] ?>">
+                                        <?= $dompet['nama_dompet'] ?> -
+                                        Rp <?= number_format($dompet['saldo'], 0, ',', '.') ?>
+                                    </option>
+                                <?php endif ?>
                             <?php endforeach; ?>
                         </select>
                     </div>
