@@ -1,0 +1,125 @@
+CRITICAL - 2024-06-12 10:02:15 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+in SYSTEMPATH\Security\Security.php on line 300.
+ 1 SYSTEMPATH\Security\Security.php(300): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(56): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(182): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\CodeIgniter.php(474): CodeIgniter\Filters\Filters->run('login', 'before')
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-06-12 10:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:02:37 --> CSRF token verified.
+INFO - 2024-06-12 10:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-12 10:02:41 --> mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_domp...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_domp...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_domp...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_domp...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(79): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-06-12 10:02:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(79): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-06-12 10:02:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(79): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-06-12 10:02:41 --> [Caused by] mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(79): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-06-12 10:04:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:04:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:04:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:05:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:06:11 --> CSRF token verified.
+INFO - 2024-06-12 10:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:06:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:06:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:59 --> CSRF token verified.
+INFO - 2024-06-12 10:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:09:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:11:32 --> CSRF token verified.
+INFO - 2024-06-12 10:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-12 10:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -124,6 +124,12 @@ $routes->post('/user/gaji/proses-update', 'Gaji::updateproses');
 $routes->get('/user/gaji/delete/(:segment)', 'Gaji::deleteproses/$1');
 $routes->post('/user/gaji/gaji-bulanan', 'Gaji::addriwayatgaji');
 
+// kategori
+$routes->get('/kategori', 'Kategori::index');
+$routes->get('/kategori/tambah', 'Kategori::tambah');
+$routes->post('/kategori/proses-tambah', 'Kategori::addproses');
+$routes->get('/kategori/update/(:segment)', 'Kategori::update/$1');
+
 
 // api (batal)
 $routes->get('/dompet/data-piutang/(:segment)', 'Dompet::dataPiutang/$1');

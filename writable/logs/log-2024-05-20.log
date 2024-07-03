@@ -1,0 +1,160 @@
+INFO - 2024-05-20 08:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 08:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 08:10:17 --> CSRF token verified.
+INFO - 2024-05-20 08:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 08:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-20 08:10:19 --> ErrorException: Undefined variable $tanggalselesai
+in APPPATH\Views\target\index.php on line 75.
+ 1 APPPATH\Views\target\index.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tanggalselesai', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 75)
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-05-20 08:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-20 08:11:14 --> ErrorException: Undefined array key 1
+in APPPATH\Views\target\index.php on line 76.
+ 1 APPPATH\Views\target\index.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 76)
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-05-20 08:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 08:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-20 08:20:06 --> ErrorException: Undefined array key "id"
+in APPPATH\Views\target\index.php on line 99.
+ 1 APPPATH\Views\target\index.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 99)
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-05-20 08:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-20 08:20:25 --> ErrorException: Undefined array key "nama_dompet"
+in APPPATH\Views\target\index.php on line 107.
+ 1 APPPATH\Views\target\index.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_dompet"', 'F:\\application-ci\\simaung\\app\\Views\\target\\index.php', 107)
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\application-ci\\simaung\\app\\Views\\target\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('target/index', [], true)
+ 5 APPPATH\Controllers\Target.php(32): view('target/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-05-20 08:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-20 08:20:42 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_' at line 1 in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\TargetModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Target.php(27): App\Models\TargetModel->getAllTargetDone('99')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Target->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-05-20 08:20:42 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = :tb_target.id_user:
+ORDER BY `tanggal_selesai` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\TargetModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Target.php(27): App\Models\TargetModel->getAllTargetDone('99')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-05-20 08:20:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = \'99\'
+ORDER BY `tanggal_selesai` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = \'99\'
+ORDER BY `tanggal_selesai` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = :tb_target.id_user:
+ORDER BY `tanggal_selesai` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\TargetModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Target.php(27): App\Models\TargetModel->getAllTargetDone('99')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-05-20 08:20:42 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = \'99\'
+ORDER BY `tanggal_selesai` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = \'99\'
+ORDER BY `tanggal_selesai` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = \'99\'
+ORDER BY `tanggal_selesai` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `target`, `cost`, `tanggal_mulai`, `tanggal_selesai`, `tb_target`.`status`, `catatan`, `tb_target`.`id_dompet`, `tb_target`.`id_user`. `tb_dompet`.`nama_dompet`
+FROM `tb_target`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_target`.`id_dompet`
+WHERE `tb_target`.`id_user` = :tb_target.id_user:
+ORDER BY `tanggal_selesai` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\TargetModel.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Target.php(27): App\Models\TargetModel->getAllTargetDone('99')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-05-20 08:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:10:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:13:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:13:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-20 09:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

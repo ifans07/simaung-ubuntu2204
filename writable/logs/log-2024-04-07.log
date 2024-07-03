@@ -1,0 +1,1545 @@
+INFO - 2024-04-07 13:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:53:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:54:25 --> CSRF token verified.
+INFO - 2024-04-07 13:54:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:54:27 --> mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_domp...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_domp...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_domp...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_domp...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 13:54:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 13:54:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 13:54:27 --> [Caused by] mysqli_sql_exception: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'db_simaung.tb_logaktivitas.ke_iddompet' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+GROUP BY `tb_logaktivitas`.`id_dompet`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `tb_dompet`.`nama_dompet`, `tb_logaktivitas`.`ke_iddompet`, SUM(`jumlah`) AS `jumlah`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+GROUP BY `tb_logaktivitas`.`id_dompet`', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(104): App\Models\LogaktivitasModel->getSumAll('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 14:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 15:09:24 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-32' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 15:09:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:24 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 15:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 15:09:25 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-32' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 15:09:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:25 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-32'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-32\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 15:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 15:09:40 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-31' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 15:09:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-31\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-31\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:09:40 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-31\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-31\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-31\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(156): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 15:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:57:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:57:37 --> CSRF token verified.
+INFO - 2024-04-07 15:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:58:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:58:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:58:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 15:58:49 --> mysqli_sql_exception: Incorrect DATE value: '2024-04' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 15:58:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = :tanggal:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:58:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = \'2024-04\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = \'2024-04\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = :tanggal:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 15:58:49 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = \'2024-04\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = \'2024-04\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = \'2024-04\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` = :tanggal:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(157): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:18:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:18:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:21:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:21:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:25:03 --> TypeError: Unsupported operand types: string + string
+in APPPATH\Models\LogaktivitasModel.php on line 152.
+ 1 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:25:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:27:24 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:27:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:27:50 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:29:43 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:31:24 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:32:39 --> Error: Call to a member function table() on null
+in APPPATH\Models\LogaktivitasModel.php on line 57.
+ 1 APPPATH\Controllers\Dompet.php(102): App\Models\LogaktivitasModel->getAllLog('3')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:33:16 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(161): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:33:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:33:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:33:16 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(161): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:34:24 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 42.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:34:57 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:34:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:34:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:34:57 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:35:21 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:35:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:35:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:35:21 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:35:24 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Dompet->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:35:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:35:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:35:24 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= \'2024-04-01\'
+AND `tanggal` < \'2024-04-\'
+AND `tb_logaktivitas`.`id_user` = \'3\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tanggal` >= :tanggal:
+AND `tanggal` < :tanggal.1:
+AND `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(158): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:35:47 --> ErrorException: Undefined variable $jml_hari
+in APPPATH\Models\LogaktivitasModel.php on line 154.
+ 1 APPPATH\Models\LogaktivitasModel.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $jml_hari', 'F:\\application-ci\\simaung\\app\\Models\\LogaktivitasModel.php', 154)
+ 2 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:45:50 --> Error: Call to undefined function App\Models\jmlHari()
+in APPPATH\Models\LogaktivitasModel.php on line 157.
+ 1 APPPATH\Controllers\Dompet.php(103): App\Models\LogaktivitasModel->getLogBulan('3')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dompet->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dompet))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:47:46 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:48:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:48:59 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:49:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:49:14 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:49:21 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:50:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:50:40 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:52:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:52:31 --> ErrorException: Constant expression contains invalid operations
+in APPPATH\Models\LogaktivitasModel.php on line 186.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 16:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:53:04 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-31' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Coba->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:53:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:53:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-31\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-31\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:53:04 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-31'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-31\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-31\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-31\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:53:36 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Coba->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:53:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:53:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:53:36 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-$30045336->704Sunday16pmSun, 07 Apr 2024 16:53:36 +080053()\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:54:21 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Coba->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:54:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:54:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:54:21 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${30045421->704Sunday16pmSun, 07 Apr 2024 16:54:21 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 16:54:27 --> mysqli_sql_exception: Incorrect DATE value: '2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}' in F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `t...', 0)
+#1 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 F:\application-ci\simaung\app\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 F:\application-ci\simaung\app\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+#6 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(941): App\Controllers\Coba->index()
+#7 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+#8 F:\application-ci\simaung\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 F:\application-ci\simaung\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 F:\application-ci\simaung\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('F:\\application-...')
+#11 {main}
+CRITICAL - 2024-04-07 16:54:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 2 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:54:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Incorrect DATE value: '2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 4 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+CRITICAL - 2024-04-07 16:54:27 --> [Caused by] mysqli_sql_exception: Incorrect DATE value: '2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = \'3\'
+AND `tanggal` >= \'2024-04-01\'
+AND `tanggal` <= \'2024-04-${$30045427->704Sunday16pmSun, 07 Apr 2024 16:54:27 +080054()}\'
+ORDER BY `tanggal` DESC, `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `tb_logaktivitas`.`log_aktivitas`, `jumlah`, `tanggal`, `catatan`, `tb_logaktivitas`.`status`, `tb_logaktivitas`.`id_dompet`, `nama_dompet`, `saldo`, `saldo_awal`, `ke_iddompet`, `tb_logaktivitas`.`id_user`
+FROM `tb_logaktivitas`
+JOIN `tb_dompet` ON `tb_dompet`.`id_dompet`=`tb_logaktivitas`.`id_dompet`
+WHERE `tb_logaktivitas`.`id_user` = :tb_logaktivitas.id_user:
+AND `tanggal` >= :tanggal:
+AND `tanggal` <= :tanggal.1:
+ORDER BY `tanggal` DESC, `id` DESC', [...], false)
+ 5 APPPATH\Models\LogaktivitasModel.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Coba.php(23): App\Models\LogaktivitasModel->filterData()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Coba->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Coba))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 16:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:56:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:00:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:00 --> CSRF token verified.
+INFO - 2024-04-07 17:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:43 --> CSRF token verified.
+INFO - 2024-04-07 17:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:02:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:14:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:14:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:44:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:44:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:44:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:45:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:45:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:57:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:58:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:58:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:14 --> CSRF token verified.
+INFO - 2024-04-07 17:59:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 17:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:01:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:03:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 18:05:58 --> ArgumentCountError: Too few arguments to function App\Models\LogaktivitasModel::getSumAll(), 0 passed in F:\application-ci\simaung\app\Controllers\Kebutuhan.php on line 38 and exactly 1 expected
+in APPPATH\Models\LogaktivitasModel.php on line 71.
+ 1 APPPATH\Controllers\Kebutuhan.php(38): App\Models\LogaktivitasModel->getSumAll()
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Kebutuhan->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 18:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 18:07:06 --> ArgumentCountError: Too few arguments to function App\Models\LogaktivitasModel::getLogBulanIni(), 0 passed in F:\application-ci\simaung\app\Controllers\Kebutuhan.php on line 39 and exactly 1 expected
+in APPPATH\Models\LogaktivitasModel.php on line 126.
+ 1 APPPATH\Controllers\Kebutuhan.php(39): App\Models\LogaktivitasModel->getLogBulanIni()
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Kebutuhan->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kebutuhan))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 18:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:07:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 18:07:43 --> ErrorException: Undefined variable $title
+in APPPATH\Views\templates\template.php on line 7.
+ 1 APPPATH\Views\templates\template.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'F:\\application-ci\\simaung\\app\\Views\\templates\\template.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('F:\\application-ci\\simaung\\app\\Views\\templates\\template.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(244): CodeIgniter\View\View->render('templates/template', [], true)
+ 5 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('filterdata/kalender', [], true)
+ 6 APPPATH\Controllers\Todolist.php(91): view('filterdata/kalender')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Todolist->calendar()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Todolist))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 18:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:09:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:09:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 18:09:58 --> ArgumentCountError: Too few arguments to function App\Models\LogaktivitasModel::getSumAll(), 0 passed in F:\application-ci\simaung\app\Controllers\Target.php on line 30 and exactly 1 expected
+in APPPATH\Models\LogaktivitasModel.php on line 71.
+ 1 APPPATH\Controllers\Target.php(30): App\Models\LogaktivitasModel->getSumAll()
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 18:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 18:10:00 --> ArgumentCountError: Too few arguments to function App\Models\LogaktivitasModel::getSumAll(), 0 passed in F:\application-ci\simaung\app\Controllers\Target.php on line 30 and exactly 1 expected
+in APPPATH\Models\LogaktivitasModel.php on line 71.
+ 1 APPPATH\Controllers\Target.php(30): App\Models\LogaktivitasModel->getSumAll()
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Target->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Target))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('F:\\application-ci\\simaung\\public\\index.php')
+INFO - 2024-04-07 18:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:11:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:15:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:16:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 18:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:35:53 --> CSRF token verified.
+INFO - 2024-04-07 22:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 22:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

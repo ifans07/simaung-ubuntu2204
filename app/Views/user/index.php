@@ -35,7 +35,10 @@ foreach($datadompet as $dompet){
                             <span id="btnGaji" style="cursor:pointer">Gaji: <span class="fw-medium" id="txtGaji" data-value="<?= number_format($gaji[0]['gaji'],0,',','.') ?>">Rp--------</span></span>
                             <?php endif ?>
                         </div>
-                        <a href="<?= base_url('user/pengaturan') ?>"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+                        <div>
+                            <a href="<?= base_url('user/pengaturan') ?>"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+                            <a href="<?= base_url('/kategori') ?>"><i class="fa-solid fa-list"></i> Kategori</a>
+                        </div>
                     </div>
                 </div>
             </div>

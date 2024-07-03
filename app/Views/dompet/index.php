@@ -421,7 +421,7 @@ $saldo = (empty($datagaji))?0:$datagaji[0]['saldo'];
                                 <div class="col box-cost">
                                     <div class="card dompet" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                         data-bs-title="<?= $log['catatan'] ?>">
-                                        <div class=" row g-2">
+                                        <div class="row g-2">
                                             <div class="col-3">
                                                 <div class="icon-number">
                                                     <?php

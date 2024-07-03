@@ -162,7 +162,7 @@ foreach ($datagaji as $gaji) {
                     </form>
                     <!-- <a href="/riwayat/hapus/<?php //echo $log['id'] ?>" onclick="return confirm('Yakin?')"><i class="fa-solid fa-trash-alt text-danger"></i></a> -->
                 </div>
-                    <div class=" row g-2">
+                    <div class="row g-2">
                         <div class="col-3">
                             <div class="icon-number">
                                 <?php
