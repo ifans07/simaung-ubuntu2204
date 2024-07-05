@@ -149,7 +149,7 @@ class Dompet extends BaseController
     {
         $dompetModel = new DompetModel();
         $data = [
-        'title' => 'Form edti dompet',
+        'title' => 'Form edit dompet',
         'datadompet' => $dompetModel->find($id)
         ];
         return view('dompet/update-dompet', $data);

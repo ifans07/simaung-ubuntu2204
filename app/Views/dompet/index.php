@@ -105,13 +105,13 @@ $saldo = (empty($datagaji))?0:$datagaji[0]['saldo'];
     <div class="container">
         <!-- dompet & saldo -->
         <div class="">
-            <div>
+            <div class="">
                 <div class="mb-3">
                     <h1 class="rounded p-3" style="background-color: #f1f1f1; font-weight: 500"><i
                             class="fa-solid fa-wallet"></i> Dompet & Saldo
                     </h1>
                 </div>
-                <div class="">
+                <div class="card">
                     <div class="row p-md-3 g-3">
                         <div class="col-md-6">
                             <!-- <span class="w-100"> -->

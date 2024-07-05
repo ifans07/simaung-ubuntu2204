@@ -129,7 +129,12 @@ $routes->get('/kategori', 'Kategori::index');
 $routes->get('/kategori/tambah', 'Kategori::tambah');
 $routes->post('/kategori/proses-tambah', 'Kategori::addproses');
 $routes->get('/kategori/update/(:segment)', 'Kategori::update/$1');
+$routes->post('/kategori/proses-update', 'Kategori::updateproses');
+$routes->get('/kategori/proses-delete/(:segment)', 'Kategori::deleteproses/$1');
 
+// icons
+$routes->get('/icons', 'Icons::index');
+$routes->get('/icons/tambah', 'Icons::tambah');
 
 // api (batal)
 $routes->get('/dompet/data-piutang/(:segment)', 'Dompet::dataPiutang/$1');

@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KategoriModel extends Model
+class IconsModel extends Model
 {
-    protected $table            = 'tb_kategori';
+    protected $table            = 'tb_icon';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['kategori', 'icon', 'slug', 'id_user'];
+    protected $allowedFields    = ['icon', 'slug'];
 
     protected bool $allowEmptyInserts = false;
 
@@ -39,23 +39,4 @@ class KategoriModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function findKategori($slug = false)
-    {
-        if($slug == false)
-        {
-            return $this->where('id_user', user_id())->findAll();
-        }
-
-        return $this->where([
-            'slug' => $slug,
-            'id_user' => user_id()
-        ])->first();
-    }
-
-    public function hapus($slug)
-    {
-        $builder = $this->db->table($this->table);
-        return $builder->delete(['slug' => $slug]);
-    }
 }

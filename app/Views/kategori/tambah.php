@@ -20,9 +20,12 @@
                             <label for="Icon" class="form-label">Icon</label>
                             <select name="icon" id="Icon" class="form-select">
                                 <option value="">--- Pilih Icon ---</option>
-                                <option value="fa-solid fa-food-bowl"><i class="fa-solid fa-plus"></i>fa-solid fa-user</option>
+                                <option value="fa-solid fa-bowl-food"><i class="fa-solid fa-bowl-food"></i>fa-solid fa-bowl-food</option>
                                 <option value="fa-solid fa-bolt"><i class="fa-solid fa-bolt"></i>fa-solid fa-bolt</option>
                                 <option value="fa-solid fa-list"><i class="fa-solid fa-list"></i>fa-solid fa-list</option>
+                                <option value="fa-solid fa-bag-shopping">fa-solid fa-bag-shopping</option>
+                                <option value="fa-solid fa-gift">fa-solid fa-gift</option>
+                                <option value="fa-solid fa-dice">fa-solid fa-dice</option>
                             </select>
                         </div>
                         <div class="mb-3">

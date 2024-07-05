@@ -36,8 +36,9 @@ foreach($datadompet as $dompet){
                             <?php endif ?>
                         </div>
                         <div>
-                            <a href="<?= base_url('user/pengaturan') ?>"><i class="fa-solid fa-gear"></i> Pengaturan</a>
-                            <a href="<?= base_url('/kategori') ?>"><i class="fa-solid fa-list"></i> Kategori</a>
+                            <a href="<?= base_url('user/pengaturan') ?>" class="icon-link me-2"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+                            <a href="<?= base_url('/kategori') ?>" class="icon-link me-2"><i class="fa-solid fa-list"></i> Kategori</a>
+                            <a href="<?= base_url('/icons') ?>" class="icon-link"><i class="fa-solid fa-icons"></i> Icons</a>
                         </div>
                     </div>
                 </div>
